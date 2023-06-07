@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!--
+
+	<img src=" " /> // 이미지 태크
+		절대경로 : 모든 경로 // 풀주소
+		상대경로 : 현재 문서 위치 기준으로 상대적인 경로
+			1. 만약에 같은 폴더에 존재하면 : 파일명 작성
+			2. 만약에 상위 폴더에 존재하면 : ../파일명  
+			3. 만약에 상상위 폴더에 존재하면 : ../../파일명  // 두번
+			4. 만약에 상위 폴더내 하위 폴더에 존재하면 : ../폴더명/파일명
+
+	<audio controls> // 오디오 태크
+		<source src = "">
+	</audio>
+
+	<video controls>
+		<source src = ""> // 비디오 태크
+	
+	</video>
+
+
+  -->
+  
+  
+  	<h6> 절대 경로 </h6>
+	<img src="C:\Users\504\eclipse-workspace\frontend\public\큐브.jpg"/>
+	
+	<h6> 상대 경로 : 현재문서와 사진이 같은 폴더일때</h6>
+	<img src="큐브.jpg"/>
+	
+	<h6> 상대 경로 : 현재문서와 같은 폴더내 사진일때</h6>
+	<img src="./이미지/큐브.jpg"/>
+	
+	<h6> 상대 경로 : 현재문서와 사진이 같은 폴더일때</h6>	
+	<img src="../img/큐브.jpg" />
+
+
+	<audio controls> 
+		<source src = "음악.mp3">
+	</audio>
+
+	<video controls>
+		<source src = "영상.mp4">
+	
+	</video>
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/NQq0dOoEPUM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</body>
+</html>
