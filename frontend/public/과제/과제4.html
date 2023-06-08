@@ -2,115 +2,63 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>과제4</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<form>
-		<fieldset>
-			<legend> 삼성 제품 만족도 조사 </legend>
-	
-	<table>
+<form>
+	<table border="1">
 		<tr>
-			<td> 이름 </td>
-			<td> <input type="text" placeholder="홍길동">
-		<tr/>
+			<td colspan="3">1</td>
+			<td rowspan="3">2</td>
+			<td>3</td>
+			<td rowspan="5">4</td>
+			<td colspan="4" rowspan="2">5</td>
+		</tr>
+		
 		<tr>
-			<td> 연령 </td>
-			<td> <select>
-			<option> 10대 </option>
-			<option> 20대 </option>
-			<option> 30대 </option>
-			<option> 40대 이상 </option>
-		</select> <td> <br/>
+			<td colspan="2">6</td>
+			<td>7</td>
+			<td rowspan="3">8</td>
 		</tr>
 
 		<tr>
-			<td> 성별 </td>
-			<td> <input type="radio" name="sex"> 남성
-			<input type="radio" name="sex"> 여성 </td>
-	
+			<td >9</td>
+			<td colspan="2">10</td>
+			<td rowspan="2">11</td>
+			<td rowspan="4">12</td>
+		</tr>
+		
+		<tr>
+			<td rowspan="3">13</td>
+			<td>14</td>
+			<td colspan="2">15</td>
+		</tr>
+		
+		<tr>
+			<td rowspan="3">16</td>
+			<td>17</td>
+			<td>18</td>
+			<td rowspan="2">19</td>
+			<td>20</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">21</td>
+			<td rowspan="2" colspan="2">22</td>
+		</tr>
+		
+		<tr>
+			<td>23</td>	 		
+			<td>24</td>
+			<td colspan="2">25</td>
+			<td>26</td>	 		
+		
+		</tr>
+		
 	</table>
-	<table>
-		<img src="삼성1.jgp"/>
-	</table>
-	<hr/>
-	<b>질문1</b> 현재 사용중인 삼성 제품을 모두 고르세요. <br/><br/>
-		<input type="checkbox"> TV
-		<input type="checkbox"> 냉장고
-		<input type="checkbox"> 에어컨
-		<input type="checkbox"> 청소기
-		<input type="checkbox"> 핸드폰<br/>
-		<hr/>
-	
-	<b>질문2</b> TV를 사용중이라면 제품에 대해 얼마나 만족하시나요? (단 미사용중이면 미사용에 체크)	<br/><br/>
-		<input type="radio" name="tv"> 5점
-		<input type="radio" name="tv"> 4점
-		<input type="radio" name="tv"> 3점
-		<input type="radio" name="tv"> 2점
-		<input type="radio" name="tv"> 1점
-		<input type="radio" name="tv"> 미사용
-		<hr/>
-	
-	<b>질문3</b> 냉장고를 사용중이라면 제품에 대해 얼마나 만족하시나요? (단 미사용중이면 미사용에 체크)	<br/><br/>
-		<input type="radio" name="ice"> 5점
-		<input type="radio" name="ice"> 4점
-		<input type="radio" name="ice"> 3점
-		<input type="radio" name="ice"> 2점
-		<input type="radio" name="ice"> 1점
-		<input type="radio" name="ice"> 미사용
-		<hr/>
-			
-	<b>질문4</b> 에어컨을 사용중이라면 제품에 대해 얼마나 만족하시나요? (단 미사용중이면 미사용에 체크)	<br/><br/>
-		<input type="radio" name="air"> 5점
-		<input type="radio" name="air"> 4점
-		<input type="radio" name="air"> 3점
-		<input type="radio" name="air"> 2점
-		<input type="radio" name="air"> 1점
-		<input type="radio" name="air"> 미사용
-		<hr/>
-			
-	<b>질문5</b> 청소기를 사용중이라면 제품에 대해 얼마나 만족하시나요? (단 미사용중이면 미사용에 체크)	<br/><br/>
-		<input type="radio" name="clean"> 5점
-		<input type="radio" name="clean"> 4점
-		<input type="radio" name="clean"> 3점
-		<input type="radio" name="clean"> 2점
-		<input type="radio" name="clean"> 1점
-		<input type="radio" name="clean"> 미사용
-		<hr/>		
-
-	<b>질문2</b> 핸드폰을 사용중이라면 제품에 대해 얼마나 만족하시나요? (단 미사용중이면 미사용에 체크)	<br/><br/>
-		<input type="radio" name="phone"> 5점
-		<input type="radio" name="phone"> 4점
-		<input type="radio" name="phone"> 3점
-		<input type="radio" name="phone"> 2점
-		<input type="radio" name="phone"> 1점
-		<input type="radio" name="phone"> 미사용
-		<hr/>			
-		
-	<b>질문6</b> 사용중이신 삼성제품에 대한 전반적인 만족도를 체크해 주세요<br/><br/>
-		<input type="radio" name="sum"> 5점
-		<input type="radio" name="sum"> 4점
-		<input type="radio" name="sum"> 3점
-		<input type="radio" name="sum"> 2점
-		<input type="radio" name="sum"> 1점
-		<input type="radio" name="sum">사용안함
-		<hr/>				
-
-	<b>건의사항</b><br/><br/>		
-		<textarea rows="4" cols="100" style="resize: none;"></textarea><br/>
-		<br/>
-	설문조사일 <input type="month">	
-		<br/><br/>
-		<center><input type="submit" value="제출하기"> <input type="reset" value="다시쓰기"></center>
-		
-		</fieldset>
-	</form>
-	
-	
+</form>
 
 
-
-		
 
 
 
