@@ -8,21 +8,81 @@
 
 
 <!--
+
+	<form> : 데이터 입력 양식(형식) [ 추후에 전송 가능 ]
+		
 	<input> : 입력상자
 		속성 [ 속성명 = 값 ]
 		1. type = "text" : 텍스트 입력
+
+		2. value	 : input 의 값 대입(값 넣기)
+		3. readonly  : 읽기 전용 [수정 불가]
+		4. autofocus : 포커스[커서] 이동
+		5. maxlength : 입력가능한 최대 글자 수
+		6. multiple  : 최대 문자 길이 수
 		
+		select	 : 목록 넣기 //혼자 사용불가 옵션이랑 같이 사용
+		<select> 
+			<option> 네이버 </option>
+		</select>
 
+		 textarea  : 가로, 세로 글자수 영역 지정  ex) rows = "10" , cols = "5"
+				rows = 가로 , cols = 세로
+		
+		
+		
   -->
-	<input><br/>
-	<input type="text"><br/>	:텍스트
-	<input type="password"><br/> :패스워드
-	<input type="email"><br/> : 이메일
-	<input type="radio"><br/> : 원형 체크 버튼
-	<input type="checkbox"><br/> : 네모 체크 버튼
-	<input type="file"><br/> : 첨부파일
+	<form><!-- form 안에서 작성 되어야 작동 함 // 없으면 무반응 -->
+		입력상자 : <input value="유재석" readonly="readonly">					<br/>
+		텍스트 : <input type="text" value="인사과" disabled="사용불가">		<br/>
+		패스워드 :<input type="password" autofocus="포커스 이동">	<br/>
+		이메일 : <input type="email" maxlength="5">		<br/>
+		
+		
+		원형 체크버튼[단일선택] : <input type="radio"><br/>   <!-- 라디오 사용할때는 이름을 똑같이 맞춰야 됨 // 다르게 쓰면 단일 체크 안됨 -->
+		<input type="radio" name="confirm">예
+		<input type="radio" name="confirm">아니오  <br/>
+		
+		
+		네모 체크버튼[복수선택] :<input type="checkbox"><br/> <!-- 얘는 이름은 맞춰도 복수 체크 됨 -->
+		<input type="checkbox"> 뉴스
+		<input type="checkbox"> 드라마  <br/>
+		
+		
+		
+		첨부파일 : <input type="file">
 
+			<input type="file" multiple="multiple">   <!--multiple - 여러개 선택 가능  -->
+									<br/>
+		
+		
+		색상 : <input type="color">		<br/>
+		날짜 : <input type="date">		<br/>
+		날짜/시간 :<input type="datetime-local"><br/>
+		월 :<input type="month">			<br/>
+		시간 :<input type="time">			<br/>
+		주 : <input type="week">			<br/>
+		범위 : <input type="range">		<br/>
+		숫자 : <input type="number">		<br/>
+		
+		<input type="button" value="이벤트 버튼"><br/> <!-- 추후 이벤트 추가 예정  -->
+		<input type="submit" value="전송 버튼"><br/> <!-- 추후 java로 전송하는 역할 -->
+		<input type="reset" value="입력 초기화"><br/> <!-- form 안에 포함된 input 내용 초기화 -->
+		
+		
+		<select> 
+			<option> 네이버 </option>
+			<option> 카카오 </option>
+			<option> 네이트 </option>
+		
+		</select>
+		
+		<textarea rows="5" cols="5" style="resize: none;"></textarea>
+				
+		
+		
+		
+	</form>
 
-
-</body>
+<body>
 </html>
