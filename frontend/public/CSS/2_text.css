@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+*{
+	font-family: "궁서";	/* 폰트 */
+ 	color: blue; 		/* 폰트 색상*/
+}
+.title{
+	
+	font-size: 60px; 		/* 폰트 크기 */
+	font-style: italic;		 /* 기울기 */
+	font-weight: bold; 		/* 굵기*/	
+}
+
+.content{
+	
+	font-family: "맑은고딕";
+	color: black;
+	word-spacing: 5px; 		/* 단어 간격 */
+	letter-spacing: 2px; 	/* 자간*/
+	line-height: 150%; 		/* 줄 간격 */
+	}
+.writer{
+	font-size:30px;
+	text-align: center;		/*텍스트 정렬*/
+	text-decoration: underline;	/*밑 줄*/
+	text-decoration: overline;	/*윗 줄*/
+	text-decoration: line-through;	/*취소선*/
+	text-shadow: 1px 3px 3px green;
+			   /* x , y 흐림정도 색상 */
+			   
+	/* 색상 표현 방법 - 이름 , 헥사(16진수) , rgb */
+	color: red;
+	color: #e8e8e8;
+	color: rgb(251 , 247 , 17);
+}		
+	
+	
+	
+	
+	
+	
+	
