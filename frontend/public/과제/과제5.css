@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.infor{
+	
+	font-weight:bold;
+	border-left:  solid 8px #008000;
+	padding-left: 17px;
+
+}
+
+.main{
+	
+	width :500px;
+	border: solid 2px gray;
+	background-color: #EEEEEE;
+	border-radius: 10px;/* 둥근모서리 */
+	
+	padding: 45px 55px;
+	line-height: 25px;
+}
+
+.contli{margin-bottom: 15px;/* 아래 간격 */}
+
+
+.main1{
+	border: solid 2px gray;
+	width: 320px;
+	border-radius: 10px;  /* 둥근 모서리 */
+	padding: 20px; /* 안쪽 간격 */
+	margin: 20px; /* 바깥 간격 */
+	
+}
+
+.botline{
+	
+	border-bottom: dotted 1px gray;
+	padding: 10px;
+	
+}
+.conth{
+	text-align: right;
+}
+
+
+

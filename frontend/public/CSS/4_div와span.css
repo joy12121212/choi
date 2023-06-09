@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+div {
+	border: solid 1px red;
+	margin: 20px;
+	background-color: #FBEBBA;
+}
+
+span {
+	border: solid 1px orange;
+}
+
+.s2 {
+	display: block; /* 크기 설정 가능 */
+	width: 200px;
+	height: 300px;
+}
+
+.s1 {
+	display: inline; /* span 디폴트라 안해도 됨 / 크기 설정 불가*/
+	width: 200px;
+	height: 200px;
+}
+
+.s3 {
+	display: inline-block;
+	width: 200px;
+	height: 300px;
+}
+
+.s4 {
+	display: none;
+}
+
+.d1 {
+	display: inline;
+	width: 200px;
+	height: 200px;
+}
+
+.d2 {
+	display: block; width : 200px;
+	height: 200px;
+	width: 200px;
+}
+
+.d3 {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+}
+
+.d4 {
+	display: none;
+	width: 200px;
+	height: 200px;
+}
