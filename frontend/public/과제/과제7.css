@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+*{padding: 0; margin: 0;} /* 전체 여백 제거 */
+
+.content{
+	width: 440px;
+	border: solid 1px #e8e8e8;
+	margin-top: 20px;
+}
+.fimg{width: 380px;}
+
+.row2{
+	border-top: solid 1px #e8e8e8;		/* 위 테두리 */
+	font-weight: bold;					/* 굵기 */
+	font-size: 18px;					/* 크기 */
+	padding: 20px;						/* 여백 */
+}
+.row3{font-weight: bold;}
+
+.row4{ margin-top: 10px; line-height: 150%;}
+
+.row5{ margin-top: 10px; line-height: 150%;}
+
+.fontc{color: orange;}
+
+li{padding:  10px 20px; list-style-type: none;}
