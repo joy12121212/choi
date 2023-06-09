@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.headC{
+	
+	border : solid 1px black;
+	width : 500px;
+	text-align: center;
+	border: none;
+	margin-bottom: 20px;
+}
+.main{
+	border: solid 1px #E0E0E0;
+	width: 500px;
+
+}
+
+.id{
+	width : 400px;
+	border: none;
+	outline: none;
+	border-bottom: 1px #E0E0E0;
+}
