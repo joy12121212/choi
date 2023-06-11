@@ -1,22 +1,143 @@
 @charset "UTF-8";
 
+*{ font-family: "맑은고딕"}
+
+
 .headC{
 	
 	border : solid 1px black;
-	width : 500px;
+	width : 350px;
 	text-align: center;
 	border: none;
-	margin-bottom: 20px;
+	margin: 0 auto;	
+	padding-top: 30px;
 }
 .main{
 	border: solid 1px #E0E0E0;
-	width: 500px;
-
+	width: 350px;
+	margin: 0 auto;	
+	margin-top: 20px;
+	padding: 25px 30px;
+	
 }
-
-.id{
-	width : 400px;
-	border: none;
+.main .id{
+	width : 330px;
 	outline: none;
-	border-bottom: 1px #E0E0E0;
+	border-bottom: solid 1px gray;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding-bottom: 5px;
 }
+.main .id1{
+	width : 330px;
+	outline: none;
+	border-bottom: solid 1px gray;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding-bottom: 5px;
+	padding-top : 12px;
+	margin-bottom: 5px;
+}
+
+.main .radio{
+	width :10px;
+	height : 10px;
+}
+
+
+.main .login{
+	font-size: 11px;
+	color: black;
+	font-weight: lighter;
+
+}
+
+.main .but1{
+	width: 330px;
+	height: 30px;
+	margin-top: 22px;
+	border: none;
+	background-color: #FDE41A;
+	margin-bottom: 12px;
+	font-size: 10px;
+}
+.main .but2{
+	width: 330px;
+	height: 30px;
+	border: none;
+
+	font-size: 10px;
+}
+
+.main .sign{
+	width : 330px;
+	text-align: right;
+}
+
+.main .sign1{
+	
+	width : 330px;
+	font-size: 1px;
+	border-right: solid 1px  #E0E0E0;
+	padding-right: 8px;
+	padding-left: 2px;
+}
+
+.main .sign2{
+	font-size: 1px;
+	padding-left: 8px;	
+
+}
+
+.notice{
+	
+	font-size : 1px;
+	width : 330px;
+	border :none;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 30px;	
+
+}
+
+.prvt {
+	font-weight: bold;
+	padding: 4px;
+}
+
+.cusSer{
+		padding: 4px;
+}
+
+.last{
+	
+	font-size: 1px;
+	font-weight: lighter;
+	color: gray;
+	text-align: center;
+}
+
+.point{
+	font-size: 1px;
+	font-weight: lighter;
+	color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
