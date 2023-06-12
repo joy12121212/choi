@@ -8,14 +8,15 @@
 
 .flexbox1{flex-wrap: wrap; align-items: flex-start;}  /* 자식들이 부모보다 사이즈가 커지면 자동 줄바꿈 */
 
-.flexbox2{align-items: center;}
+.flexbox2{align-items: center;} /* 가운데 정렬 */
 
-.flexbox3{align-items: flex-end;}
+.flexbox3{align-items: flex-end;} /* 밑변 정렬 */
 
-.flexbox4{align-items:stretch;}/* 사이즈가 정해지지 않은 애들을 가장 크게 해줌 */
+.flexbox4{align-items:stretch;} /* 사이즈가 정해지지 않은 애들을 가장 크게 해줌 */
 
 .flexbox5{ flex-wrap :wrap; align-items:baseline;}/* 사이즈가 정해지지 않은 애들을 가장 크게 해줌 */
-/* baseline - 텍스트 기준으로 정렬 */
+
+/* baseline - 텍스트(내용물)중 가장 밑변이 기준이되어 정렬 */
 
 .box1 , .box2 , .box3 , .box4 , .box5 , .box6{
 	background-color: blue;
