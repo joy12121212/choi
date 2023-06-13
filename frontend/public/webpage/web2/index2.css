@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+*{margin: 0px; padding: 0px;} /* 여백 제거 */
+li{list-style-type: none;} /* 글머리 제거 */
+
+@font-face { /* 폰트 가져오기 */
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+#header{
+	width : 1200px;  /* pc웹 기준 권장 사이즈 1100~1300px; */
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+/* 상단 로고 사이즈 변경 */
+.h_logo img { width: 100%}
+
+.top_menu{
+	font-size: 14px;
+	text-align: right;
+	margin-bottom: 15px;
+}
+
+.main_menu li{
+	display: inline-block;
+	margin-left: 100px;
+	font-family: 'SUITE-Regular';
+	font-size: 20px;
+}
+
+#content{
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* 사이드 바 */
+.side{ width: 250px; /* 상위요소 content(1200px;) 내에서 분할 */
+}
+.side h3{background-color: #0CA9A3;
+padding: 15px; }
+.side p {
+	line-height: 150%;
+	padding: 15px;
+	margin-bottom: 5px;
+}
+
+.side .search_input{
+	width: 120px; height: 25px;
+	padding-left: 5px;
+	margin-top: 5px;
+}
+
+.side .search_btn{
+	margin-left: 15px; padding: 3px 6px;
+	margin-top: 18px;
+}
+
+.side h4{
+	border-top: solid 2px black;
+	border-bottom: solid 1px gray;
+	margin-top: 5px;
+	pause: 15px;
+	font-size: 15px;
+	padding: 10px;
+}
+
+.side li{
+	padding: 10px;
+}
+
+.main_content{
+	width: 890px;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* 왼쪽 내용 */
+
+.left_content{
+	width: 430px;
+}
+.main_content h3{
+	border-bottom: solid 2px black;
+	padding-bottom: 10px;
+}
+.board { margin:  10px 0px 50px 0px;}
+
+.item {display: flex;
+justify-content: space-between;
+padding: 5px 0px;}
+
+
+.right_content{
+	width: 430px;
+}
+
+.r_all{display: flex;}
+
+.rb_img{
+	width: 200px;
+	padding: 10px;
+
+}
+.lb_img{
+	width: 200px;
+	padding: 10px;
+
+}
+
+.b_img{
+	margin-right: 15px
+}
+
+#footerback{
+	width:100%;
+	height:250px;
+	background-color: #05354E;
+	margin-top: 100px;
+}
+
+.ft_f{
+	width :1200px;
+	text-align: left;
+	padding-top : 10px;
+	margin: 0 auto;
+}
+
+
+.ft_f li{
+	display: inline-block;
+	font-size: 20px;
+	color: white;
+	padding: 5px;
+	margin: 0px 10px;
+	font-family: 'SUITE-Regular';
+	}
+
+
+.ft_l{
+	width :1200px;
+	text-align: left;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.ft_ll{
+	display: inline-block;
+	font-size: 20px;
+	color: white;
+	padding: 5px;
+	margin: 0px 30px;
+
+}
+
+.ft_l li{
+	font-size: 15px;
+	color: white;
+	padding: 5px;
+	margin: 0px 20px;
+	font-family: 'SUITE-Regular';
+	display: flex;
+	margin: 0px 30px;
+}
+
+
+
+#main_img{
+	width : 100%;
+	height : 350px; /* 사이즈가 있어야 백그라운드 이미지가 들어감 */
+	background-image: url("img/main_bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 30px 0px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@
 .flex_box1{
 	border: solid 1px red; 
 	display: flex;		 /* 가로로 붙일대는 flex 부모(상위요소)에게 적용 */
-	flex-direction: row; /* 가로, 세로 방행 : row 기본값 */
+	flex-direction: row; /* 가로, 세로 방향 : row 기본값 */
 	padding: 5px;
 }
 
