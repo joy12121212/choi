@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/* 전체 설정 */
+*{padding: 0px; margin: 0px; font-family: "맑은 고딕"}
+
+/* a태그 초기설정 */
+a{color: black; text-decoration: none;}
+
+/* 전체 배경 색 */
+body{background-color: #F5F6F7;}
+
+/* 페이지 구역 설정 */
+#wrap{width: 460px; margin: 0 auto;}
+
+/* 로고(헤더) */
+#header .h_logo img{ height: 50px;}
+#header .h_logo{text-align: center; margin: 50px 0px;}
+
+
+/* -----------------본문-------------------------------*/
+
+.signup_input{
+	border: solid 1px #DEDEDE;
+	background-color: white;
+	padding: 10px;
+	display: flex;	
+	margin:7px 0px;;
+	flex-wrap: nowrap; /* 자식 요소들의 사이즈가 커졌을때 줄 바꿈 처리 안함 //디폴트라 딱히 설정 안해도 됨 공부용 필기*/
+	align-items: center; /* 세로 정렬 */
+}
+
+.input_id{
+	border: none;
+	width: 100%;
+	height: 30px;
+	font-size: 18px;
+
+
+}
+
+/*  포커스 : 커서 들어왔을때 액션 속성*/
+*:focus{outline: none;} /* 포커스 줄 없애기 카카오 홈페이지 만들때 써봄*/
+
+.signup_at{color: #AEAEAE;}
+
+/* 네이버아이콘 배경으로 넣기 */
+.signup_icon{
+	background-image: url("https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png");
+	width: 25px; height: 25px; /* 해당 요소(이미지)의 사이즈 / 설정 안하면 안나옴*/
+	background-size: 120px 75px; /* 배경 사이즈 */
+/* 	background-position-x: 10px; 배경 위치 좌표x
+	background-position-y: 10px; 배경 위치 좌표y  작업할때는 f12로 직접 좌표 이동해라 */
+}
+
+.birthbox{ display: flex;}
+.birthM{margin-left: 20px; margin-right: 20px;}
+
+.birthY , .birthM , .birthD{ /* flex가 같은 애들은 사이즈 조절을 해주는데 다른 요소면 사이즈 조절 안해줌 */
+	width: 120px; /* 수동으로 세개의 사이즈를 정해줘라 */
+}
+
+.choice{
+	font-size: 8px;
+	color: #AEAEAE;
+}
+.phone_box{
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0px;
+
+}
+.btn_auth{
+	border: none;
+	background-color: #03C75A;
+	color: white;
+	width: 120px;
+	font-weight: bold;
+	margin: 8px 0px;
+	font-size: 15px;
+	
+
+}
+.input_phone{
+	width: 300px;
+}
+
+.auth_input{
+	background-color: #F5F6F7;
+}
+
+.sign_ok{
+	margin : 20px 0px;
+	width: 460px;
+	height: 50px;
+	font-size: 22px;
+}
+
+/* 푸터 시작----------------------------- */
+
+#footer{ text-align: center;}
+
+.ft_top a{ font-size: 8px;}
+
+.ft_top{text-align: center;}
+
+.ft_sub {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5px;
+}
+.ft_sub img{padding:10px; height: 10px;}
+
+.aline{ font-size: 5px; color: #e8e8e8;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
