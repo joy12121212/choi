@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+
+.box1 , .box2 , .box3 ,
+.box4 , .box5 , .box6 , 
+.box7 , .box8 , .box9 ,
+.box10 , .box11 , .box12 {
+	width: 100px; height: 80px; 
+	background-color: yellow;
+	border: solid 1px red;} 
+	
+.box2{ /* 모서리 기준으로 +하면 안쪽(패딩) -하면 바깥(마진) */
+	position: relative; /* 상대 위치 : 현 요소의 위치 시작점*/ 
+	left: 50px; /* 왼쪽에서 50 이동 */
+	top: 50px; /* 위에서 50 이동 */
+}
+
+.box5{ 
+	position: absolute; /* 절대위치 : 부모 요소의 위치 시작점 기준 */
+	left: 50px; 
+	top: 50px; 
+}
+
+.box8{ position: fixed; /* 고정위치 : 디바이스(모바일 or pc) 화면에 고정 / 이동해도 그대로 */
+		right: 50px; bottom: 50px;
+}
+
+.parent1 { /* box11의 부모가 되어서 body 따라가는걸 막음 */
+	position: relative;
+	border: solid 1px blue;
+}
+
+.box11{ /* 기본적으로body를 따라감/그걸 막으려면 부모 클래스에 위치 지정해주면 됨  */
+	position: absolute;
+	left: 100px; 
+	top: 10px;
+}
+
+.box12{ position: static; /* 기본값/순서대로 배치 됨 */
+	left: 100px; /* 위치 변경 안먹힘 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+li{list-style-type: none;} /* 글머리 제거 */
+
+
+.parent{
+	width: 700px;
+	height: 500px;
+	background-color: green;
+	margin:  0 auto;
+	position: relative; /* 상대 위치 */
+	
+}
+
+.box{
+	width: 100px;
+	height: 70px;
+	background-color: yellow;
+	border-radius: 10px; /* 둥근 모서리 */
+	text-align: center;
+	border: solid 1px black;
+	position: absolute;
+}
+.box1{ left: 300px; top: 100px;}
+.box2{ left: 150px; top: 150px;}
+.box3{ left: 450px; top: 150px;}
+.box4{ left: 150px; top: 275px;}
+.box5{ left: 450px; top: 275px;}
+.box6{ left: 300px; top: 325px;}
+
+
+
+/* 2차ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ */
+
+
+#header{
+	display: flex; /* 하위 요소 배치 방법 */
+	flex-direction: row;
+	background-color: white;
+	border-bottom: solid 1px #eeeeee;
+	position: sticky; /* 이거 쓰면 겹침 // 스태틱 제외 다 겹칠 수 있음*/ /* 스크롤 이동했을때 위치를 고정시킴 */
+	top: 0px; /* 대부분 헤더에서 사용해서 0을 많이 쓴다 */
+	/* 다른 요소와 위치가 겹쳤을때 우선순위 정해야 된다
+	기본값 = 0  */
+	z-index: 1; /* 겹쳤을때에 대한 순서를 정한다 //기본은 0 / 숫자가 높을수록 앞에 배치 9999 까지 설정 가능*/
+}
+
+.h_menu li{ /* 인라인 블럭은 나에게 바로 적용 */
+	display: inline-block;
+
+}
+
+
+.popup{
+	width: 200px; height: 200px;
+	border: solid 2px red;
+	position: fixed;		/* 화면에 무조건 박아놓기 */
+	right: 5px; bottom: 10px; 
+	z-index: 2;				/* 겹칠때 사용 하는거 */
+	background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
