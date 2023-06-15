@@ -74,9 +74,9 @@ li{list-style-type: none;}
 	margin: 15px 0px;
 }
 
-
-
-
+.main_message2{
+	width: 1200px; text-align: center; margin: 0 auto; 	position: relative; 
+	}
 
 
 /* 대표 이미지 */
@@ -88,6 +88,12 @@ li{list-style-type: none;}
 	background-repeat: no-repeat;
 	background-position: center;
 
+}
+.position{
+	position: relative; /* 상대 위치 */
+	width: 1200px;
+	height : 100px;
+	margin: 0 auto;
 }
 
 
