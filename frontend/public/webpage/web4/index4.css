@@ -178,6 +178,40 @@ margin: 50px 0px;
 color: #9E9E9E;}
 
 
+/* -------------------팝업창---------------------  */
 
+#popup_wrap{
+	position: fixed;
+	right: 0px; top: 30%;
+}
 
+#popup_wrap li{ /* 아이콘 구역 */
+	width: 25px; height: 25px; background-color: #f7f7f7; 
+	padding: 10px; border: 1px solid #ababab;
+	text-align: center; }
+	
+#popup_wrap img {height: 27px;}	
+	
+.popup_item{position: relative;}
 
+.popup_item .sub_item{
+	position: absolute;
+	display: none;
+	width: 85px; height: 15px;
+	background-color: black;
+	color: white;
+	top: 10px;
+	right: 45px;
+	padding: 5px;
+	border-radius: 10px;
+}
+.popup_item:hover .sub_item{ display: block;
+	
+}
+	
+	
+	
+	
+	
+	
+	
