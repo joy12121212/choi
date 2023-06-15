@@ -113,10 +113,69 @@ a{color: black; text-decoration: none;}
 /* 메인 이미지 */
 #main_img {width: 100%;}
 
+/* 컨텐츠 시작 */
+#content{width: 1600px; margin: 0 auto; padding: 50px 0px;}
+
+#content .title{font-size: 27px; text-align: center; font-weight: bold;}
+
+#content .comment{font-size: 17px; text-align: center;color: #999999; margin: 30px;}
+
+
+/* ------------------ 제품 1개 ----------------------- */
 
 
 
+.item {width: 380px; } /* 1600 길이에 4개 나눠서 여백 감안해서 380 */
 
+.item img{width: 100%} /* 부모의 사이즈를 따라간다 */
+
+.color span{ /* span 요소의 display:inline = 사이즈 안먹힘 */
+display:inline-block;
+	width: 10px; height: 10px;
+}
+.color_review{display: flex; justify-content: space-between;}
+
+.review{color: #808080; font-size: 15px; font-weight: bold;}
+
+.item_name{ font-size: 15px; margin: 5px 0px 10px 0px;}
+.item_size{ font-size: 14px; color: #595959;}
+.item_price {position: relative; margin: 15px 0px;} /* 부모 기준 잡아주기 */
+.item_price .discount{
+	position : absolute; /* 자식을 오른쪽 끝으로 붙인다 */
+	right: 0px; top: 0px;
+	font-size: 14px; font-weight: bold; color: red;
+}
+
+.price{text-decoration: line-through; 
+	color: #595959;
+}
+
+.item_icon img{width: 40px;}
+
+.items{ display: flex; flex-wrap: wrap; justify-content: space-between;}
+
+/* ------------------------푸터 1시작---------------- */
+
+
+
+.top_ft{
+	background-color: #f7f7f7;	
+}
+.content_ft{
+	width: 1400PX; margin: 0 auto;
+	display: flex; justify-content: space-between;
+	padding: 50px;
+}
+
+.content_ft h3{ margin: 10px 0px; font-size: 16px;}
+
+
+/* -----------------푸터2--------------------- */
+
+
+.bot_ft_info{ text-align: center; margin: 0 auto;
+margin: 50px 0px;
+color: #9E9E9E;}
 
 
 
