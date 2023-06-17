@@ -114,13 +114,14 @@ flex-wrap: wrap; padding-top: 100px; padding-bottom: 50px; height: 500px;}
 /* 마우스 오버 설정 */
 .brand_cont1:hover { border: 1px solid red; filter: drop-shadow(8px 3px 3px #c3c3c3); }
 
+
 /* 픽스드 설정 */
 /* 전체 구역 */
 #brand_popup_wrap{position: fixed; right: 50px; top: 90px;}
 
 .brand_popup_item{position: relative;}
 
-
+/* 동그라미 지정 */
 #brand_popup_wrap li{ /* 아이콘 구역 */
 	width: 120px; height: 120px; background-color: #BD1D1D; 
 	padding: 10px; border: 1px solid #BD1D1D; border-radius :400px;
@@ -128,13 +129,19 @@ flex-wrap: wrap; padding-top: 100px; padding-bottom: 50px; height: 500px;}
 	position: fixed; right: 50px; 
 	}
 
-.brnd_popup_point{
+/* 글자 위치 */
+.brand_popup_point{
     position: relative;
     right: 25px;
     top: 100px;
 }
+/* 창업문의 글자 수정 */
 .brand_popup_point1 {font-size: 15px; color:white; font-weight: bold;}
 
+/* 노트 모양 이미지 */
+
+#brand_popup_wrap img {position: absolute; top: 35px;}
+/* 픽스드 끝 */
 
 
 /* ---------- 브랜드 페이지 끝났습니다!!---------- */
