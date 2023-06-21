@@ -93,3 +93,41 @@ console.log( 배열명 ) // '수박' 제거
 console.log( 배열명 ) // '달기' 제거 
 
 
+
+
+/*
+
+/ 변수 /
+
+let couple = man , woman , man2, woman2 등등등...
+
+/ 상수 / 
+
+let basic_rate = 3800원 기본요금
+
+let student_num = 영수1 , 철수2, 박수3, 명수4 등등등...
+
+
+
+/ 배열 /
+
+let study = [ mat , eng , kor , music ]
+
+let student = [ 영수, 철수, 민희, 명수]
+
+let fee = [기본요금, 추가요금, 종일 요금, 월 요금]
+
+let Fighter = [ 도라에몽, 손오공, 사이타마, 루피, 열렙전사]
+
+let Resignation = [부장, 차장, 과장, 대리, 주임]
+
+*/
+
+
+
+
+
+
+
+
+
