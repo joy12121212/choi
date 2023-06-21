@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link href="과제2.css" rel="stylesheet">
 </head>
 <body>
+	<script src="과제2.js" type="text/javascript"></script>
+	
+	<!-- 영역 나눔 -->
+	<div id="wrap"> <!-- 전체 영역 -->
+		<div class="sign"> <!-- 회원가입 시작 -->
+			
+			<input type="text" class="sid">
+			<input type="password" class="spw">
+			<input type="button" value="회원가입" onclick="signlist()">
+					
+		</div> <!-- 회원가입 끝 -->
+
+		<div class="login"> <!-- 로그인 시작 -->
+			<input type="text" class="lid">
+			<input type="password" class="lpw">
+			<input type="button" value="로그인" onclick="loginlist()">
+		
+		</div> <!-- 로그인 끝 -->
+	</div> <!-- 전체 영역 끝 -->
+	
+	
+	
 
 </body>
 </html>
