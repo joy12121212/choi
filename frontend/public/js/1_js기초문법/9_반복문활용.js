@@ -152,7 +152,7 @@ for(let i = 1; i <= value10; i++){
 	for(let ls = 1; ls<=1; ls++){output += `*`}
 	for(let lb1 = 1; lb1<i; lb1++){output += ` `}
 	for(let rb =2; rb<i; rb++){output += ` `}
-	for(let rs =1; rs<=1; rs++){output += `*`}
+	for(let rs =1; rs<i; rs++){output += `*`}
 	output += `\n`	
 }
 	console.log(output)   
