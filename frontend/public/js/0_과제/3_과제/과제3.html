@@ -3,8 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link href="과제3.css" rel="stylesheet">
 </head>
 <body>
+	
+<div id="wrap"> <!-- css 전체 영역 -->
 
+	<div> <!-- 버튼 영역 시작-->
+		<!-- 1. 날짜 생성 -->
+			<input type="date" class="date">
+			<input type="button" onclick="date()" value="등록">		
+		<!-- 2. 항목 생성  -->
+			<input type="text" class="category" placeholder="항목">
+			<input type="button" onclick="category()" value="등록">
+		<!-- 3. 금액 생성 -->
+			<input type="text" class="expense" placeholder="금액">
+			<input type="button" onclick="expense()" value="등록">
+
+	</div><!-- 버튼 영역 끝 -->
+	
+
+	<div> <!-- 가계부 입력값 출력 영역 시작-->
+
+		<table border="1"> <!-- 테이블 시작  -->
+			<tr>
+				<th>날짜</th><th>항목</th><th>금액</th><th>비고</th>
+			</tr>
+			<tr >
+				<th colspan="2">총합계</th><th colspan="2"></th> 
+			</tr>
+		</table> <!-- 테이블 끝 -->
+	
+	
+	
+	</div>  <!-- 가계부 입력값 출력 영역 끝 -->
+
+
+
+
+
+
+
+
+
+</div> <!-- css 전체 영역 -->
+
+<script src="과제3.js" type="text/javascript"></script>
 </body>
 </html>
