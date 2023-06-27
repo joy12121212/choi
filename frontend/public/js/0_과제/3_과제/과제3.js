@@ -6,17 +6,19 @@ let expense_list = []
 function date() {
 	date_list.push(document.querySelector('.date').value)
 	console.log(date_list)
-
+	document.querySelector('.date').value =''
 }
 
 function category() {
 	category_list.push(document.querySelector('.category').value)
 	console.log(category_list)
+	document.querySelector('.category').value=''
 }
 
 function expense() {
 	expense_list.push(document.querySelector('.expense').value)
 	console.log(expense_list)
+	document.querySelector('.expense').value=''
 }
 
 
