@@ -7,7 +7,7 @@ li{list-style-type: none;} /* 글머리 제거 */
 /* 내용 시작 */
 #service_info{
 	margin: 20px;
-	widows: 1200px;
+	width: 1200px;
 	text-align: left;
 }
 

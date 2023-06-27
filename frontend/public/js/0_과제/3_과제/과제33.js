@@ -104,10 +104,12 @@ function 등록() { console.log('등록함수 클릭')
 
 	
 	날짜배열.push(date); console.log(날짜배열); 항목배열.push(name);console.log(항목배열); 금액배열.push(money);console.log(금액배열);
+
 	출력()	
+
 	// * 저장 성공시 인풋 상자 초기화
 	alert('항목 등록이 성공 되었습니다')
-	dateInput = ``; nameInput =``; moneyInput=``;  // 인풋박스 초기화
+	dateInput.value = ``; nameInput.value =``; moneyInput.value=``;  // 인풋박스 초기화
 	
 }
 
@@ -119,7 +121,7 @@ function 출력() {
 	
 	//2. 무엇을 ???
 
-	let html =  `<tr>
+	let html =  `<tr class="tr">
 			<th> 날짜 </th>
 			<th> 항목 </th>
 			<th> 금액 </th>
