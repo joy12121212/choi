@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+.wrap{
+	width: 1000px; height: 600px;
+	background-image: url("img/배경1.png"); /* 구역 사이즈 지정해야 이미지 들어간다 */
+	background-repeat: no-repeat; /* 이미지보다 배경이 클 경우 채우기 안 함 // 이미지 사이즈만 보여주기 */
+	margin: 0 auto; /* 이미지 가운데로 */
+	background-size: 100%; /* 이미지를 배경 사이즈에 강제로 맞추기 */
+	position: relative; /* 위에 div 에 이걸 해줘야 이 안에서만 왓다갓다 한다 */
+}
+
+/* 유저 구역 */
+.userbox{ width: 100px ; height:100px;
+		background-image: url("img/마리오이동.png");
+		background-repeat: no-repeat;
+		background-size: 60%;
+		position: absolute; /* 절대위치 = 부모 기준 */
+		top: 395px;
+		left: 50px;
+}
