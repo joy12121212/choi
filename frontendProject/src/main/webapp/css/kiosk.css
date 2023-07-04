@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/* 키오스크 전체 구역 */
+
+.kioskwrap{
+	font-family : 'omyu_pretty';
+	font-size : 20px;
+	width: 700px;
+	margin: 50px auto;
+}
+/* 헤더 구역 이미지 */
+.himg{
+	width : 100%; /* 웬만하면 가로 사이즈만 넣어서 비율 안깨지게 해라 */
+	/* 비율 맞추는 방법 */
+	object-fit : cover;	
+	
+	}
+
+/* 카테고리 */
+.categorymenu{
+	display: flex;  /* 카테고리메뉴 가로 배치 */
+	justify-content: space-around; /* 가로 배치 간격 */
+	padding-top: 20px;
+}
+
+/* 선택 안된 카테고리 */
+.categorymenu li{color: #8e8e8e;}
+
+/* 선택 된 카테고리 */
+.categoryselect {
+	/* 위에서 color 중복됨/ id 사용 , !important , 직접 style 적용 중 택1 */
+	color: red !important; /* !important 사용 함 */
+	border-bottom: 3px solid red;
+	padding-bottom:  3px;
+}
+/* 제품 출력 구역 */
+.productbox {
+	height: 450px; /* 높이 생략시 기본값 auto : 내용물 크기만 자동으로 늘어남 */
+    display: flex;
+    flex-wrap: wrap; /* 자동 줄바꿈 */
+    overflow-y: scroll; /* 만약에 자식요소들이 현재 구역보다 사이즈가 커지면 */
+}
+/* 제품 1개 */
+.product{ width: 30%; text-align: center; margin: 5px 10px 30px 10px}
+.product img{width: 100%;}
+
+/* 카트 출력 구역 */
+.cartbox{height: 250px; background-color: #eeeeee;}
+
+/* 카트 상단 부분 */
+.carttop{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 50px;
+}
+/* 카트내 제품수 원형 */
+.ccount{
+	background-color: red;
+	width: 30xp; /* 사이즈 적용이 안됨 / span inline 기본값으로  */
+	display:inline-block;
+	border-radius: 10px;
+	font-size: 15px; color: white; text-align: center; padding: 4px;
+}
+.ctotal{color: red;}
+
+.cartbot{display: flex; overflow-x:scroll; }
+
+.citem{
+	min-width: 23%;/* 한줄에 4개 넣을거임 */ /* max-width , min-width */
+	background-color: white;
+	padding: 10px;
+	margin : 5px 10px;
+	position: relative;
+}
+.icencel{position: absolute; right: 18px; top : 10px;}
+.iprice{color: red;}
+.iname{width: 80%; height: 70px;}
+
+
+
+

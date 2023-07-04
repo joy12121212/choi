@@ -1,0 +1,1 @@
+console.log('소소소소')
