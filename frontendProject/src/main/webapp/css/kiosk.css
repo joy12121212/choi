@@ -44,7 +44,7 @@
 .product img{width: 100%;}
 
 /* 카트 출력 구역 */
-.cartbox{height: 250px; background-color: #eeeeee;}
+.cartbox{height: 250px; background-color: #eeeeee; position: relative;}
 
 /* 카트 상단 부분 */
 .carttop{
@@ -55,15 +55,18 @@
 /* 카트내 제품수 원형 */
 .ccount{
 	background-color: red;
-	width: 30xp; /* 사이즈 적용이 안됨 / span inline 기본값으로  */
-	display:inline-block;
-	border-radius: 10px;
-	font-size: 15px; color: white; text-align: center; padding: 4px;
+	width: 30px; /* 사이즈가 적용 ????  span inline 기본값이므로 width , heigth */
+	display : inline-block;
+	/* inline : 한줄 차지x 사이즈적용x , block : 한줄 차지o 사이즈적용o , inline-block : 한줄차지x 사이즈적용o */
+	border-radius: 30px; /* 둥근모서리 */
+	font-size: 15px; color: white; text-align: center; padding: 4px;	
+	
 }
+/* 총 주문금액 000원 색상 */
 .ctotal{color: red;}
-
+/* 가로 스크롤 */
 .cartbot{display: flex; overflow-x:scroll; }
-
+/* 카트에 메뉴 설정 */
 .citem{
 	min-width: 23%;/* 한줄에 4개 넣을거임 */ /* max-width , min-width */
 	background-color: white;
@@ -71,10 +74,26 @@
 	margin : 5px 10px;
 	position: relative;
 }
+/* x버튼 */
 .icencel{position: absolute; right: 18px; top : 10px;}
+/* 카트에 가격 색상 */
 .iprice{color: red;}
+/* 카트에 메뉴 설정 */
 .iname{width: 80%; height: 70px;}
-
-
+/* 버튼 위치 설정 */
+.cartbtn{
+	position: absolute; display: flex; 
+	width: 100%; bottom: 0px; }
+/* 버튼 크기, 색상 설정 */                
+.cartbtn button{
+	width: 50%;
+	font-size: 20px;
+	color: white;
+	border: none;
+	padding: 20px;
+}
+/* 버튼 배경색상 설정 */
+.cancelbtn{background-color: black;}
+.oderbtn{background-color: red;}
 
 

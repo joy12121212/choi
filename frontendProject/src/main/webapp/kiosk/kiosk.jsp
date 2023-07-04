@@ -20,7 +20,7 @@
 <!------------------------------헤더---------------------------------->	
 		<div> <!--  광고 이미지가 표시되는 구역 -->
 			<!--광고 이미지 -->
-			<img class="himg" src="../img/main1.png">
+			<img class="himg" src="../img/himg1.png">
 
 			<!-- 카테고리 -->
 			<ul class="categorymenu">
@@ -71,7 +71,8 @@
 
 				
 				<div class="cartbtn">
-				
+					<button class="cancelbtn">취소하기</button>
+					<button class="oderbtn">주문하기</button>
 				</div>
 			
 			</div> <!-- 카트 구역 -->
