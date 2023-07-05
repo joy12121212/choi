@@ -24,11 +24,7 @@
 
 			<!-- 카테고리 -->
 			<ul class="categorymenu">
-				<li class="categoryselect">신제품(New)</li>
-				<li>프리미엄</li>
-				<li>와퍼&주니어</li>
-				<li>치킨&슈림프버거</li>
-				<li>올데이킹&킹모닝</li>
+
 			</ul>
 		</div> <!-- 광고 이미지가 표시되는 구역 끝-->
 <!------------------------------헤더---------------------------------->	
@@ -37,13 +33,6 @@
 		<div class="kioskcontent"> 
 			<div class="productbox"> <!-- 제품 구역 -->
 
-				<div class="product"> <!-- product -->
-					<img src="../img/헬로디아블로와퍼.png"/>
-					<div class="pinfo"> <!-- pinfo -->
-						<div class="pname">헬로 디아블로 와퍼</div>
-						<div class="pprice">15,000원</div>
-					</div><!-- pinfo -->
-				</div> <!-- product -->
 	
 			</div> <!-- 제품 구역 -->
 		
