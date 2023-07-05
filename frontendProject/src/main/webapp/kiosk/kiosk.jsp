@@ -41,18 +41,13 @@
 				<div class="cartcontent"> <!-- 제품 개수, 총가격 -->
 
 					<div class="carttop"> <!-- 위 -->
-						<div> 카트 <span class="ccount">3</span></div>
-						<div>총 주문금액 <span class="ctotal">30,000</span></div>
+						<div> 카트 <span class="ccount">0</span></div>
+						<div>총 주문금액 <span class="ctotal">0</span></div>
 					</div><!-- 위 -->
 
 					<div class="cartbot"><!-- 아래 -->
 						<!-- 카트내 제품 1개 -->
-						<div class="citem">
-							<div class="iname">더블비프불고기버거</div> <!-- 제품명 -->
-							<div class="iprice">12000원</div> <!-- 제품가격 -->
-							<div class="icencel">x</div> <!-- 제품취소 -->
-						</div>
-					
+
 					</div><!-- 아래 -->
 
 				</div><!-- 제품 개수, 총가격 -->
@@ -60,7 +55,7 @@
 
 				
 				<div class="cartbtn">
-					<button class="cancelbtn">취소하기</button>
+					<button onclick="cartCancel()" class="cancelbtn">취소하기</button>
 					<button class="oderbtn">주문하기</button>
 				</div>
 			

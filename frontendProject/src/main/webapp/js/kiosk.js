@@ -118,15 +118,66 @@ function productPrint( categoryNo ){ // 어떤 카테고리의 제품 출력할�
 function productSelect( productNo ){
 	console.log(burgerList[productNo].name)
 	cartList.push(productNo) ; console.log(cartList)
-	
+	cartPrint(); //카트에 저장된거 출력
 }
 
 
+	// carttop에 인덱스 추가 될때마다 수량++ 1~~5 등등 삭제되면 수량--, price + pirce sum 출력 
+	// cartbot 아래에 있는 citem 가져와서 inner html 출력
+	// x 에 onclick 이벤트 발생시 선택된 제품 삭제 인덱스
+	
+// 6. 카트 내 버거들을 출력하는 함수 [카트 내 제품이 등록 될때, 카트내 제품 취소 될때]
+
+function cartPrint(){
+
+	// 1. 어디에
+	let cartbot = document.querySelector('.cartbot')
+	
+	// 2 . 무엇을? 카트 내 모든제품(배열) for 문 출력
+	let html=``;
+		let totalPrice = 0;
+		for(let i=0; i<cartList.length; i++){
+			
+			let burgerIndex = cartList[i]; console.log(burgerList);
+			
+			html += `<div class="citem">
+						<div class="iname">${burgerList[burgerIndex].name}</div>
+						<div class="iprice">${burgerList[burgerIndex].price.toLocaleString()}원</div>
+						<div onclick="productCancel(${i})" class="icencel">X</div>
+					</div>`
+			totalPrice += burgerList[burgerIndex].price		
+		}//for
+	// 출력
+	cartbot.innerHTML = html;
+	// *카트내 제품수
+	document.querySelector('.ccount').innerHTML = `${cartList.length}`
+	// *카트내 총가격
+	document.querySelector('.ctotal').innerHTML = `${totalPrice.toLocaleString()}원`
+	// *카트내 제품이 많아서 가로 스크롤이 활성화 된다면 반대편(끝)으로 이동
+	cartbot.scrollLeft = 10000;
+}
 
 
+// 7. 카트 내 부분 취소 버튼 함수 [ 실행조건 : 카트 내, 버거 내 x 버튼 클릭시]
 
+function productCancel(cartIndex){ // 일부분 취소 // 누구를 취소할지 인수 필요
+	// 1. 카트 배열 내 인덱스 삭제
+	cartList.splice(cartIndex , 1)
+	// 2. 화면 업데이트
+	cartPrint();
+}
 
+// 8. 카트 내 전체 취소 버튼 함수
 
+function cartCancel(){ // 전체 취소라서 인수 필요 없음 / 인덱스 불필요
+	// 1. 모두 삭제
+	cartList.splice(0)
+	// 취소 팝업
+	alert('카트 취소 되었습니다')
+	// 2. 화면 업데이트
+	cartPrint();	
+	
+}
 
 
 

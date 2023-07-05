@@ -38,6 +38,7 @@
     display: flex;
     flex-wrap: wrap; /* 자동 줄바꿈 */
     overflow-y: scroll; /* 만약에 자식요소들이 현재 구역보다 사이즈가 커지면 */
+
 }
 /* 제품 1개 */
 .product{ width: 30%; text-align: center; margin: 5px 10px 30px 10px}
