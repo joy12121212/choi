@@ -21,6 +21,15 @@ let burgerList = [
 	// 4. 선택된 버거들이 저장되는 배열
 		// 버거 객체 ?? 버거의 식별=중복x // 중복되지 않는 절대값 무언가가 필요 //보통은 제품번호(고유번호)로 식별
 let cartList = []
+	// 5. 주문 내역 저장
+		// 주문내역에는 종류, 수량, 총 가격, 주문시각
+		
+		// 주문 { 주문번호 : , 주문날짜 ; , 결제금액 : , 주문제품들 : [] , 상태 : true[주문]/false[완료] - 취소or확정or완료or대기...}
+let orderList = [
+	{ono : 1 , date : '2023-07-05-13:30:45' , pay : 30000 , products : [0 , 0 , 2] , state : 0 }	
+]
+
+
 
 // ------------------------ 샘플 데이터 ---------------------- //
 
@@ -172,12 +181,57 @@ function productCancel(cartIndex){ // 일부분 취소 // 누구를 취소할지
 function cartCancel(){ // 전체 취소라서 인수 필요 없음 / 인덱스 불필요
 	// 1. 모두 삭제
 	cartList.splice(0)
-	// 취소 팝업
-	alert('카트 취소 되었습니다')
+
 	// 2. 화면 업데이트
 	cartPrint();	
 	
 }
+
+// 9. 카트내 저장된 버거 주문(등록) 함수 [ 실행조건 : 주문하기 버튼 클릭시]
+
+function productorder(){
+	alert('주문 완료')
+	
+	//주문번호 만들기
+	let ono = orderList[orderList.length-1].ono; // 주문배열내 마지막주문의 번호
+	// 카트(전역변수) 에 있던 버거인덱스를 새로운 배열에 저장
+	// 주문이 들어가는 버거들의 인덱스
+	let products = [];
+	let totalPrice = 0;
+	for(let i = 0; i<cartList.length; i++){
+		products.push(cartList[i]); // i번째 버거를 새로운 배열에 저장
+		totalPrice += burgerList[cartList[i]].price // 총 금액에 버거 리스트에 카트리스느의 i 번째 인덱스를 더한다
+	}
+	
+	// 1. 주문 객체 생성해서
+	let order = { 
+		ono : ono+1,			// 주문번호 생성해서 저장 주문번호++;
+		date : new Date(),		// 현재 날짜/시간 구해주는 함수 이용해서 자동으로 대입
+		pay : totalPrice,				// 카트 내 제품들의 총 가격
+		products : products,	// 카트 내 있던 모든 제품들
+		state : 0				// 주문객체 생성시 '주문요청'으로 초기상태로 사용 
+	}
+	
+	// 2. 주문 배열에 저장하기
+	orderList.push(order); alert('주문이 들어갔습니다')
+	// 전체 취소 함수랑 같아서 재호출 // 재사용	
+	cartCancel();
+	console.log(orderList)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

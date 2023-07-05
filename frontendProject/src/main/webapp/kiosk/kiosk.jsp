@@ -56,7 +56,7 @@
 				
 				<div class="cartbtn">
 					<button onclick="cartCancel()" class="cancelbtn">취소하기</button>
-					<button class="oderbtn">주문하기</button>
+					<button onclick="productorder()" class="oderbtn">주문하기</button>
 				</div>
 			
 			</div> <!-- 카트 구역 -->
