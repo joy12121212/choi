@@ -48,7 +48,7 @@
 		
 		<div class="container"> <!-- 현재 게시물 출력 전체 구역 -->
 
-			<a href="write.jsp"><button type="button" class="btn btn-outline-secondary"> 글쓰기</button></a>
+			<a href="write.jsp"><button type="button" class="btn btn-outline-secondary m-3"> 글쓰기</button></a>
 			<table class="table table-hover table-striped table-dark text-center"> <!-- 테이블 -->
 				<thead class="table-Light">		
 				<tr> <!-- 제목 -->
