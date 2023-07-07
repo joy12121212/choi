@@ -56,21 +56,10 @@
 					<th width="15%">작성일</th> <th width="5%">조회수</th>  <th width="5%">추천수</th>				
 				</tr>
 				</thead>
-				<tbody>
-				<tr> <!-- 게시물 -->
-					<td> 1 </td> <td> 게시물 제목 </td> <td> 공공공 </td>
-					<td> 2023-07-06 </td> <td> 312 </td> <td> 2 </td>				
-				</tr>			
+				
+				<tbody class="tcontent">
+					<!-- inner html 들어올 자리 -->
 
-				<tr> <!-- 게시물 -->
-					<td> 2 </td> <td> 게시물 제목2 </td> <td> 공공공 </td>
-					<td> 2023-07-06 </td> <td> 312 </td> <td> 2 </td>				
-				</tr>			
-
-				<tr> <!-- 게시물 -->
-					<td> 3 </td> <td> 게시물 제목3 </td> <td> 공공공 </td>
-					<td> 2023-07-06 </td> <td> 312 </td> <td> 2 </td>				
-				</tr>	
 				</tbody>
 				
 				<tfoot>
@@ -118,5 +107,7 @@
 	
 	<!-- 부트스트랩 스크립트 적용 -->	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>	
+
+<script src="../js/list.js" type="text/javascript"></script>
 </body>
 </html>
