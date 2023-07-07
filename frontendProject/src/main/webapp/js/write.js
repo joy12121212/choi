@@ -83,9 +83,9 @@ let no = boardList.length ==0 ? 1 : boardList[boardList.length-1].no + 1
 	// 화긴
 	console.log(JSON.parse(localStorage.getItem('boardList')))
 	alert('글쓰기 성공')
-		// html : <a href="경로"></a>
+		// html : <a href="경로"></a>  ★html에서 페이지 전환 방법★
 		// js : location.href="경로"
-	location.href='list.jsp'
+	location.href='list.jsp' // ★스크립트에서 페이지 전환★
 	
 	
 /*	
