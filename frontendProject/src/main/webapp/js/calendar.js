@@ -42,7 +42,7 @@ function calPrint(){
 	
 	// 현재 달력 마지막 일 까지 일수 출력
 	for(let day = 1; day<=eDay; day++){
-		html += `<div> ${day} </div>`
+		html += `<div onclick="openModal()"> ${day} </div>`
 	}
 	calendar.innerHTML = html; // calendar 부분에 html 을 표시해준다	
 }
@@ -62,8 +62,15 @@ function onNext(check) {
 	calPrint() // 작업을 했으면 화면 새로고침을 해줘라
 }
 
+// 3. 모달 열기 // 날짜 클릭시
+function openModal(){
+	document.querySelector('.modalwrap').style.display= 'flex'; // 날짜 div 클릭하면 보이기
+}
 
-
+// 4. 모달 닫기 // 닫기 버튼 클릭시
+function closeModal(){
+	document.querySelector('.modalwrap').style.display= 'none';	// 닫기 버튼 누르면 사라지기
+}
 
 
 

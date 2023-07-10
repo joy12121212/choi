@@ -26,7 +26,18 @@
 		
 		</div> <!-- 캘린더 전체 구역 -->
 	
+		<div class="modalwrap"> <!-- 모달 전체 -->
+			<div class="modal"> <!-- 모달 상자 -->
+				<h3>일정 추가</h3>
+				<textarea rows="5" cols="10"></textarea>
+					<div class="modalbtn"><!-- 모달 버튼 -->
+						<button>일정등록</button>
+						<button onclick="closeModal()">닫기</button>
+					
+					</div>
+			</div> <!-- 모달 상자 -->
 		
+		</div> <!-- 모달 전체 -->
 		
 		
 	
