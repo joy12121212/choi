@@ -14,7 +14,11 @@ let month = new Date().getMonth()+1;		//현재 월 0~11 표시 되므로 +1 해�
 console.log(year);console.log(month);
 // 1. 현재 연도/월 기주으로 달력 출력 하는 함수
 
-//calPrint()
+// 전역 배열
+let contents = [] // 여러개 일정 객체를 저장하는 배열
+
+
+calPrint()
 function calPrint(){
 	// 1. 현재 연도와 월 출력
 	document.querySelector('.caldate').innerHTML = `${year}년 ${month}월`
@@ -42,17 +46,34 @@ function calPrint(){
 	
 	// 현재 달력 마지막 일 까지 일수 출력
 	for(let day = 1; day<=eDay; day++){
-		html += `<div onclick="openModal(${day})"> ${day} </div>`
+		html += `<div onclick="openModal(${day})"> ${day}
+				${contentPrint(`${year}-${month}-${day}`)}
+				</div>`
 		
 	}
 	calendar.innerHTML = html; // calendar 부분에 html 을 표시해준다	
 	
 }
 
+// 6. 일정 출력 함수 [ 실행 조건 : 현재 날짜와 일정 날짜가 같으면 출력]
+	// 인수 : 함수 안으로 들어오는 수 / 값 / 데이터
+	// 반환 : 함수 끝나고 호출 했던 곳으로 수 / 값 / 데이터 돌려줌 = 해당 날짜의 일정 내용 html
+
+function contentPrint(date){
+	// 인수로 들어온 날짜와 같은 일정목록에서 일정 찾기
+	let html =``;
+	for(let i = 0; i<contents.length; i++){
+		if(date == contents[i].date){
+			html +=`<span class="content" style="background-color:${ contents[i].color  }">
+					${contents[i].content}</span>`
+		}
+	}
+	return html;
+}
 
 // 2. 버튼 클릭시 현재 월 변화 해주는 함수
-function onNext(check) {
-	console.log(check)
+function onNext(check) {console.log(check)
+
 	if (check == 0){ // 이전달
 		month --;
 		//만약에 월이 차감 했는데 1보다 작아지면 12로 변경 + 연도 1 차감
@@ -61,9 +82,8 @@ function onNext(check) {
 		month ++;
 		if(month >12){month = 1; year++;}
 	}
-	calPrint() // 작업을 했으면 화면 새로고침을 해줘라
+		calPrint() // 작업을 했으면 화면 새로고침을 해줘라
 }
-
 // 3. 모달 열기 // 날짜 클릭시
 function openModal(day){
 	document.querySelector('.modalwrap').style.display= 'flex'; // 날짜 div 클릭하면 보이기
@@ -76,8 +96,8 @@ function closeModal(){
 	document.querySelector('.modalwrap').style.display= 'none';	// 닫기 버튼 누르면 사라지기
 }
 
-// 전역 배열
-let contents = [] // 여러개 일정 객체를 저장하는 배열
+//<input value="값"/> 여기엔 value를 사용
+//<div>값</div> 여기엔 innerHtml을 사용
 
 
 // 5. 일정등록 버튼 클릭할때
@@ -86,17 +106,21 @@ function onWrite(){
 	let color = document.querySelector('.color');
 	let contentinput = document.querySelector('.contentinput');
 	let date = document.querySelector('.date');
+	console.log(color)
+	console.log(contentinput)
+	console.log(date)
+	
 	// 2. 가공 [ 유효성 검사 , 객체화]
 	let object = {
-		color : color ,
-		content : contentinput ,
-		date : date
+		color : color.value ,
+		content : contentinput.value ,
+		date : date.innerHTML
 	}	
 	// 3. 저장
-	contents.push(object);	console.log(contents);
+	contents.push(object);	
 	// 4. 비워주기
 	color.value = ''; contentinput.value = '';
-	closeModal()
+	closeModal(); calPrint(); console.log(contents)
 }
 
 
