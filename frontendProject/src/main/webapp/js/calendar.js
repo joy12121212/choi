@@ -14,7 +14,7 @@ let month = new Date().getMonth()+1;		//현재 월 0~11 표시 되므로 +1 해�
 console.log(year);console.log(month);
 // 1. 현재 연도/월 기주으로 달력 출력 하는 함수
 
-calPrint()
+//calPrint()
 function calPrint(){
 	// 1. 현재 연도와 월 출력
 	document.querySelector('.caldate').innerHTML = `${year}년 ${month}월`
@@ -42,9 +42,11 @@ function calPrint(){
 	
 	// 현재 달력 마지막 일 까지 일수 출력
 	for(let day = 1; day<=eDay; day++){
-		html += `<div onclick="openModal()"> ${day} </div>`
+		html += `<div onclick="openModal(${day})"> ${day} </div>`
+		
 	}
 	calendar.innerHTML = html; // calendar 부분에 html 을 표시해준다	
+	
 }
 
 
@@ -63,8 +65,10 @@ function onNext(check) {
 }
 
 // 3. 모달 열기 // 날짜 클릭시
-function openModal(){
+function openModal(day){
 	document.querySelector('.modalwrap').style.display= 'flex'; // 날짜 div 클릭하면 보이기
+	// 현재 클릭한 일수의 날짜 출력
+	document.querySelector('.date').innerHTML = `${year}-${month}-${day}`
 }
 
 // 4. 모달 닫기 // 닫기 버튼 클릭시
@@ -72,8 +76,28 @@ function closeModal(){
 	document.querySelector('.modalwrap').style.display= 'none';	// 닫기 버튼 누르면 사라지기
 }
 
+// 전역 배열
+let contents = [] // 여러개 일정 객체를 저장하는 배열
 
 
+// 5. 일정등록 버튼 클릭할때
+function onWrite(){
+	// 1. 이력 받은 값 호출
+	let color = document.querySelector('.color');
+	let contentinput = document.querySelector('.contentinput');
+	let date = document.querySelector('.date');
+	// 2. 가공 [ 유효성 검사 , 객체화]
+	let object = {
+		color : color ,
+		content : contentinput ,
+		date : date
+	}	
+	// 3. 저장
+	contents.push(object);	console.log(contents);
+	// 4. 비워주기
+	color.value = ''; contentinput.value = '';
+	closeModal()
+}
 
 
 

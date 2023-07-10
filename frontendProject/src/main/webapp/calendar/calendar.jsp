@@ -21,6 +21,13 @@
 			</div> <!-- 상단 메뉴 -->
 
 			<div class="calendar"> <!-- 날짜 표시 구역 -->
+				<!--  상단 요일 출력 -->
+				<!--  상단 일 출력 -->
+
+				<div>1
+					<span class="content">밥ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
+					<span class="content">돈</span>
+				</div>
 
 			</div> <!-- 날짜 표시 구역 -->
 		
@@ -29,9 +36,11 @@
 		<div class="modalwrap"> <!-- 모달 전체 -->
 			<div class="modal"> <!-- 모달 상자 -->
 				<h3>일정 추가</h3>
-				<textarea rows="5" cols="10"></textarea>
+				<input class="color" type="color">
+				<div class="date"></div>
+				<textarea class="contentinput" rows="10" cols="65"></textarea>
 					<div class="modalbtn"><!-- 모달 버튼 -->
-						<button>일정등록</button>
+						<button onclick="onWrite()" type="button">일정등록</button>
 						<button onclick="closeModal()">닫기</button>
 					
 					</div>

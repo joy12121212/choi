@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.wrap{ width: 1200px; margin: 50px auto;}
+.wrap{ width: 1200px; margin: 50px auto; 	font-family : 'omyu_pretty';}
 
 .caltop{display: flex; justify-content: center;}
 
@@ -25,6 +25,8 @@
  
 .sunday{background-color: red; color: white;}
 
+
+		/* ★★★★★★★★★★★★★★모달 만드는 방법★★★★★★★★★★★★★★★★ */
 /* 모달 전체 구역 */
 
 .modalwrap{
@@ -39,3 +41,31 @@
 	background-color: white; width: 500px; height: 300px;
 	padding: 10px; border-radius: 30px;
 }
+.modalbtn{text-align: right;margin-top: 30px;}
+
+		/* ★★★★★★★★★★★★★★모달 만드는 방법★★★★★★★★★★★★★★★★ */
+
+
+
+/* 일정 출력 */
+
+
+
+.content{background-color: red; color: white; margin: 3px; font-size: 15px;
+		display: block; /* span 태그의 기본은 inline 이기 때문에 사이즈 적용x 사이즈 적용위해 블럭 사용 */
+		/* 해당 구역보다 내용물이 커지면(구역보다 텍스트 길이가 길면)  ...... 으로 표시 */
+
+		/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+		overflow: hidden; /* 넘치면 해당 부분 숨기기 */
+		white-space: nowrap; /* 만약에 텍스트가 커지면 자동 줄바꿈 해제 */ 
+		text-overflow: ellipsis; /* 생략, 단축 시키다 ... 으로 만든다 */
+		/* overflow , white-space , text-overflow  세개는 세트다  */
+		/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */		
+		
+}
+
+
+
+
+
+
