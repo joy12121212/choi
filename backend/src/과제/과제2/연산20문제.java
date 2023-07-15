@@ -10,73 +10,164 @@ public class 연산20문제 {
 
 		//------ 문제1 여기에 풀이-------//
 		
-
-		
+		System.out.println("|\\_/|");
+		System.out.println("|q p|   /}");
+		System.out.println("( 0 )\"\"\"\\");
+		System.out.println("|\"^\"`    |");
+		System.out.println("||_/=\\\\__|");
 		
 		//------ 문제2 여기에 풀이-------//
+//		String writer = scanner.next();
+//		String content = scanner.next();
+//		String date = scanner.next();
+		String writer = "유재석";
+		String content = "안녕하세요";
+		String date = "09-28";
 		
+		System.out.println(" --------------방문록--------------------");
+		System.out.println("| 순번  | 작성자  | 	내용 	| 날짜     |");
+		System.out.println("|  1   |"+writer+"\t|"+content+"\t|"+date+"\t|");
+		System.out.println("----------------------------------------");
 
 		
 		
 		//------ 문제3 여기에 풀이-------//
-
-				
+		
+			int basic = 1000000;
+			int incentive = 500000;
+			double tax = basic * 0.1;
+			double sum3 = (basic + incentive)-tax;
+			int sum33 = (int)sum3;
+			
+		System.out.println(sum33);		
 		
 		//------ 문제4 여기에 풀이-------//
 		
-
+		int money = 356789;
+		
+		int sum4 = (money / 100000);
+		System.out.println("십만원 " + money/100000+"장");
+		System.out.println("만원 " +(money % 100000)/10000+"장" ); // 356789 % 100000 은 356789 - 100000 과 같아서 56789 가 남는다 여기서 10000으로 나누면 5
+		System.out.println("천원 " +(money % 10000)/1000+"장" );
+		System.out.println("백원 " +(money % 1000)/100+"개" );
 		
 		//------ 문제5 여기에 풀이-------//
-
+		
+		int num5 = 21;
+		
+		System.out.println((num5 % 7 == 0) ? "7의배수":"7의배수가 아니다");
 		
 		//------ 문제6 여기에 풀이-------//
-
+		
+		int num6 = 6;
+		
+		System.out.println(num6 % 2 == 0 ? "짝" : "홀");
 		
 		//------ 문제7 여기에 풀이-------//
 
+		int num7 = 42;
+		
+		System.out.println(num7 % 7 == 0 && num7 % 2 == 0 ? "짝" : "홀" );
 		
 		//------ 문제8 여기에 풀이-------//
 
+		int num8 = 49;
+		System.out.println(num8 % 7 == 0 && num8 % 2 == 1 ? "홀" : "짝" );
 	
 		//------ 문제9 여기에 풀이-------//
-
+		
+		int num9 = 10;
+		int num99 = 20;
+		
+		System.out.println(num9 > num99 ? num9 : num99);
 		
 		//------ 문제10 여기에 풀이-------//
 		
+		int num10 = 20;
+		System.out.println((num10*num10)*3.14);
 		
 		//------ 문제11 여기에 풀이-------//
 		
+		double num11 = 55.54;
+		double num111 = 84.5687;
+	
+		System.out.format("%.6f%%%n" , num11 / num111 * 100.0);
 		
 		//------ 문제12 여기에 풀이-------//
 		
+		int num12 = 20; // 윗변
+		int num122 = 30; // 밑변
+		int num1222 = 10; // 높이
+		System.out.println((num12 + num122)*num1222 / 2);
 		
 		//------ 문제13 여기에 풀이-------//
 		
+		int num13 = 190;
+		
+		System.out.println((num13 - 100)*0.9);
 		
 		//------ 문제14 여기에 풀이-------//
 		
+		int num14 = 80;
+		
+		System.out.println(num14 / ((num13 /100)*(num13 /100)));
 		
 		//------ 문제15 여기에 풀이-------//
-		
-		
+	
+		int num15 = 4;
+		double num155 = num15 * 2.54;
+		System.out.println(num155);
+	
 		//------ 문제16 여기에 풀이-------//
 		
+		int num16 = 53;
+		int num166 = 72;
+		int num1666 = 41;
+		
+		double mid = num16 * 0.3;
+		double last = num166 * 0.3;
+		double perfor = num1666 * 0.4;
+		
+		System.out.printf("%.2f " ,mid);
+		System.out.printf("%.2f " , last);
+		System.out.printf("%.2f " , perfor);
+		System.out.println();
 		
 		//------ 문제17 여기에 풀이-------//
 		
+			//10 + 5 + 9  이후 x에서 마이너스1 = 23
 		
 		//------ 문제18 여기에 풀이-------//
 		
+		int num18 = 1;
+		
+		System.out.println(num18 >=10 ? num18 >=20 ? num18 >= 40 ? "중년" : "성인" : "학생" : "얼라");
 		
 		//------ 문제19 여기에 풀이-------//
 		
+		int kor = 50;
+		int eng = 99;
+		int mat = 98;
 		
+		int sum = kor + eng + mat;
+		double ave = sum / 3;
+		
+		System.out.println("총점 "+sum);
+		System.out.printf("%.2f " , ave);
+		System.out.println();
 		//------ 문제20 여기에 풀이-------//
 		
+		String str1 = "아이디";
+		String str2 = "비밀번호1";
 		
+		System.out.println(str1 == "아이디" && str2 == "비밀번호" ? "로그인성공" : "로그인 실패");
 		//------ 문제21 여기에 풀이-------//
 		
-		
+		int num1 = 1;
+		int num2 = 50;
+		int num3 = 30;
+
+		System.out.println((num1 > num2) && (num1 > num3) ? (num2 > num1) && (num2 > num3) ? num2 : num1: "땡"); // 모르겠다 이거는
 		
 	}
 

@@ -44,7 +44,7 @@ let viewhimg = 0; // 현재 출력중인 광고이미지 인덱스 저장하고�
 
 setInterval ( ()=> {
 	// 1. 해당 이미지 태그 객체 호출	
-	let himg = document.querySelector('.himg');
+	let himg = document.querySelector('.himg');    
 	// 2. 호출된 객체 에서 src 속성 대입( 변경 )
 	viewhimg ++; // 인덱스 증가 [다음이미지로 변경]
 	// 배열의 마지막 인덱스 보다 viewhimg 가 크거나 같으면 viewhimg 를 0 으로 돌린다 - 첫번째 이미지
