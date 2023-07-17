@@ -45,7 +45,7 @@ public class 연산20문제 {
 		
 		int money = 356789;
 		
-		int sum4 = (money / 100000);
+		
 		System.out.println("십만원 " + money/100000+"장");
 		System.out.println("만원 " +(money % 100000)/10000+"장" ); // 356789 % 100000 은 356789 - 100000 과 같아서 56789 가 남는다 여기서 10000으로 나누면 5
 		System.out.println("천원 " +(money % 10000)/1000+"장" );
@@ -163,11 +163,11 @@ public class 연산20문제 {
 		System.out.println(str1 == "아이디" && str2 == "비밀번호" ? "로그인성공" : "로그인 실패");
 		//------ 문제21 여기에 풀이-------//
 		
-		int num1 = 1;
-		int num2 = 50;
+		int num1 = 100;
+		int num2 = 20;
 		int num3 = 30;
 
-		System.out.println((num1 > num2) && (num1 > num3) ? (num2 > num1) && (num2 > num3) ? num2 : num1: "땡"); // 모르겠다 이거는
+		System.out.println((num1 > num2) && (num1 > num3) ?  num1 : (num2 > num1) && (num2 > num3) ? num2 : num3); // 모르겠다 이거는
 		
 	}
 
