@@ -158,9 +158,13 @@ public class 연산20문제 {
 		//------ 문제20 여기에 풀이-------//
 		
 		String str1 = "아이디";
-		String str2 = "비밀번호1";
+		String str2 = "비밀번호";
 		
 		System.out.println(str1 == "아이디" && str2 == "비밀번호" ? "로그인성공" : "로그인 실패");
+		
+		//  스캐너 사용시에는 이걸로 System.out.println(str1.equals("아이디") && str2.equals("비밀번호") ? "로그인성공" : "로그인실패");
+		
+		
 		//------ 문제21 여기에 풀이-------//
 		
 		int num1 = 100;
