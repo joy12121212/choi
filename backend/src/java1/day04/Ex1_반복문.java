@@ -3,7 +3,7 @@ package java1.day04;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Ex_반복문 {
+public class Ex1_반복문 {
 	public static void main(String[] args) {
 		
 		int sum = 0;
@@ -79,6 +79,32 @@ public class Ex_반복문 {
 		}//while
 		//rum, break 는 여기로 나옴
 		
+		
+	대문자for :for ( char upper = 'A'; upper <= 'Z'; upper++) {
+			System.out.print(upper+" ");
+	소문자for : for (char lower = 'a'; lower < 'z'; lower++) {
+				System.out.print("\t"+lower);
+				if (lower =='g') {
+					break 대문자for;
+				}
+			}
+			System.out.println();
+		}//for 끝
+		
+		System.out.println();
+		// 137p
+		
+	숫자for:	for (int j = 1; j <=10; j++) {
+			if (j % 2 !=0) {
+				continue 숫자for; // for 이동 / 아래에 있는 코드 실행x // 홀수 출력x
+			}
+			System.out.println(j + " ");
+		}
+		
+		
+		
+		
+		
 	}//main
 	//return 은 여기로 나옴
 }//class
@@ -112,7 +138,18 @@ public class Ex_반복문 {
 		
 		
 		
+		 for 문 여러개 실행시 식별 방법
+		 1. for문 식별이름 : for(){}
+		 2. break for문 식별이름;  지정한 for 문 탈출
+		 	- break -> 가장 가까운 반복문 탈출
+		 	- break for문 이름 -> 해당 for문 탈출
+		 3. continue;
+		 	- 가장 가까운 반복문 증감식/조건식 으로 이동
+		 	continue for문 이름 ->
+		 	- 해당 for문 증감식/조건식으로 이동
+		 	
 		
+			
 		
 		
 		
