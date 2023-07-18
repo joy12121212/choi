@@ -10,16 +10,12 @@ public class Ex2_확인문제7 {
 		boolean run = true;
 
 
+		int inM = 0;
 		
 		while (run) {
-
-			int inM = 0;
-
-			
 			System.out.println("-----------------");
 			System.out.println("1.예금 | 2.출금 | 3.잔고 | 4.종료");
 			System.out.println("-----------------");
-
 			System.out.print("선택> ");
 			int money = scanner.nextInt();
 			
