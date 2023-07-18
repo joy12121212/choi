@@ -14,13 +14,36 @@ public class 과제4_2_가위바위보 {
 		int 게임수 = 0; 
 		int 플레이어승리수 = 0 ; int 컴퓨터승리수 = 0 ;
 		
-		while(true) {
+  와일:	while(true) {
 			
 			System.out.println("\n\n--------------[[ 가위바위보 게임 ]] ----------- ");
 			System.out.print(" >>>>>>>  가위[0] 바위[1] 보[2] 종료[3] 중 선택 : ");
 			플레이어 = scanner.nextInt();
 			
 			/* 문제풀이 위치 */
+			Random random = new Random();
+			컴퓨터 = random.nextInt(3);
+
+
+			if (플레이어 == 3) {
+				System.out.println(" >>>>>>> [게임종료] : 게임 횟수" + 게임수);
+				if (플레이어승리수 > 컴퓨터승리수) {
+					System.out.println(" >>>>>>> [최종승리자] : 플레이어 " + 플레이어승리수);
+				}else {
+					System.out.println(" >>>>>>> [최종승리자] : 컴퓨터 " + 컴퓨터승리수);
+				}
+				break 와일;
+
+			} else if (컴퓨터 > 플레이어) {
+				System.out.println(" >>>>>>> 컴퓨터가 낸 수 : " + 컴퓨터);
+				System.out.println(" >>>>>>> 컴퓨터 승리"); 컴퓨터승리수++; 게임수++;
+			} else if (컴퓨터 < 플레이어) {
+				System.out.println(" >>>>>>> 컴퓨터가 낸 수 : " + 컴퓨터);
+				System.out.println(" >>>>>>> 플레이어 승리"); 플레이어승리수++; 게임수++;
+			} else if (플레이어 == 컴퓨터) {
+				System.out.println(" >>>>>>> 컴퓨터가 낸 수 : " + 컴퓨터);
+				System.out.println(" >>>>>>> 무승부"); 게임수++;
+			}
 			
 			
 			/* ----------- */
