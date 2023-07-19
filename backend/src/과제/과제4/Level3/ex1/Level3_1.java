@@ -1,6 +1,7 @@
 package 과제.과제4.Level3.ex1;
 
 import java.time.LocalDateTime;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Level3_1 {
@@ -24,7 +25,9 @@ public class Level3_1 {
 		System.out.println("--------------- for 사용해서 출력 10회 --------------------");
 		
 		/* 문제풀이 위치 */
-		
+		for (int i = 1; i <= 10; i++) {
+			System.out.println("안녕하세요"+i);
+		}
 		
 		
 		/* ----------- */

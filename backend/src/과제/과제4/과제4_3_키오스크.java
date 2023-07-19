@@ -22,7 +22,6 @@ public class 과제4_3_키오스크 {
 			System.out.print(">>>>>> 선택 : "); int ch = scanner.nextInt();
 			
 			/* 문제풀이 위치 */
-
 			
 			System.out.println("제품명\t"+"수량\t"+"가격");
 			
@@ -35,10 +34,18 @@ public class 과제4_3_키오스크 {
 					총금액 += 콜라가격;
 					System.out.println(총금액);
 					콜라재고--;
-
 				}
-
-
+				
+			}else if (ch == 2) {
+				if (환타재고 == 0) {
+					System.out.println("재고부족");
+				}else {
+					환타바구니++;
+					System.out.println("환타\t" + 환타바구니+"\t" + (환타가격*환타바구니));
+					총금액 += 환타가격;
+					System.out.println(총금액);
+					환타재고--;
+					}
 				
 			}else if (ch == 3) {
 				if (사이다재고 == 0) {
@@ -49,24 +56,13 @@ public class 과제4_3_키오스크 {
 					총금액 += 사이다가격;
 					System.out.println(총금액);
 					사이다재고--;
+					}
 
-				}
-			}else if (ch == 2) {
-				if (환타재고 == 0) {
-					System.out.println("재고부족");
-				}else {
-					환타바구니++;
-					System.out.println("환타\t" + 환타바구니+"\t" + (환타가격*환타바구니));
-					총금액 += 환타가격;
-					System.out.println(총금액);
-					환타재고--;
-
-				}
 			}else if(ch == 4) {
 
 				System.out.println("콜라\t" + 콜라바구니+"\t" + (콜라가격*콜라바구니));
-				System.out.println("사이다\t" + 사이다바구니+"\t" + (사이다가격*사이다바구니));
 				System.out.println("환타\t" + 환타바구니+"\t" + (환타가격*환타바구니));
+				System.out.println("사이다\t" + 사이다바구니+"\t" + (사이다가격*사이다바구니));
 				System.out.println("총 가격 : " + ((콜라가격*콜라바구니) + (사이다가격*사이다바구니)+(환타가격*환타바구니)));
 				
 				System.out.println("1. 결제 2. 취소");

@@ -1,6 +1,7 @@
 package 과제.과제4.Level3.ex2;
 
 import java.time.LocalDateTime;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Level3_2 {
@@ -12,7 +13,18 @@ public class Level3_2 {
 		
 		
 		/* 문제풀이 위치 */
-		
+		int i = 1;
+		while (true) {
+
+			System.out.print(i+"회 입력 : " );
+			String str = scanner.next();
+			i++;
+			if (str.equals("end")) {
+				System.out.println("안내) 프로그램 종료 합니다.[총 " + i + "회 입력]");
+				break;
+			}
+		}
+
 		/* ----------- */
 
 	}
