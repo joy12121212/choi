@@ -29,7 +29,9 @@ public class Ex1_파일처리 {
 				// * 통신하다가 갑자기 오류 발생할수도 있음 [ * 필수 : 미리 예외처리/오류처리 ] 
 			// 1. FileOutputStream : 파일 내보내기/저장 관련된 메소드 제공하는 class
 				// new FileOutputStream("파일경로"); : 해당 파일과 연동/연결
-					//해당 경로에 파일이 없으면 자동 생성
+					//해당 경로에 파일이 없으면 자동 생성 , 새로쓰기
+				// new FileOutputStream("파일경로",true); : 해당 파일과 연동/연결
+				//해당 경로에 파일이 없으면 자동 생성 , 이어쓰기
 
 				// 파일 경로 : 
 					// 상대경로 : 프로젝트명 생략 -> ./src/패키지명/파일명
@@ -101,9 +103,10 @@ public class Ex1_파일처리 {
 		//바이트배열 -> 문자열로 변환
 		//String 관광지파일정보 = new String(관광지파일바이트배열 , "UTF-8"); // 문자열에 한글 있을경우
 		String 관광지파일정보 = new String(관광지파일바이트배열 , "EUC-KR"); // 문자열에 한글 있을 경우
-		System.out.println(관광지파일정보);
+//		System.out.println(관광지파일정보);
 		
-		
+		System.out.println(관광지파일정보.split("\n")[0]);
+		System.out.println(관광지파일정보.split("\n")[0].split(",")[0]);
 		
 		
 		
