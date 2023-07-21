@@ -29,14 +29,14 @@ public class 과제5_키오스크_파일처리 {
 			
 			/* ------ 파일내 제품정보 --->스트림[바이트]---> 바이트배열로 저장---->문자열 변환-----*/		
 			byte[] inByteArray = new byte[(int)file.length()]; // 파일의 용량 만큼의 배열 선언 // 알아서 바이트 값 확인
-			fileInputStream.read(inByteArray); //읽어온 바이트를 바이트배열에 저장
-			String fileInfo = new String(inByteArray); // 바이트배열 -> 문자열 변환
-//			System.out.println(fileInfo);
+			fileInputStream.read(inByteArray); //연결될 파일의 바이트 읽어오기
+			String fileInfo = new String(inByteArray); // 바이트를 -> 문자열 변환
+			System.out.println(fileInfo);
 			
 			/* ------ 파일내 제품정보 문자열 --> 배열 저장-----*/
 				// 1. 하나의 문자열로 모든 ㅈ품의 문자열을 각 제품별로 분리
 				String[] 재고관리 = fileInfo.split("\n");// fileInfo 에서 \n (줄바꿈 엔터) 로 구분지어서 재고관리 배열에 대입한다
-				
+				System.out.println(Arrays.toString(재고관리));
 				//System.out.println("제품별 분리 " + Arrays.toString(재고관리));//재고관리 배열의 모든 내용을 호출/출력 한다
 				// 각 제품별로 각 필드/정보 분리
 				
