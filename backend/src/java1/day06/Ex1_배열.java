@@ -84,16 +84,16 @@ public class Ex1_배열 {
 			// 3. 값 변경 
 			arr3[0] = "1월";		arr3[1] = "2월";		arr3[2] = "3월";
 				System.out.println( Arrays.toString( arr3 ) );
-			
+	
 			// * 값 삭제 ( 불가능 : 배열은 선언시 고정 길이 이므로 , 값 대신에 기본값으로 변경 )
 			arr3[1] = null;		System.out.println( Arrays.toString( arr3 ) );
 			
 				// * 삭제된 인덱스 뒤로 값을 한칸 당기기
 				for( int i = 1 ; i < arr3.length ; i++ ) { 
 					// 만약에 마지막인덱스에 도착했으면 다음인덱스가 없으므로 당기기 할 필요X
-					if( i == arr3.length-1 ) { arr3[i] = null; break; }
+					if( i == arr3.length-1 ) { arr3[i] = null; break; } 
 					// 마지막 인덱스가 아니면 값을 한칸씩 당기기 
-					arr3[i]=arr3[i+1];
+					arr3[i]=arr3[i+1];                                              // 이건 이해가 안된다
 				}
 				System.out.println( Arrays.toString( arr3 ) );
 			
