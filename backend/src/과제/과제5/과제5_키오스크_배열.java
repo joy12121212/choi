@@ -40,35 +40,36 @@ public class 과제5_키오스크_배열 {
 				// 배열 호출
 				// 1. 배열 변수명 호출
 				System.out.println(재고관리);
-				System.out.println("배열내 데이터 호출 : " + Arrays.toString(재고관리));
-				System.out.println("배열내 데이터 개수 : " + 재고관리.length);
-				System.out.println("배열내 특정(인덱스) 데이터 호출 : " + 재고관리[0]);
+				System.out.println("배열내 데이터 호출 : " + Arrays.toString(재고관리)); // 재고관리 배열에 저장되어있는 모든 정보를 호출 해서 보여준다
+				System.out.println("배열내 데이터 개수 : " + 재고관리.length); // 재고관리의 길이를 알려준다 // 이거는 3 // 그럼 인덱스는 0 1 2
+				System.out.println("배열내 특정(인덱스) 데이터 호출 : " + 재고관리[0]); // 재고관리의 0번 인덱스에 있는 정보를 호출 한다
 				
 				String 제품정보 = 재고관리[ch-1]; // ??? // 재고관리의 특정 데이터를 인덱스 번호로 호출 한다 // ch -1 ->0 이니까 재고관리[0] 이니까 콜라 정보가 호출됨
 				System.out.println(제품정보);
 				
 					//배열내 데이터 호출 후 분리 하였다
-				int 재고 = Integer.parseInt(제품정보.split(",")[0]);
-				int 바구니 = Integer.parseInt(제품정보.split(",")[1]);
-				int 가격 = Integer.parseInt(제품정보.split(",")[2]);
+				int 재고 = Integer.parseInt(제품정보.split(",")[0]); // 제품정보 배열 내에 , 로 구분지은 값중 0번 인덱스 정보를 재고 라는 변수에 대입한다
+				int 바구니 = Integer.parseInt(제품정보.split(",")[1]);// 제품정보 배열 내에 , 로 구분지은 값중 1번 인덱스 정보를 바구니 라는 변수에 대입한다
+				int 가격 = Integer.parseInt(제품정보.split(",")[2]);// 제품정보 배열 내에 , 로 구분지은 값중 2번 인덱스 정보를 가격 이라는 변수에 대입한다
 				
-				if (재고 > 0) {재고--; 바구니++; System.out.println("바구니에 담았습니다.");					
-				}else {System.out.println("재고부족");}
-					//재고관리 업데이트
-				
+				if (재고 > 0) {재고--; 바구니++; System.out.println("바구니에 담았습니다."); // 재고가 0보다 크다면 재고수량 -1 , 바구니 +1 , 바구니에 담았습니다 출력	
+				}else {System.out.println("재고부족");}// 재고가 0보다 크지 않다면 , 재고 == 0 이 된다면 재고부족 출력
+					
+				//재고관리 업데이트
 				재고관리[ch-1] = 재고+","+바구니+","+ 가격;  //재고관리의 n번 인덱스에 재고, 바구니, 가격 재고 현행화
 				
 				}
-				else if (ch ==4) {
-					System.out.println(Arrays.toString(재고관리));
-					for (int i = 0; i < 재고관리.length; i++) {
+				else if (ch ==4) { //만약에 ch 가 4 라면
+					System.out.println(Arrays.toString(재고관리)); // 재고관리 배열이 모든 정보 호출/출력
+					for (int i = 0; i < 재고관리.length; i++) {//0부터 재고관리의 길이 까지 for 문 실행
 						
-						int stock = Integer.parseInt(재고관리[i].split(",")[1]);
-						int price = Integer.parseInt(재고관리[i].split(",")[2]);
+						int stock = Integer.parseInt(재고관리[i].split(",")[1]); // 재고관리 배열의  i 번째 인덱스에서 , 로 구분 지었을때 1번 인덱스의 값을 stock에 대입 한다
+						int price = Integer.parseInt(재고관리[i].split(",")[2]); // 재고관리 배열의  i 번째 인덱스에서 , 로 구분 지었을때 2번 인덱스의 값을 price에 대입 한다
 						
-						if (stock > 0) {
+						if (stock > 0) {//만약에 stock 이 0보다 크다면 아래 명령어 실행
 							System.out.printf("%10s %10s %10s \n" , 재고관리[i].split(",")[3] , stock , stock*price);
-						}
+							//재고관리 배열의 i번째 인덱스중 , 로 구분지었을때 3번 인덱스 정보 + stock(1번 인덱스 값)+stock(1번 인덱스 값) 곱하기 price(2번 인덱스 값) 출력 \n은 줄바꿈(엔터)
+							}
 					}//랙
 				}// ch 4 if
 				

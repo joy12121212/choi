@@ -21,21 +21,23 @@ public class 과제5_키오스크_파일처리 {
 			
 			
 			Scanner scanner = new Scanner(System.in);
-			String filePath = "./src/과제/과제5/재고파일.txt";
-			FileOutputStream fileOutputStream = new FileOutputStream(filePath, true); // 1 파일출력 스트림객체
-			FileInputStream fileInputStream = new FileInputStream(filePath); // 파일입력 객체 연동
+			String filePath = "./src/과제/과제5/재고파일.txt"; // 재고파일의 경로를 filePath 에 대입 한다
+			FileOutputStream fileOutputStream = new FileOutputStream(filePath, true); // fileOutputStream 변수에 filePath 파일출력 객체 생성 // true 로 이어쓰기 
+			FileInputStream fileInputStream = new FileInputStream(filePath); // fileInputStream 변수에 filePath 파일입력 객체 생성 하여 대입
 			File file = new File(filePath); // 파일 정보 객체 / 용량, 경로, 파일명 등등 알려주는 메소드
 			/* ----------- */
 			
 			/* ------ 파일내 제품정보 --->스트림[바이트]---> 바이트배열로 저장---->문자열 변환-----*/		
-			byte[] inByteArray = new byte[(int)file.length()]; //파일의 용량 만큼의 배열 선언
+			byte[] inByteArray = new byte[(int)file.length()]; // 파일의 용량 만큼의 배열 선언 // 알아서 바이트 값 확인
 			fileInputStream.read(inByteArray); //읽어온 바이트를 바이트배열에 저장
 			String fileInfo = new String(inByteArray); // 바이트배열 -> 문자열 변환
 //			System.out.println(fileInfo);
 			
 			/* ------ 파일내 제품정보 문자열 --> 배열 저장-----*/
 				// 1. 하나의 문자열로 모든 ㅈ품의 문자열을 각 제품별로 분리
-				String[] 재고관리 = fileInfo.split("\n"); //System.out.println("제품별 분리 " + Arrays.toString(재고관리));
+				String[] 재고관리 = fileInfo.split("\n");// fileInfo 에서 \n (줄바꿈 엔터) 로 구분지어서 재고관리 배열에 대입한다
+				
+				//System.out.println("제품별 분리 " + Arrays.toString(재고관리));//재고관리 배열의 모든 내용을 호출/출력 한다
 				// 각 제품별로 각 필드/정보 분리
 				
 				
