@@ -29,7 +29,7 @@ public class Ex5_객체배열 {
 				// 2. 배열에 저장
 				
 				for (int i = 0; i < memberList.length; i++) {
-					if (memberList[i] == null) {
+					if (memberList[i] == null) {// memberList 배열에 null 값이 있다면 m 에 대입된 데이터들을 대입
 						memberList[i] = m;
 						break;
 					}// if
