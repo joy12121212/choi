@@ -1,4 +1,4 @@
-package 과제.과제8;
+package 과제.과제9.copy;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -37,8 +37,15 @@ public class Membersys {
 				System.out.print("아이디 : "); 	String scId = scanner.next();
 				System.out.print("비밀번호 : "); 	String scPw = scanner.next();
 				System.out.print("이름 : "); 	String scNm = scanner.next();
-				System.out.print("전화번호 : "); 	String scPn = scanner.next();
+				System.out.print("전화번호 : "); 	String scPn = scanner.next();      
 				System.out.print("나이 : "); 	int scAge = scanner.nextInt();
+				
+				
+				
+				//1. 기본 생성자[과제8] vs 정의한생성자[과제9]
+					//1안
+
+				
 				// 2. 5가지를 하나로 묶음 = 문자열 vs 객체
 				// * 객체 선언 : 클래스명 객체변수명 = new 생성자명();
 				Member member = new Member(); // 필드에 기본값 들어가 있음
