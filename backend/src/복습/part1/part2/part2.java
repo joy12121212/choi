@@ -1,4 +1,4 @@
-package 복습.part1;
+package 복습.part1.part2;
 
 import java.util.Scanner;
 
@@ -63,7 +63,7 @@ public class part2 {
 			}//if
 			
 			else if (ch == 4) {
-				System.out.println("콜라\t"+콜라바구니+"\t"+(콜라바구니*콜라가격)+"\n"+"환타\t"+환타바구니+"\t"+(환타바구니*환타가격)+"\n"+"사이다\t"+사이다바구니+"\t"+(사이다바구니*사이다가격)+"\n"+총금액+"원");
+				System.out.println("콜라\t"+콜라바구니+"\t"+(콜라바구니*콜라가격)+"\n"+"환타\t"+환타바구니+"\t"+(환타바구니*환타가격)+"\n"+"사이다\t"+사이다바구니+"\t"+(사이다바구니*사이다가격)+"\n"+"결제하실 금액 : " +총금액+"원");
 				System.out.println("1.결제 2.취소");
 				int ch2 = scanner.nextInt();
 				
@@ -76,6 +76,7 @@ public class part2 {
 							콜라재고 = 10; 사이다재고 = 3; 환타재고 =2; 콜라바구니 = 0; 사이다바구니 =0; 환타바구니=0; 총금액=0;
 						}else {
 							System.out.println("금액이 부족 합니다");
+							콜라재고 = 10; 사이다재고 = 3; 환타재고 =2; 콜라바구니 = 0; 사이다바구니 =0; 환타바구니=0; 총금액=0;
 						}
 					}else if (ch2 == 2) {
 						System.out.println("결제 취소");
