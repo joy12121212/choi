@@ -1,4 +1,4 @@
-package 과제.과제10;
+package 과제.팀플1;
 
 public class Phone {
 	private App[] app;
