@@ -106,15 +106,15 @@ public class MemberSys {
 		for (int k = 0; k < memberList.length; k++) {
 			if (memberList[k] != null && memberList[k].getPassword().equals(pw)) {
 				pwOk=0;
-				break;
-			}
+				break;}//if
+			}//for
 			if (pwOk>=0) {
 				System.out.println("임시비밀번호는 : "+tmp+" 입니다");
 			}else {
 				System.out.println("비밀번호 없음");
 			}
 			
-		}
+		
 	}// 비밀번호 끝
 	
 }
