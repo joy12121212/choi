@@ -13,7 +13,9 @@ public class MemberController { // 기능처리 담당 클래스
 	private static MemberController memberController = new MemberController();
 	
 	// 2. 외부로부터 싱글톤 호출할 수 있도록 get~
-	public static MemberController getInstance() {return memberController;}
+	public static MemberController getInstance() {
+		
+		return memberController;}
 	// 얘는 간접 나가기라 public
 	// 3. 외부에서 객체 생성 차단 // 생성자 잠금 처리
 	private MemberController() {}
@@ -44,44 +46,40 @@ public class MemberController { // 기능처리 담당 클래스
 
 	} // loginLgic
 	
-	public byte[] findIdLogic(String name , String phone) {
-		
-
+	public String findIdLogic(String name , String phone) {
 		
 		for (int j = 0; j < MemberDao.memberList.length; j++) {
-			if (MemberDao.memberList[j] != null && MemberDao.memberList[j].getName().equals(name) && MemberDao.memberList[j].getName().equals(phone)) {
-				byte[] userId = MemberDao.memberList[j].getId().getBytes();
-				
-				
-				return userId;			
-			}
-		}return null;
+			if (MemberDao.memberList[j] != null && 
+					MemberDao.memberList[j].getName().equals(name) &&
+					MemberDao.memberList[j].getName().equals(phone))
+				{
+					String userId = MemberDao.memberList[j].getId();
+					return userId;	
+				}//if
+			
+		}return "";
 
 	}//findidlogic
 	
-
+	public int findPwLogic(String id , String phone) {
 		
+		int tmp = (int) (Math.random()*9999);		
+		
+		for (int j = 0; j < MemberDao.memberList.length; j++) {
+			if (MemberDao.memberList[j] != null && 
+					MemberDao.memberList[j].getName().equals(id) &&
+					MemberDao.memberList[j].getName().equals(phone))
+			{ return tmp;}
+			
+		}//for
+		return 1;
+	}//findidlogic
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 }//class
+	
