@@ -28,9 +28,9 @@ public class MainPage {
 
 			int ch = sc.nextInt(); 
 			
-			if( ch == 1 ) { }
-			if( ch == 2 ) { } 
-			if( ch == 3 ) { } 
+			if( ch == 1 ) { singupPage();}
+			if( ch == 2 ) { loginPage();} 
+			if( ch == 3 ) { findIdPage();} 
 			if( ch == 4 ) { } 
 
 		} // w e 
@@ -59,11 +59,18 @@ public class MainPage {
 		boolean result = MemberController.getInstance().loginLogic(id , pw);
 		if (result) { System.out.println("로그인 성공");
 		}else {System.out.println("로그인 실패");}
-	
-		
-		
+		  
 	}
-	void findIdPage() {}
+	void findIdPage() {
+		
+		System.out.println("이름을 입력 하세요"); String name = sc.next();
+		System.out.println("전화번호 입력 하세요"); String phone = sc.next();
+		
+		byte[] id = MemberController.getInstance().findIdLogic( name , phone);
+		String id1 = new String(id);
+
+
+	}
 	void fidePwPage() {}
 	
 	

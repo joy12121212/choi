@@ -1,5 +1,7 @@
 package java1.day11.Ex4디자인패턴2.controller;
 
+import java.util.Iterator;
+
 import java1.day11.Ex4디자인패턴2.model.dao.MemberDao;
 import java1.day11.Ex4디자인패턴2.model.dto.MemberDto;
 
@@ -40,9 +42,26 @@ public class MemberController { // 기능처리 담당 클래스
 		}return false;
 		
 
-	}
+	} // loginLgic
 	
+	public byte[] findIdLogic(String name , String phone) {
+		
+
+		
+		for (int j = 0; j < MemberDao.memberList.length; j++) {
+			if (MemberDao.memberList[j] != null && MemberDao.memberList[j].getName().equals(name) && MemberDao.memberList[j].getName().equals(phone)) {
+				byte[] userId = MemberDao.memberList[j].getId().getBytes();
+				
+				
+				return userId;			
+			}
+		}return null;
+
+	}//findidlogic
 	
+
+		
+
 	
 	
 	
