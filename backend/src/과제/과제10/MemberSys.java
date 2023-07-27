@@ -1,25 +1,20 @@
 package 과제.과제10;
 
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Random;
+
+
 import java.util.Scanner;
-import 과제.과제10.Member;
+
 
 public class MemberSys {
 	
 	static Member[] memberList = new Member[100];
-	static Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in); // static 사용으로 프로그램내 전역 구역에서 공유 됨
+	static int login = -1;	// ★ 정적 멤버 // 로그인은 성공시 항상 되어있어야 하기 때문에 전역으로 
 
-	Member member = new Member();
 	public static void main(String[] args) {
-
-			
-	
-			
 			
 		while(true) {
-
 			
 			System.out.println("\n\n--------- 회원 시스템 ---------"); 
 			System.out.print("1.회원가입 2.로그인 3.아이디찾기 4.비밀번호찾기    선택> ");
@@ -34,8 +29,6 @@ public class MemberSys {
 	}//main
 	
 	
-	
-	
 	static void 회원가입 () { 
 		Member member = new Member();
 		
@@ -46,6 +39,9 @@ public class MemberSys {
 		System.out.print("나이 입력 하세요 : ");  int age = sc.nextInt(); member.setAge(age);
 		
 		System.out.println(member);
+		
+		// Member m = new Member(id, pw , name , phone, age);  // 만들면서 바로 때려박기
+		
 		
 		for (int i = 0; i < memberList.length; i++) {
 			if (memberList[i] == null) {
@@ -61,13 +57,13 @@ public class MemberSys {
 		System.out.println("아이디를 입력 하세요"); String id = sc.next();
 		System.out.println("비밀번호를 입력 하세요"); String pw = sc.next();
 
-		int login = -1;
+		
 
 		for (int i = 0; i < memberList.length; i++) {
 			if (memberList[i] != null && memberList[i].getId().equals(id) && memberList[i].getPassword().equals(pw)) {
 				login = 0;
 				break; }
-		}if (login >= 0) {
+		}if (login >= 0) { // login 정적으로  뺌
 			System.out.println("로그인 성공");
 		} else {
 			System.out.println("로그인 실패");
@@ -78,41 +74,47 @@ public class MemberSys {
 	static void 아이디찾기 () {
 		
 		int idOk = -1;
-		System.out.println("아이디를 입력 하세요"); String id = sc.next();
+		int index = 0;
+		System.out.println("이름을 입력 하세요"); String name = sc.next();
+		System.out.println("전화번호 입력 하세요"); String phone = sc.next();
+		
 		for (int j = 0; j < memberList.length; j++) {
-			if (memberList[j] != null && memberList[j].getId().equals(id)) {
+			if (memberList[j] != null && memberList[j].getName().equals(name) && memberList[j].getPhone().equals(phone)) {
 				idOk = 0;
+				index = j;
 				break;
 				}//if
 			}//for
 			if (idOk >= 0) {
-				System.out.println("아이디는 : " + id);
+				System.out.println("아이디는 : " + memberList[index].getId() +" 입니다");
 			} else {
 				System.out.println("아이디가 없습니다");
 			}
 
-		
+
 	} //아이디 끝
 	
 	
 	static void 비밀번호찾기 () {
-		
-		int tmp = (int) (Math.random()*4999);
+		int tmp = (int) (Math.random()*4999);		
+		int idOk = -1;
 
-		int pwOk = -1;
+		System.out.println("아이디을 입력 하세요"); String id = sc.next();
+		System.out.println("전화번호 입력 하세요"); String phone = sc.next();
 		
-		System.out.println("비밀번호를 입력 하세요"); String pw = sc.next();
-	
-		for (int k = 0; k < memberList.length; k++) {
-			if (memberList[k] != null && memberList[k].getPassword().equals(pw)) {
-				pwOk=0;
-				break;}//if
+		for (int j = 0; j < memberList.length; j++) {
+			if (memberList[j] != null && memberList[j].getId().equals(id) && memberList[j].getPhone().equals(phone)) {
+				idOk = 0;
+
+				break;
+				}//if
 			}//for
-			if (pwOk>=0) {
-				System.out.println("임시비밀번호는 : "+tmp+" 입니다");
-			}else {
-				System.out.println("비밀번호 없음");
+			if (idOk >= 0) {
+				System.out.println("임시 비밀번호는 " + tmp + "입니다");
+			} else {
+				System.out.println("비밀번호 찾기 실패");
 			}
+
 			
 		
 	}// 비밀번호 끝
