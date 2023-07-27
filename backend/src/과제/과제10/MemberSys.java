@@ -1,10 +1,13 @@
 package 과제.과제10;
 
+//현재 클래스에서 같은 패키지에 있는 클래스 호출 = 생략
+//java.lang 기본 패키지 이므로 생략
+//현재 클래스애서 다른 패키지에 있는 클래스 호출 = 임포트
+
 import java.util.Arrays;
+import java.util.Scanner;	// 
 
-
-import java.util.Scanner;
-
+// import java.util.*;		//해당 패키지내 모든 클래스 호출
 
 public class MemberSys {
 	
