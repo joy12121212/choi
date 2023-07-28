@@ -12,6 +12,70 @@ public class part2re1 {
 		Scanner scanner = new Scanner(System.in);
 		
 		
+		int 콜라재고 = Integer.parseInt(재고관리.split("\n")[0].split(",")[0]);
+		int 콜라바구니 = Integer.parseInt(재고관리.split("\n")[0].split(",")[1]);
+		int 콜라가격 = Integer.parseInt(재고관리.split("\n")[0].split(",")[2]);
+		
+		int 환타재고 = Integer.parseInt(재고관리.split("\n")[1].split(",")[0]);
+		int 환타바구니 = Integer.parseInt(재고관리.split("\n")[1].split(",")[1]);
+		int 환타가격 = Integer.parseInt(재고관리.split("\n")[1].split(",")[2]);
+		
+		int 사이다재고 = Integer.parseInt(재고관리.split("\n")[2].split(",")[0]);
+		int 사이다바구니 = Integer.parseInt(재고관리.split("\n")[2].split(",")[1]);
+		int 사이다가격 = Integer.parseInt(재고관리.split("\n")[2].split(",")[2]);
+		
+		int 총금액 = 0;
+		
+
+		while (true) {
+			
+			System.out.println("\n\n-------------------- 메뉴 ------------------- ");
+			System.out.println("1.콜라[300] 2.환타[200] 3.사이다[100] 4.결제");
+			System.out.print(">>>>>> 선택 : "); 
+			
+			int sc = scanner.nextInt();
+			
+
+			
+			if (sc == 1) {
+				if (콜라재고 <=0) {
+					System.out.println("재고가 부족 합니다");
+				}else {
+					System.out.println("제품을 담았습니다"); 콜라재고--; 콜라바구니++; 총금액+=콜라가격;
+				}
+			}else if (sc == 2) {
+				if (환타재고 <=0) {
+					System.out.println("재고가 부족 합니다");
+				}else {
+					System.out.println("제품을 담았습니다"); 환타재고--; 환타바구니++; 총금액+=콜라가격;
+				}
+				
+			}else if (sc==3) {
+				if (사이다재고 <=0 ) {
+					System.out.println("재고가 부족 합니다");
+				}else {
+					System.out.println("제품을 담았습니다"); 사이다재고--; 사이다바구니++; 총금액+=콜라가격;
+				}
+			} else if (sc==4) {
+				
+				System.out.println("콜라\t" + 콜라바구니+"\t" + (콜라바구니*콜라가격)+"\n"+"환타\t" + 환타바구니+"\t" + (환타바구니*환타가격)+"\n"+"사이다\t" + 사이다바구니+"\t" + (사이다바구니*사이다가격)+"\n");
+				System.out.println("결제하실 금액은 : " + 총금액);
+				
+				int sc2 = scanner.nextInt();
+				if (총금액 > sc2) {
+					System.out.println("금액이 부족합니다.취소");
+					콜라바구니 = 0; 콜라재고 = 10; 환타바구니 = 0; 환타재고 = 3; 사이다바구니 =0; 사이다재고 =2; 총금액 = 0;
+				}else {
+					System.out.println("결제가 완료 되었습니다 잔액 : "+ (sc2-총금액) );
+					콜라바구니 = 0; 콜라재고 = 10; 환타바구니 = 0; 환타재고 = 3; 사이다바구니 =0; 사이다재고 =2; 총금액 = 0;
+				}
+			}
+
+			
+			
+		}
+
+		
 		
 		
 	}
