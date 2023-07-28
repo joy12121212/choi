@@ -4,8 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
+
 import java.util.Scanner;
 
 import javax.swing.text.html.HTMLDocument.HTMLReader.SpecialAction;
@@ -91,8 +90,11 @@ public class 과제5_키오스크_파일처리 {
 				if (stock > 0) {
 					stock--; basket++; System.out.println(name + "제품을 담앗슴");
 				}else {System.out.println(name + "제고 엄슴");}
-				재고관리[ch-1]=name+","+stock+","+price+","+basket;
-				String outStr = "";
+				
+				재고관리[ch-1]=name+","+stock+","+price+","+basket; // 재고 상태 현행화
+				
+				String outStr = ""; // 공백 변수 생성
+				
 				for (int i = 0; i < 재고관리.length; i++) {
 					outStr += 재고관리[i].split(",")[0]+","+재고관리[i].split(",")[1]+","+재고관리[i].split(",")[2]+","+재고관리[i].split(",")[3]+"\n";
 				}//for e
