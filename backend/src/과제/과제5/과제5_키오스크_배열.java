@@ -74,6 +74,8 @@ public class 과제5_키오스크_배열 {
 							System.out.printf("%10s %10s %10s \n" , name , 바구니 , 바구니*price);
 							//재고관리 배열의 i번째 인덱스중 , 로 구분지었을때 3번 인덱스 정보 + stock(1번 인덱스 값)+stock(1번 인덱스 값) 곱하기 price(2번 인덱스 값) 출력 \n은 줄바꿈(엔터)
 							}
+						
+
 					}//for
 				}// ch 4 if
 				
