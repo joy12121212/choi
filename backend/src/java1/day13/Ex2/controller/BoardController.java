@@ -31,18 +31,19 @@ public class BoardController {
 		public BoardDto printLogic( int index) {
 		
 			// 조회수 증가
-			if (index <= BoardDao.getInstance().boardDtoArray.length) {
+		
 			int view = BoardDao.getInstance().boardDtoList.get(index).getView();
 			view++;
 				BoardDao.getInstance().boardDtoList.get(index).setView(view);
-			} // 조회수 증가 
+			 // 조회수 증가 
+			
 
 
 			BoardDto boardDto = BoardDao.getInstance().boardDtoList.get(index);
 			return boardDto;
 		}
 
-		// 글삭제 처리 기능 함수 [ U ] : 수정할 게시물 인덱스 , 수정할 내용 , 수정할 작성자
+		// 글수정 처리 기능 함수 [ U ] : 수정할 게시물 인덱스 , 수정할 내용 , 수정할 작성자
 		public boolean updateLogic(int index , String content , String writer) {
 			
 			BoardDao.getInstance().boardDtoList.get(index).setContent(content);
@@ -52,7 +53,7 @@ public class BoardController {
 			return true;	
 		}
 
-		// 글수정 처리 기능 함수 [ D ]
+		// 글삭제 처리 기능 함수 [ D ]
 		public boolean deleteLogic(int index) {
 			BoardDao.getInstance().boardDtoList.remove(index);
 			// 해당 인덱스 번호 삭제
