@@ -97,6 +97,9 @@ public class part4 {
 					int price = Integer.parseInt(재고관리[i].split(",")[2]);
 					String name = 재고관리[i].split(",")[0];
 					
+					if (basket >0) {
+						System.out.printf("%10s %10s %10s \n" , name , basket , basket * price);
+					}
 				
 				}
 			
