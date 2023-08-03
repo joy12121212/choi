@@ -17,16 +17,20 @@ public class EX1_실행 {
 		//4. 타이어 교체 하기위해 카센터에서 한국타이어 교체
 		myCar.tire = new HankookTire();
 		System.out.println(myCar.tire);
+
 		
 		myCar.run(); // 한국타이어 실행
 		
 		//5. 타이어 교체 하기 위해 카센터에서 금호타이어 교체
 		myCar.tire = new KumhoTire();
 		System.out.println(myCar.tire);
-		
+		  
 		myCar.run(); // 금호타이어 실행
-		
-		
+		System.out.println("--------------");
+		KumhoTire kumhoTire = (KumhoTire)myCar.tire;
+		System.out.println(kumhoTire);
+		System.out.println(myCar.tire);
+		myCar.run();
 	}//main
 
 }

@@ -9,5 +9,5 @@ public class Car {
 	// 3. 메소드
 	
 	public void run() {tire.roll();}
-	
+
 }

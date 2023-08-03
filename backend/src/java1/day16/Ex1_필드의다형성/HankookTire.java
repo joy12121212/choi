@@ -12,4 +12,6 @@ public class HankookTire extends Tire{
 		System.out.println("한국타이어 회전");
 		
 	}
+
 }
+
