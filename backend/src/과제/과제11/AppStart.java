@@ -1,5 +1,18 @@
 package 과제.과제11;
 
+import 과제.과제11.view.MainPage;
+
 public class AppStart {
+	
+	public static void main(String[] args) {
+		
+		MainPage.getInstance().mainView();;
+			// 1. MainPage.getInstance() : MainPage 싱글톤 객체 호출
+				// 반환 -> mainPage 객체가 반환된다
+				// 2. mainPage.mainView();
+				// geiInstance() 
+		
+		
+	}
 
 }
