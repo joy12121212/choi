@@ -1,6 +1,6 @@
 package 과제.과제11.model.dao;
 
-import java.util.Iterator;
+
 
 import 과제.과제11.model.dto.MemberDto;
 
@@ -11,6 +11,32 @@ public class MemberDao extends Dao{
 	public static MemberDao getInstance() {return memberDao;}
 
 	private MemberDao() {}
+	
+	
+	public boolean infoCheck(String 검색할필드명 , String 검색할값) {
+		
+		try {
+	
+			String sql = "select * from member where " + 검색할필드명 +" = ?";
+			System.out.println(sql);
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, 검색할값);
+			rs = ps.executeQuery();
+			
+			if (rs.next()) {return true;
+				
+			}
+		} //try
+		
+		catch (Exception e) {
+			System.out.println("오류" + e);
+		}
+		
+		return true;
+	}//infocheck
+	
+	
 	
 	
 	
@@ -83,5 +109,63 @@ public class MemberDao extends Dao{
 		return false;
 	}// loginsql
 
+	// 3. 아이디 찾기 sql
+	
+	public String findById( String name , String phone) {
+		System.out.println("아이디찾기 sql 도착");
+		try {
+		String sql = "select * from member where mname = ? and mphone=?;";
+		
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, name);
+		ps.setString(2, phone);
+		
+		// insert / update / delete : ps.excteUpdate();   /   select : ps.excuteQuery();
+		rs = ps.executeQuery();
+		
+
+		
+		//rs.next()	: 검색된 레코드중 다음 레코드로 이동
+		//rs.getString()	: 현재 위치한 레코드의 필드값 호출
+		// 와이드카드로 전체를 검색했으면 필드값의 순서(1번 2번 3번) 숫자를 넣어야 됨
+		// 필드를 검색했으면 id , pw , phone 라면 id 값을 받으려면 1 , pw는 2 , phone 는 3 입력
+	
+		if (rs.next()) {
+			return rs.getString(2);
+		}//if
+		
+		}//try
+		catch (Exception e) {
+			System.out.println("아이디 찾기 실패 " + e);
+		}//catch
+		return null;
+	}// find id
+	
+
+	
+	//4. 비밀번호 찾기 sql
+	public String findByPw(String id , String phone) {
+		
+		try {
+		String sql = "select * from member where mid = ? and mphone=?;";
+		
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, id);
+		ps.setString(2, phone);
+		
+		rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return rs.getString(3);
+		}//if
+				
+		}//try
+		catch (Exception e) {
+			System.out.println("비밀번호 찾기 실패 " + e);
+		}//catch
+		
+		return null;
+		
+	}// find pw
 	
 }
