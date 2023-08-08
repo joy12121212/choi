@@ -78,6 +78,7 @@ public class MainPage {
 		
 		if (resutl) {
 			System.out.println("안내 - 로그인 성공");
+			LoginPage.getInstance().loginMenu();
 		}else {
 			System.out.println("안내 - 로그인 실패");
 		}

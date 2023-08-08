@@ -42,14 +42,30 @@ public class MemberController {
 		
 		
 	}
+	// 로그인 처리
+	private int loginSession =0; // 0 로그인 안함 // 1 이상 로그인된 회원의 번호
+	public int getLoginSession () {return loginSession;}
+
+	// 로그아웃 처리
+	public void logOut() {this.loginSession=0;}
 	
 	// 2. 로그인 로직
 	public boolean loginLogic(String id , String pw) {
 		
 	
-		boolean result = MemberDao.getInstance().loginSQL(id , pw);
-		return result;
+		int result = MemberDao.getInstance().loginSQL(id , pw);
+		
+		if (result >1) {
+			this.loginSession = result;
+			return true;
+		}else {
+			return false;
+		}
+		
+
 	}
+	
+
 	
 	
 	// 3. 아이디 찾기 로직
@@ -80,9 +96,52 @@ public class MemberController {
 		return result;
 	}// find pw sql
 	
+	// 회원정보 조회
+	public MemberDto info() {
+		//현재 로그인된 회원 번호가 loginSession 여기에 있으니 view 안들리고 바로 쏨
+		return MemberDao.getInstance().info(this.loginSession);
+	}	
+	
+	
+	// 비밀번호 수정
+	public boolean infoUpdate(String newPw)  {
+		
+		
+		
+		
+		return MemberDao.getInstance().infoUpdate(newPw, loginSession);
+	}
+	
+	// 회원탈퇴
+	public boolean infoDelete() {
+		
+		
+		return MemberDao.getInstance().infoDelete(loginSession);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
 	
 
-}
+}//mc

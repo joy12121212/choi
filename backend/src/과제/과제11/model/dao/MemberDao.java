@@ -80,7 +80,7 @@ public class MemberDao extends Dao{
 	
 	
 		//2. 로그인 sql
-	public boolean loginSQL(String id , String pw) {
+	public int loginSQL(String id , String pw) {
 		System.out.println("로그인 다오 도착");
 		System.out.println(id + pw);
 
@@ -101,12 +101,12 @@ public class MemberDao extends Dao{
 			// 전체 회원 정보 호출시에는 while 문 사용
 				
 			if (rs.next()) {
-				return true; // 찾는 값이 있으면 true , 없으면 false  반환 해주는 next()함수
+				return rs.getInt(1); // 찾는 값이 있으면 true , 없으면 false  반환 해주는 next()함수
 			}
 		}// try
 		catch (Exception e) {System.out.println("실패" +e);
 		}// catch
-		return false;
+		return 0;
 	}// loginsql
 
 	// 3. 아이디 찾기 sql
@@ -168,4 +168,89 @@ public class MemberDao extends Dao{
 		
 	}// find pw
 	
-}
+
+	
+	
+	public MemberDto info(int mno) {
+		
+		try {
+			// 1. sql 작성
+			
+			String sql = "select * from member where mno = ?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, mno);
+			rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				// 현재 레코드를 dto 로 만들고 리턴
+				MemberDto dto = new MemberDto(
+						rs.getInt(1), rs.getString(2), rs.getString(3),
+						rs.getString(4), rs.getString(5));
+				return dto;
+			}
+		} 
+		catch (Exception e) {System.out.println(e);}
+			
+		return null;
+	}	
+
+	
+	// 비밀번호 수정
+	public boolean infoUpdate(String newPw, int mno)  {
+		try {
+			String sql = "update member set mpw = ? where mno = ?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, newPw);
+			ps.setInt(2, mno);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {System.out.println(e);}
+		
+		
+		return false;
+	}
+	
+	
+	
+	// 회원 탈퇴
+	public boolean infoDelete(int mno) {
+		
+		try {
+			String sql = "delete from member where mno = ?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, mno);
+			int row = ps.executeUpdate();
+			if (row ==1) {return true;}
+
+		} catch (Exception e) {System.out.println(e);}
+
+		
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}//dao
