@@ -9,7 +9,7 @@ public class test111111 {
         boolean uCardSetFull = false;        // '유저'의 카드set이 비어있는 상태로 초기화
         boolean dCardSetFull = false;        // '딜러'의 카드set이 비어있는 상태로 초기화
         boolean gameWin = true;              // 게임 결과 판단. 승리로 초기화
-        int comCardSet[] = new int[52];      // 무작위로 결정된 숫자를 저장
+        int comCardSet[] = new int[52];      // 무작위로 결정된 숫자를 1저장
  
         comCardSetInit(comCardSet);          // 공용 카드set 생성 및 초기화 
         
