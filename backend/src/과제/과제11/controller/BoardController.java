@@ -4,6 +4,7 @@ package 과제.과제11.controller;
 import java.util.ArrayList;
 
 import 과제.과제11.model.dao.BoardDao;
+import 과제.과제11.model.dao.MemberDao;
 import 과제.과제11.model.dto.BoardDto;
 
 
@@ -34,9 +35,55 @@ public class BoardController {
 	public BoardDto boardView( int bno ) {
 		return BoardDao.getInstance().boardView(bno);
 	}
+	
+	
 	// 12. boardUpdate : 게시물 수정 
-	public void boardUpdate() {}
+	// [ 준비물 :
+	//	bno = 수정할 게시물의 식별[누구를 수정할건지]
+	//	mno = 작성자와 일치할경우에만 수정 가능[유효성검사]
+	//	title = 수정할거
+	//	content = 수정할거
+	public int boardUpdate(int bno , int mno , String title , String content) {
+		
+		//1. 유효성 검사
+			//2 . 게시물의 작성자 회원번호와 로그인된 회원과일치 하지 않으면
+		if (mno != MemberController.getInstance().getLoginSession()) {return 3;	}
+			//3 . 제목 글자수 체크
+		if (title.length() < 1 || title.length() >50) {	return 4;}
+		
+		boolean result = BoardDao.getInstance().boardUpdate(new BoardDto(bno , title , content));
+		if (result) {return 1;}
+		else return 2;
+	}
 	// 13. boardDelete : 게시물 삭제
-	public void boardDelete() {}
+	public int boardDelete(int bno , int mno) {
+		if (mno != MemberController.getInstance().getLoginSession()) {return 3;	}
+		//3 . 제목 글자수 체크
+	
+	boolean result = BoardDao.getInstance().boardDelete(bno);
+	if (result) {return 1;}
+	else return 2;
+	}
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

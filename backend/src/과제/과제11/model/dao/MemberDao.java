@@ -33,7 +33,7 @@ public class MemberDao extends Dao{
 			System.out.println("오류" + e);
 		}
 		
-		return true;
+		return false;
 	}//infocheck
 	
 	
@@ -88,18 +88,18 @@ public class MemberDao extends Dao{
 			// 1단계 : sql 작성한다 [sql 에서 먼저 테스트 하고 복사해서 가져와]
 			String sql = "select * from member where mid = ? and mpw = ?";
 			// 2단계 : sql 조작할 수 있는 객체 만들기
+			
+			System.out.println(sql);
 			ps = conn.prepareStatement(sql);
 			// 3단계 : sql 조작 sql ? 매개변수 값 대입
 			ps.setString(1, id);
 			ps.setString(2, pw);
 			// 4단계 실행 : insert / update / delete : ps.excteUpdate();   /   select : ps.excuteQuery();
 			rs = ps.executeQuery();
-			
 			// 5단계 : sql 실행 결과 조작
-			
 			// 로그인은 한번만 실행하면 되기에 if 문 사용
 			// 전체 회원 정보 호출시에는 while 문 사용
-				
+				System.out.println(rs);
 			if (rs.next()) {
 				return rs.getInt(1); // 찾는 값이 있으면 true , 없으면 false  반환 해주는 next()함수
 			}
@@ -231,11 +231,7 @@ public class MemberDao extends Dao{
 		return false;
 	}
 	
-	
-	
-	
-	
-	
+
 	
 	
 	

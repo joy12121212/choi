@@ -52,10 +52,10 @@ public class MemberController {
 	// 2. 로그인 로직
 	public boolean loginLogic(String id , String pw) {
 		
-	
+		System.out.println("로그인 세션 도착");
 		int result = MemberDao.getInstance().loginSQL(id , pw);
 		
-		if (result >1) {
+		if (result >=1) {
 			this.loginSession = result;
 			return true;
 		}else {
