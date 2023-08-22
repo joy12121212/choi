@@ -1,1 +1,43 @@
 @charset "UTF-8";
+
+.visitwrap {
+	width: 500px;
+	margin: 0 auto;
+}
+.visit_Top{
+	display: flex; 				/* 하위 요소 가로 배치*/
+	margin: 30px 0px;
+}
+.visit_Inputs input {
+	width: 130px;
+	padding: 5px;
+	border: 1px solid #8e8e8e;
+}
+.visit_Top textarea{
+	width: 100%;
+	padding: 5px;
+	border: 1px solid black;
+	resize : none; 			/* textarea 사이즈 조절 불가*/
+	margin-left: 50px;
+}
+.visit_Top button{
+	width: 80px;
+	background-color: black;
+	color: white;
+	border: none;
+	font-weight: bold;
+}
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 출력 구역 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.visit_Bottom {
+	margin: 30px 0px;
+}
+.visitbox {
+	display: flex;
+	border-top: 1px solid black;
+	padding-top: 20px;
+}
+.visitdate{font-size: 9px;}
+.visitbox_top{width: 20%;}
+.visitvox_center{width:60%; margin : 0px 10px;}
+.visitvox_bottom{width: 20%;}
+.visitvox_bottom button{width: 100%; background-color: black; color: white;}

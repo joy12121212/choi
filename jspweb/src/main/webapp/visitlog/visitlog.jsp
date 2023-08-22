@@ -12,23 +12,23 @@
 </head>
 <body>
 
-	<div> <!-- 전체 구역 -->
+	<div class="visitwrap"> <!-- 전체 구역 -->
 	
-		<div> <!-- 쓰기 구역 -->
-			<input class="writer" type="text" placeholder="작성자">	
-			<input class="vpwd" type="text" placeholder="비밀번호">
-			<textarea class="vcontent"></textarea>
-			<button onclick ="vwrite()" type="button"> 등록 </button>
+		<div class="visit_Top"> <!-- 쓰기 구역 -->
+			<div class="visit_Inputs">
+				<input class="vwriter" type="text" placeholder="작성자">	
+				<input class="vpwd" type="text" placeholder="비밀번호">
+			</div>
+				<textarea class="vcontent" placeholder="내용"></textarea>
+				<button onclick ="vwrite()" type="button"> 등록 </button>
 		</div>
 	
 	
 	
 		<!--------------------------------------->
 		
-		<div> <!-- 출력 구역 -->
-		
-		
-		
+		<div class="visit_Bottom"> <!-- 출력 구역 -->
+
 		</div>
 	
 	
