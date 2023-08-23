@@ -49,11 +49,50 @@ public class VisitlogDao extends Dao {
 			
 			}
 	
-	// 3. 수정 [ 인수 : 수정할 방문록 정보(번호int ,내용String) , 리턴 : 성공 or 실패 ]
-		public boolean vupdate() {return false;}
+	// 3. 수정 [ 인수 : 수정할 방문록 정보(번호int ,내용String, 비번 String) , 리턴 : 성공 or 실패 ]
+		public boolean vupdate(int vno , String vcontent , String vpwd) {
+			
+			try {
+				String sql = "update visitlog set content = ? where vno = ? and pw = ?";
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, vcontent);
+				ps.setInt(2, vno);
+				ps.setString(3, vpwd);
+				int row = ps.executeUpdate();
+				
+				if (row == 1) {return true;}return false;
+			} 
+			
+			catch (Exception e) {
+				System.out.println("에러에러 : " +e);
+			}
+			
+			
+			
+			
+			return false;}
 	
-	// 4. 삭제 [ 인수 : 삭제할 방문록 정보(번호int, 내용String) , 리턴 : 성공 or 실패
-		public boolean vdelete() {return false;}
+	// 4. 삭제 [ 인수 : 삭제할 방문록 정보(번호int,) , 리턴 : 성공 or 실패
+		public boolean vdelete(int vno, String vpwd) {
+			
+			
+			try {
+				String sql = "delete from visitlog where vno = ? and pw = ?;";
+				
+				ps = conn.prepareStatement(sql); // 연결
+				ps.setInt(1, vno); // 대입
+				ps.setString(2, vpwd); // 대입
+				int row = ps.executeUpdate(); // 실행
+				
+				if (row == 1) {return true;} // 가져와서 조건 따지기
+				//왜 row == 1 이냐 ? 방명록 번호와 비밀번호가 일치하는 row를 삭제하면 1을 반환받으니까 // 1이 아니면 삭제 못한거 or 삭제 여러개 = 오류 
+				return false;
+				
+			} catch (Exception e) {
+				System.out.println("에러에러 : " +e);
+			}
+			return false;
+		}//vdelete
 		
 	
 	

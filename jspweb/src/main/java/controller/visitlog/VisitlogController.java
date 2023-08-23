@@ -64,12 +64,47 @@ public class VisitlogController extends HttpServlet {
 
 	// 3. 수정
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		// 1. AJAX 데이터 요청
+		// 2. 데이터가 많으면 객체화
+		// 3. 다오에게 전달 후 SQL 결과를 받는다
+		// 4. 결과를 AJAX 에게 전달 한다
+		
+		
+		
+		// 1. request.getParameter("속성명")
+		int vno = Integer.parseInt(request.getParameter("vno")); System.out.println(vno);
+		String vcontent = request.getParameter("vcontent"); System.out.println(vcontent);
+		String vpwd = request.getParameter("vpwd");System.out.println(vpwd);
+		
+		boolean result = VisitlogDao.getInstance().vupdate(vno, vcontent, vpwd);
+		response.setContentType("application/json; charset=UTF-8");
+		response.getWriter().print(result);
+		
+		
+		
 	}
 
 	// 4. 삭제
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		int vno = Integer.parseInt(request.getParameter("vno"));
+		String vpwd = request.getParameter("vpwd");
+		
+		boolean result = VisitlogDao.getInstance().vdelete(vno, vpwd);
+		response.setContentType("application/json; charset=UTF-8");
+		response.getWriter().print(result);
 
 	}
 
-}
+	/* http 서블릿 클래스는 기본적으로 get , post , put , delete 함수 제공
+		기본 톰캣 서버는 get , post 만 매개변수 전달 가능
+	 	put , delete 는 서버마다 설정 해줘야됨 // 삭제하면 다시해
+	 sever.xml -> source 63번째 줄 코드
+	 <Connector connectionTimeout="20000" maxParameterCount="1000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
+	 수정할거
+	 <Connector connectionTimeout="20000" port="80" protocol="HTTP/1.1" redirectPort="8443" parseBodyMethods="POST,PUT,DELETE" URIEncoding="UTF-8"/>
+	 */
+
+
+}//class

@@ -16,7 +16,7 @@ function vwrite(){
 	// 2. 객체화
 	
 	let info = {
-		vwriter : vcontentInput.value ,
+		vwriter : vwriterInput.value ,
 		vpwd : vpwdInput.value ,
 		vcontent : vcontentInput.value
 	}
@@ -78,8 +78,8 @@ function vread(){ // 실행 조건 : js 열릴때, 등록, 수정, 삭제 - > �
 						<div class="visitvox_center">${r[i].content}</div>
 			
 						<div class="visitvox_bottom">
-							<button type="button">수정</button>
-							<button type="button">삭제</button>
+							<button onclick="vupdate(${r[i].vno})" type="button">수정</button>
+							<button onclick="vdelete(${r[i].vno})" type="button">삭제</button>
 						</div>
 					</div>`
 				}
@@ -96,12 +96,52 @@ function vread(){ // 실행 조건 : js 열릴때, 등록, 수정, 삭제 - > �
 }
 
 // 3. Update
-function vupdate(){
-	alert('수정 성공'); vread(); // 등록 수정 했을때 목록 호출
+function vupdate(vno){
+ vread(); // 등록 수정 했을때 목록 호출
+	console.log(vno)
+	
+	// 1. 수정할 내용 입력 받음
+	let vcontent = prompt('수정할 내용 : '); //alert(); : 확인 알림 // confirm(); : 확인/취소 창 // prompt(); : 알림창에서 입력까지 받음
+	// 2. 비밀번호가 일치할 경우에 수정 가능 // 비밀번호 확인
+	let vpwd = prompt('작성자 비밀번호 : ');
+	
+	// 수정 준비물 : vno(누구를) ,vcontent(어떤 내용으로) , vpwd(비밀번호가 일치하면)	
+	
+	$.ajax({
+      url :  "/jspweb/VisitlogController",
+      method : "put" , 
+      data : {vno : vno , vcontent : vcontent , vpwd : vpwd} ,
+      success : function f(r){
+		  if (r == true) {
+			  alert('삭제성공'); vread();
+		  } else { alert('삭제실패') }} ,
+      error :  function f (r){console.log('에러')}
+	});
+
+	
+	
+	
 }
 
 
 // 4. Delete
-function vdelete(){
-	alert('삭제 성공'); vread(); // 등록 삭제 했을때 목록 호출
+function vdelete(vno){
+	
+		// 1. 비밀번호가 일치할 경우에 삭제 가능 // 비밀번호 확인
+	let vpwd = prompt('작성자 비밀번호 : ');
+	
+	// 삭제 준비물 : vno(누구를) , vpwd(비밀번호가 일치하면)	
+	
+	$.ajax({
+      url :  "/jspweb/VisitlogController",
+      method : "delete" , 
+      data : {vno : vno ,  vpwd : vpwd} ,
+      success : function f(r){
+		  if (r == true) {
+			  alert('삭제성공'); vread();
+		  } else { alert('삭제실패') }} ,
+      error :  function f (r){ console.log('에러')}
+	});
+	
+	
 }
