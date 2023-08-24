@@ -1,1 +1,41 @@
 @charset "UTF-8";
+
+.acbwrap {
+	width: 700px;
+	margin: 0 auto;
+}
+
+.acb_Write {
+	display: flex;
+	justify-content: space-between;
+	border: 3px solid black;
+	padding: 20px;
+}
+
+.acb_Frint {
+	margin: 20px 30px;
+}
+
+.contentCss {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contentCss div {
+	margin: 5px 30px;
+}
+
+.con1 {
+	width: 150px;
+	border: 1px solid black;
+}
+
+.con2 {
+	width: 150px;
+	border: 1px solid black;
+}
+
+.con3 {
+	width: 200px;
+	border: 1px solid black;
+}

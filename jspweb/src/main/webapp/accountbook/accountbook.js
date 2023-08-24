@@ -52,10 +52,10 @@ function acbread(){
 		  
 		  for(let i = 0; i <r.length; i++){
 			  html +=`
-			<div> 
-				<div>${r[i].content}</div>
-				<div>${r[i].money}</div>
-				<div>${r[i].date}</div>
+			<div class="contentCss"> 
+				<div class="con1">${r[i].content}</div>
+				<div class="con2">${r[i].money}</div>
+				<div class="con3">${r[i].date}</div>
 
 				<div>
 				<button onclick="acbupdate(${r[i].ano})" type="button">수정</button>

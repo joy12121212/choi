@@ -7,9 +7,12 @@
 <title>Insert title here</title>
 
 <!-- css import -->
-<link herf = "accountbook.css" rel="stylesheet">
+<link href = "accountbook.css" rel="stylesheet">
 </head>
 <body>
+
+	<!-- jsp 파일안에 다른 jsp 파일 import 하기 -->
+	<%@include file = "../header.jsp" %>
 
 	<div class = "acbwrap"> <!-- 전체 구역 -->
 

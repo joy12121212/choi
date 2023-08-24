@@ -12,6 +12,9 @@
 </head>
 <body>
 
+	<!-- jsp 파일안에 다른 jsp 파일 import 하기 -->
+	<%@include file = "../header.jsp" %>
+
 	<div class="visitwrap"> <!-- 전체 구역 -->
 	
 		<div class="visit_Top"> <!-- 쓰기 구역 -->
