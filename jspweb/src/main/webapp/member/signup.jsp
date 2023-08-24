@@ -15,7 +15,9 @@
 	<h3>회원가입 왓어요</h3>
 	
 	<div> <!-- 회원가입 전체 구역 -->
-	아이디 : <input class="mid" type="text">
+	아이디 : <input onkeyup="idcheck()" class="mid" type="text"></br>
+	<span class="idcheckbox" ></span>
+	</br>
 	비밀번호 : <input class="mpwd" type="text">
 	비밀번호 확인 : <input class="mpwdconfirm" type="text">
 	이메일 :  <input class="memail" type="text">

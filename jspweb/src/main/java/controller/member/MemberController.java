@@ -7,9 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class MemberController
- */
+import model.dao.MemberDao;
+import model.dto.MemberDto;
+
+
+
 @WebServlet("/MemberController")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,10 +26,16 @@ public class MemberController extends HttpServlet {
     	String mid = request.getParameter("mid");
     	String mpwd = request.getParameter("mpwd");
     	String memail = request.getParameter("memail");
-    	String mimg = request.getParameter("ming");
+    	String mimg = request.getParameter("mimg");
     	
+
     	System.out.println(mid + mpwd + memail + mimg);
+    	// 객체화 
+    	MemberDto memberDto = new MemberDto(mid , mpwd , memail , mimg);
+    	boolean result = MemberDao.getInstance().signup(memberDto);
     	
+    	response.setContentType("application/json; charset=UTF-8");
+    	response.getWriter().print(result);
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
