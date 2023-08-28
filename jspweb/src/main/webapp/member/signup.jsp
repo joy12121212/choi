@@ -23,9 +23,13 @@
 	
 	<span class="pwcheckbox"></span>
 	<br/>
-	이메일 :  <input onkeyup="emailcheck()" class="memail" type="text"> <button type="button">인증요청</button><br/>
-	이메일 인증 : <input class="ecode" type="text"> <button type="button">인증</button><br/>
-	<span class="emailchechbox"></span> <br/>
+	이메일 :  <input onkeyup="emailcheck()" class="memail" type="text"> <button onclick="authReq()" class="authReqBtn" disabled type="button">인증요청</button><br/>
+	<!-- 이메일 인증검사 통과시 사용 가능 -->
+	<span class="emailchechbox"></span><br/>
+	
+	<div class="authbox">
+	</div>
+	
 	프로필 :  <input class="mimg" type="file">
 	<button onclick="signup()" type="button">회원가입</button>
 	</div>

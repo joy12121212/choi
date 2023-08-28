@@ -112,13 +112,13 @@ function signup() {
 			console.log('통신성공')
 			if (r == true) {
 				alert('회원가입성공');
-				midInput = '';
-				mpwdInput = '';
-				mpwdconfirmInput = '';
-				memailInput = '';
+				midInput.value = ``;
+				mpwdInput.value =``;
+				mpwdconfirmInput.value = ``;
+				memailInput.value = ``;
 			} else { alert('회원가입실패') }
 		},
-		error: e => { }
+		error: e => {e }
 	});
 
 }
@@ -182,23 +182,103 @@ function emailcheck(){
 			 success: r => {
 				 if (r) {
 					 emailchechbox.innerHTML = `사용중이다`;
+					 document.querySelector('.authReqBtn').disabled=true;
 				 } else {
 					 emailchechbox.innerHTML = `사용가능하다`;
+					 document.querySelector('.authReqBtn').disabled=false;
 				 }
 
 
 			 },
 			 error: e => { e }
 		 });
-	 } else { console.log('실패') }
+	 } else { console.log('실패') 
+	 document.querySelector('.authReqBtn').disabled=true;}
 }//email
 
 
+// 4. 인증 요청 버튼을 눌렀을때
+function authReq() {
+	console.log('이메일증인증요청 정상')
+	
+	// 1. authbox div 호출
+	let authbox = document.querySelector('.authbox');
+	
+	// 2. auth html 구성
+	let html= `
+			이메일 인증 : <input class="ecode" type="text">
+			<span class="timebox">남은시간 02:00 </span>
+			<button onclick="auth()" type="button">인증</button><br/>`
+	authbox.innerHTML=html;
+	//타이머 실행
+	authcode = '1234';	// 테스트용 인증번호
+	timer = 30;			// 인증 시간 테스트
+	setTimer();			// 타이머 실행
+	
+	
+}
+
+// 4번, 5번, 6번에서 같이 사용할거라서 전역변수로 선언
+
+let authcode = '';
+let timer = 0;
+let timerInter;
 
 
 
+// 5. 타이머 만들기
+function setTimer(){
+	//정의
+		//setInterval (함수명 , 실행간격[밀리초])  특정 시간마다 함수를 실행하는 함수
+		//setInterval (funtion 함수명(){} , 밀리초)
+		//setInterval (함수명() , 밀리초)
+		//setInterval (()=> {} , 밀리초)
+	//종료
+		//clearInterval( 변수명 );
+	timerInter = setInterval(()=> {
+		
+		//시간 형식 만들기
+			// 분 단위 만들기
+			let m = parseInt(timer/60)
+			let s = parseInt(timer%60);
+			// 두자리수 맞추기
+			m = m < 10 ? "0" + m : m; // 만약 m이 10보다 작으면(1~9) 앞에 0 붙이고 아니면(10이상) 그대로
+			s = s < 10 ? "0" + s : s;
+		document.querySelector('.timebox').innerHTML = `남은시간 ${m}:${s}`; // 현재 인증 시간 html 대입
+		timer--;
+		
+		//만약에 타이머가 0 이면 종료
+		if(timer < 0) {
+			// 1. setInterval 종료 [누구를 종료할건지 변수 선언 = timerInter]
+			clearInterval(timerInter);
+			// 2. 인증 실패
+			document.querySelector('.emailchechbox').innerHTML=`인증실패`;
+			// 3. authbox 숨기기
+			document.querySelector('.authbox').innerHTML=``;
+		}
+		
+	}, 1000)
+}
 
 
+// 6. 인증입력 버튼
+function auth(){
+	
+	let ecode = document.querySelector('.ecode').value;
+	
+	if (authcode == ecode){
+		console.log('인증코드 일치')
+		//interval 종료
+		clearInterval(timerInter);
+		//인증 성공 알림
+		document.querySelector('.emailchechbox').innerHTML=`인증성공`;
+		//박스 초기화
+ 		document.querySelector('.authbox').innerHTML=``;
+	}//if
+	else{console.log('인증코드불일치')
+		document.querySelector('.emailchechbox').innerHTML=`인증실패`;
+	}
+}//auth
 
 
 

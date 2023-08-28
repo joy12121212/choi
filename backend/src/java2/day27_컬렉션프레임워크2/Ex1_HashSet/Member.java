@@ -20,20 +20,20 @@ public class Member {
 
 	}
 	
-	@Override 
-	public boolean equals(Object obj) { // java ver. 16 이상에서 사용 가능
-		if (obj instanceof Member target) {
-			//만약에 해당 객체가 name 과 age 가 일치하면 ture
-			return target.name.equals(name) && (target.age == age);
-		}else {
-			return false;
-		}
-	}
-
-	@Override
-	public String toString() {
-		return "Member [name=" + name + ", age=" + age + "]";
-	}
+//	@Override 
+//	public boolean equals(Object obj) { // java ver. 16 이상에서 사용 가능해서 주석처리함
+//		if (obj instanceof Member target) {
+//			//만약에 해당 객체가 name 과 age 가 일치하면 ture
+//			return target.name.equals(name) && (target.age == age);
+//		}else {
+//			return false;
+//		}
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Member [name=" + name + ", age=" + age + "]";
+//	}
 	
 	
 	
