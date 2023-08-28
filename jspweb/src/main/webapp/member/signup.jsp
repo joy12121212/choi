@@ -15,13 +15,17 @@
 	<h3>회원가입 왓어요</h3>
 	
 	<div> <!-- 회원가입 전체 구역 -->
-	아이디 : <input onkeyup="idcheck()" class="mid" type="text"></br>
+	아이디 : <input onkeyup="idcheck()" class="mid" type="text"><br/>
 	<span class="idcheckbox" ></span>
-	</br>
-	비밀번호 : <input class="mpwd" type="text">
-	비밀번호 확인 : <input class="mpwdconfirm" type="text">
-	이메일 :  <input class="memail" type="text">
-	이메일 인증 : <input class="ecode" type="text">
+	<br/>
+	비밀번호 : <input onkeyup="pwcheck()" class="mpwd" type="text">
+	비밀번호 확인 : <input onkeyup="pwcheck()" class="mpwdconfirm" type="text"><br/>
+	
+	<span class="pwcheckbox"></span>
+	<br/>
+	이메일 :  <input onkeyup="emailcheck()" class="memail" type="text"> <button type="button">인증요청</button><br/>
+	이메일 인증 : <input class="ecode" type="text"> <button type="button">인증</button><br/>
+	<span class="emailchechbox"></span> <br/>
 	프로필 :  <input class="mimg" type="file">
 	<button onclick="signup()" type="button">회원가입</button>
 	</div>

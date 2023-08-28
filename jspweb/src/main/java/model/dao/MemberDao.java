@@ -44,13 +44,13 @@ public class MemberDao extends Dao{
 	
 	// 6. 아이디 / 이메일 중복 검사
 	
-	public boolean findId (String mid) {
+	public boolean findIdOrEmail (String type, String data) {
 		
 		try {
-			String sql = "select * from member where mid = ?";
+			String sql = "select * from member where "+ type +" = ?";
 			
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, mid);
+			ps.setString(1, data);
 			rs = ps.executeQuery();
 			
 			if (rs.next()) {

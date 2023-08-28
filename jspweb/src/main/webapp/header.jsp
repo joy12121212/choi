@@ -20,7 +20,7 @@
 				<li> <a href="/jspweb/visitlog/visitlog.jsp">방문록</a> </li>
 				<li> <a href="/jspweb/accountbook/accountbook.jsp">과제1:가계부</a> </li>
 				<li> <a href="/jspweb/member/signup.jsp">회원가입</a> </li>
-				
+
 			</ul>
 		</div>
 		
