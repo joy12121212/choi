@@ -280,5 +280,30 @@ function auth(){
 	}
 }//auth
 
+function preimg(object){
+	console.log(object)
+	console.log(document.querySelector('mimg'))
+	
+	console.log(object.files)
+	console.log(object.files[0])
+	
+	let file = new FileReader();
+	
+	file.readAsDataURL(object.files[0])
+	
+	file.onload = e=>{
+		console.log(e.target.result)
+		document.querySelector('.preimg').src=e.target.result;}
+	
+}
+
+
+
+
+
+
+
+
+
 
 

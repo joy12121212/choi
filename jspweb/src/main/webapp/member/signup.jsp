@@ -30,7 +30,8 @@
 	<div class="authbox">
 	</div>
 	
-	프로필 :  <input class="mimg" type="file">
+	프로필 :  <input onchange="preimg(this)" class="mimg" type="file">
+	<img class="preimg" alt="" src="">
 	<button onclick="signup()" type="button">회원가입</button>
 	</div>
 	
