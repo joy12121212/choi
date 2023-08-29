@@ -53,6 +53,7 @@ function idcheck() {
 
 	// 아이디 호출
 	let mid = document.querySelector('.mid').value;
+	console.log(mid)
 	let idcheckbox = document.querySelector('.idcheckbox');
 	// 유효성 검사
 	// 제어문을 이용한 검사 if(mid.length < 5 %% mid.length >=30){}
@@ -70,21 +71,22 @@ function idcheck() {
 			data: { type: "mid", data: mid },
 			success: r => {
 				console.log('idhceck 통신성공')
-				if (r) { idcheckbox.innerHTML = '사용중인 아이디' }
-				else { idcheckbox.innerHTML = '사용 가능한 아이디' }
+				if (r) { idcheckbox.innerHTML = '사용중인 아이디' , checkList [0] = false;}
+				else { idcheckbox.innerHTML = '사용 가능한 아이디', checkList[0]=true; }
 			},
 			error: e => { }
 		});
 
 	} else {
 		idcheckbox.innerHTML = '영문(소문자) + 숫자 조합의 5~30글자만 입력 가능 합니다'
+		,checkList [0] = false;
 	}
 
 }
 
 
 
-
+/*
 //1. 회원가입 메소드
 function signup() {
 	console.log('signup 왔어요')
@@ -122,7 +124,7 @@ function signup() {
 	});
 
 }
-
+*/
 
 // 2. 비밀번호 확인 [정규표현식 검사 , 비밀번호와 비밀번호확인 일치여부]
 function pwcheck() {
@@ -143,15 +145,15 @@ function pwcheck() {
 		if (mpwdj.test(mpwdconfirm)) { // 비밀번호확인 정규표현식 검사
 			//비밀번호랑 비밀번호확인이랑 일치하는지 검사
 			if (mpwd == mpwdconfirm) {
-				pwcheckbox.innerHTML = `사용가능한 비밀번호`
-			} else { pwcheckbox.innerHTML = `비밀번호가 일치하지 않습니다` }
+				pwcheckbox.innerHTML = `사용가능한 비밀번호` , checkList [1] = true;
+			} else { pwcheckbox.innerHTML = `비밀번호가 일치하지 않습니다` , checkList [1] = false; }
 
 		} else {
-			pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합으로 5글자~20글자 까지 가능`
+			pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합으로 5글자~20글자 까지 가능` ,checkList [1] = false; 
 		}
 
 	} else {
-		pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합으로 5글자~20글자 까지 가능`
+		pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합으로 5글자~20글자 까지 가능` ,checkList [1] = false; 
 	}
 
 }
@@ -183,9 +185,11 @@ function emailcheck(){
 				 if (r) {
 					 emailchechbox.innerHTML = `사용중이다`;
 					 document.querySelector('.authReqBtn').disabled=true;
+					 checkList [2] = false; 
 				 } else {
 					 emailchechbox.innerHTML = `사용가능하다`;
 					 document.querySelector('.authReqBtn').disabled=false;
+					
 				 }
 
 
@@ -193,7 +197,7 @@ function emailcheck(){
 			 error: e => { e }
 		 });
 	 } else { console.log('실패') 
-	 document.querySelector('.authReqBtn').disabled=true;}
+	 document.querySelector('.authReqBtn').disabled=true; checkList [2] = false; }
 }//email
 
 
@@ -255,6 +259,7 @@ function setTimer(){
 			document.querySelector('.emailchechbox').innerHTML=`인증실패`;
 			// 3. authbox 숨기기
 			document.querySelector('.authbox').innerHTML=``;
+			checkList [2] = false; 
 		}
 		
 	}, 1000)
@@ -274,9 +279,11 @@ function auth(){
 		document.querySelector('.emailchechbox').innerHTML=`인증성공`;
 		//박스 초기화
  		document.querySelector('.authbox').innerHTML=``;
+ 		checkList [2] = true; 
 	}//if
 	else{console.log('인증코드불일치')
 		document.querySelector('.emailchechbox').innerHTML=`인증실패`;
+		checkList [2] = false; 
 	}
 }//auth
 
@@ -298,8 +305,45 @@ function preimg(object){
 }
 
 
+let checkList = [false, false, false]
 
-
+// 8 회원가입 메소드
+function signup(){
+	
+	// 1. 1~6번 아이디/비밀번호/이메일 함수 유효성 검사
+	
+	console.log(checkList)
+	if( checkList[0] && checkList[1] && checkList[2]){
+		console.log('회원가입 가능')
+		
+		// 입력받은 데이터를 한번에 가져오기 form 태그 이용
+		// 1. form 객체 호출
+		let signupForm = document.querySelectorAll('.signupForm')[0];
+		console.log(signupForm)
+		
+		let signupData = new FormData(signupForm)	// 첨부파일시 필수 [ 대용량 데이터 ]
+		
+		
+		//3. ajax에게 첨부파일 전송 하기
+	    $.ajax({
+	      url :  "/jspweb/MemberController",
+	      method : "post" , 
+	      data : signupData ,
+	      contentType : false,
+	      processData : false,
+	      success : r => {console.log('사인업 통신 성공?')} ,
+	      error :  e => {e}
+	      });
+			//첨부파일 있을경우 json 방식 불가 , form 객체 전송 타입으로 변환해야된다
+			
+			
+			
+		
+		
+	}else{console.log('회원가입 불가능')}
+	
+	
+}
 
 
 

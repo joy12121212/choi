@@ -29,7 +29,7 @@ public class MemberDao extends Dao{
 			}return false;
 			
 		} catch (Exception e) {
-			System.out.println("오류발생 singup" + e);
+			System.out.println("오류발생 singup : " + e);
 		}
 			return false;
 	}
