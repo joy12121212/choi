@@ -149,11 +149,11 @@ function pwcheck() {
 			} else { pwcheckbox.innerHTML = `비밀번호가 일치하지 않습니다` , checkList [1] = false; }
 
 		} else {
-			pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합으로 5글자~20글자 까지 가능` ,checkList [1] = false; 
+			pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합 5~20글자 까지 가능` ,checkList [1] = false; 
 		}
 
 	} else {
-		pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합으로 5글자~20글자 까지 가능` ,checkList [1] = false; 
+		pwcheckbox.innerHTML = `영어 대,소문자 1개 이상 + 숫자 1개이상 조합 5~20글자 까지 가능` ,checkList [1] = false; 
 	}
 
 }
@@ -187,7 +187,7 @@ function emailcheck(){
 					 document.querySelector('.authReqBtn').disabled=true;
 					 checkList [2] = false; 
 				 } else {
-					 emailchechbox.innerHTML = `사용가능하다`;
+					 emailchechbox.innerHTML = `사용가능한 E-mail 입니다`;
 					 document.querySelector('.authReqBtn').disabled=false;
 					
 				 }
@@ -210,13 +210,13 @@ function authReq() {
 	
 	// 2. auth html 구성
 	let html= `
-			이메일 인증 : <input class="ecode" type="text">
+			<input class="ecode" type="text">
 			<span class="timebox">남은시간 02:00 </span>
 			<button onclick="auth()" type="button">인증</button><br/>`
 	authbox.innerHTML=html;
 	//타이머 실행
 	authcode = '1234';	// 테스트용 인증번호
-	timer = 30;			// 인증 시간 테스트
+	timer = 120;			// 인증 시간 테스트
 	setTimer();			// 타이머 실행
 	
 	
@@ -322,7 +322,7 @@ function signup(){
 		console.log(signupForm)
 		
 		let signupData = new FormData(signupForm)	// 첨부파일시 필수 [ 대용량 데이터 ]
-		
+		 
 		
 		//3. ajax에게 첨부파일 전송 하기
 	    $.ajax({
@@ -331,15 +331,30 @@ function signup(){
 	      data : signupData ,
 	      contentType : false,
 	      processData : false,
-	      success : r => {console.log('사인업 통신 성공?')} ,
+	      success : r => {console.log('사인업 통신 성공?')
+	      
+	      if(r){
+			  alert('회원가입 성공')
+			  location.href="/jspweb/member/login.jsp";
+		  }
+	      else{
+			  alert('회원가입 실패')
+		  }
+	      
+	      } ,
 	      error :  e => {e}
 	      });
 			//첨부파일 있을경우 json 방식 불가 , form 객체 전송 타입으로 변환해야된다
 			
-			
-			
-		
-		
+	document.querySelector('.mid').value = ``;
+	document.querySelector('.mpwd').value = ``;
+	document.querySelector('.mpwdconfirm').value = ``;
+	document.querySelector('.memail').value = ``;
+	document.querySelector('.mimg').value = ``;
+	document.querySelector('.preimg').src=``;
+	document.querySelector('.emailchechbox').innerHTML=``;
+	document.querySelector('.idcheckbox').innerHTML = ``;
+	document.querySelector('.pwcheckbox').innerHTML = ``;
 	}else{console.log('회원가입 불가능')}
 	
 	

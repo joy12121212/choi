@@ -23,10 +23,9 @@ public class MemberFindController extends HttpServlet {
     }
     	// 메소드 하나에 ajax 여러개 쓰려면 type 정송
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doget 실행");
 		// 요청
 		
-		String type = request.getParameter("type");
+		String type = request.getParameter("type"); 
 		String data = request.getParameter("data");
 		
 		// 객체화 / 유효성 검사
@@ -35,13 +34,43 @@ public class MemberFindController extends HttpServlet {
 		// 결과 전달
 		response.setContentType("application/json; charset=UTF-8");
 		response.getWriter().print(result);
-		this.doPost(request, response);
-		System.out.println("AAA");
+
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-System.out.println("AA");
+
+		// 1. 매개변수 요청
+		String mid=request.getParameter("mid");
+		String mpwd = request.getParameter("mpwd");
+		System.out.println(mid + mpwd);
+		
+		
+		// 2. 객체화 유효성 검사
+		
+		// 3. dao 에게 전달 후 결과 받기
+		boolean result = MemberDao.getInstance().login(mid, mpwd);
+		
+		// 4. 결과 응답
+		response.setContentType("application/json; charset=UTF-8");
+		response.getWriter().print(result);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
