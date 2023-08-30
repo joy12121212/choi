@@ -1,5 +1,5 @@
 /*직원 이미지*/
-function simg(obj){
+function preimg(obj){
 	
 	console.log(obj)
 	
@@ -9,7 +9,7 @@ function simg(obj){
 	
 	file.onload = e =>{
 		console.log(e.target.result)
-		document.querySelector('.simg1').src=e.target.result;
+		document.querySelector('.preimg').src=e.target.result;
 	} 
 	
 	
@@ -34,11 +34,11 @@ function signup(){
       success : r => {console.log('사인업 통신 성공?')
       
       if(r){
-		  alert('회원가입 성공')
+		  alert('직원등록 성공')
 
 	  }
       else{
-		  alert('회원가입 실패')
+		  alert('직원등록 실패')
 	  }
       
       } ,
