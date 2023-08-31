@@ -31,18 +31,13 @@
 				<li> <a href="#">기능3</a> </li>				
 				<li> <a href="/jspweb/accountbook/accountbook.jsp">가계부</a> </li>						
 				<li> <a href="#">과제2</a> </li>						
-				<li> <a href="#">인사관리</a> </li>						
+				<li> <a href="/jspweb/member/hrm.jsp">인사관리</a> </li>						
 			
 			</ul>
 			
 			<ul class="submenu">
-				<!--서브메뉴  -->
-			<li> <a href="/jspweb/member/signup.jsp">회원가입</a> </li>	
-				<li> <a href="/jspweb/member/login.jsp">로그인</a> </li>
-				<li> <a href="#">로그아웃</a> </li>
-				<li> <a href="#">마이페이지</a> </li>
-				<li> <img class="himg" src="/jspweb/member/img/default.webp"/></li>			
-						
+				<!--서브메뉴  -->		
+					
 			</ul>
 			
 		</div>
@@ -52,7 +47,7 @@
 		
 	<!-- jquery 호출 -->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-		
+	<script src="/jspweb/js/header.js"></script>	
 
 </body>
 </html>

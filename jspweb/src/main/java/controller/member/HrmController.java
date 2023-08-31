@@ -46,7 +46,7 @@ public class HrmController extends HttpServlet {
     	//받기 아직 없음
     	boolean result = HrmDao.getInstance().signup(hrmDto);
 
-    	
+    	System.out.println("hrm resutl 확인 : " + result);
     	response.setContentType("application/json; charset=UTF-8");
     	response.getWriter().print(result);
     	
@@ -57,8 +57,12 @@ public class HrmController extends HttpServlet {
 	
 		//ArrayList<AccountBookDto> result = AccountBookDao.getInstance().acbRead();
 		ArrayList<HrmDto> result = HrmDao.getInstance().sRead();
+		
 		ObjectMapper objectMapper = new ObjectMapper();
 		String jsonArray = objectMapper.writeValueAsString(result);
+		System.out.println("hrm 겟 result 확인 : " + result);
+		
+		
 		
 		response.setContentType("application/json; charset=UTF-8");
 		response.getWriter().print(jsonArray);

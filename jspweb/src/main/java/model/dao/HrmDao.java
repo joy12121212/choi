@@ -37,7 +37,7 @@ public class HrmDao extends Dao{
 		ArrayList<HrmDto> list = new ArrayList<>();
 		
 		try { 
-			String sql = "";
+			String sql = "select * from hrm order by sdate asc;";
 			
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -47,8 +47,8 @@ public class HrmDao extends Dao{
 				rs.getInt(1), rs.getString(2), rs.getString(3),
 				rs.getString(4), rs.getString(5), rs.getString(6));
 			list.add(hrmDto);
-			
 			}
+			System.out.println(list);
 			
 		} catch (Exception e) {
 			System.out.println("sread 오류 발생 : " + e);

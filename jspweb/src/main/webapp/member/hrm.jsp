@@ -5,11 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="../css/hrm.css" rel="stylesheet">
 </head>
 <body>
 	<%@include file = "../header.jsp" %>
 
-	<div><!-- 전체 감싸기 -->
+	<div id="wrap"><!-- 전체 감싸기 -->
+		
 		<form class="hrmForm">
 			
 			<div>직원명</div>
@@ -29,21 +31,18 @@
 			</select>
 			
 			<div>사진등록</div>
-			<input onchange="preimg(this)" name="smig" type="file">
-			<img class="preimg" alt="" src=""><br/>
+			<input onchange="preimg(this)" name="smig" class="" type="file">
+			<img class="preimg" alt="" src="img/default.webp"><br/>
 						
-			<button onclick="signup()" >직원등록</button>
+			<button onclick="signup()" type="button">직원등록</button>
 		</form>
-		
+		</div>
 		<div class="sprint">
-			<table>
-				<tr>
-					<th>사번</th><th>직원명</th><th>연락처</th><th>직급</th><th>사진</th><th>등록일</th>
-				</tr>
-				
-				
-			</table>
-		
+			<div class="smenu">
+			<div>사번</div><div>직원명</div><div>연락처</div><div>직책</div><div>사진</div><div>등록일</div>
+			</div>
+			<!-- 정보 출력 구역 -->
+			<div class="sinfo"></div>
 		</div>
 		
 	</div><!-- 전체 감싸기 -->

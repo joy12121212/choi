@@ -98,9 +98,47 @@ public class MemberDao extends Dao{
 	
 	// 7. 회원정보 수정
 	
+	public boolean mupdate(int mno , String mimg) {
+		
+		System.out.println("회원정보sql mno : " + mno);
+		System.out.println("회원정보sql mimg : " + mimg);
+		
+		String sql = "update member set mimg = ? where mno = ?;";
+		try {
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, mimg);
+			ps.setInt(2, mno);
+			int count = ps.executeUpdate();
+			
+			if (count == 1) {
+				return true;
+			}
+			
+		} catch (Exception e) {
+		System.out.println("회원정보수정 sql 오류 : " + e );
+		}return false;
+	}
+	
+	
+	
+	
+	
+	
 	// 8. 회원 탈퇴
 	
-	
+	public boolean mdelete (int mno , String mpwd) {
+		try {
+			String sql = "delete from member where mno = ? and mpwd = ?;";
+			
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, mno);
+			ps.setString(2, mpwd);
+			int row = ps.executeUpdate();
+			
+			if (row ==1) {return true;}			
+		} catch (Exception e) {System.out.println("삭제 트라이에서 오류 : " + e);}	
+		return false;	
+	}
 	
 	
 	

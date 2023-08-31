@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.dao.MemberDao;
 import model.dto.MemberDto;
 
-/**
- * Servlet implementation class MemberFindController
- */
 @WebServlet("/MemberFindController")
 public class MemberFindController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,7 +40,7 @@ public class MemberFindController extends HttpServlet {
 
 		// 1. 매개변수 요청
 		String mid=request.getParameter("mid"); System.out.println("로그인세선 가져온 id " + mid);
-		String mpwd = request.getParameter("mpwd");System.out.println("로그인세선 가져온 id " + mpwd);
+		String mpwd = request.getParameter("mpwd");System.out.println("로그인세선 가져온 pw " + mpwd);
 		System.out.println(mid + mpwd);
 		
 		

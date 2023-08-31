@@ -24,7 +24,7 @@
 			
 			
 			<div class="intitle">비밀번호</div>						
-			<input maxlength="20"  name="mpwd" class="mpwd" type="text"><br/>
+			<input maxlength="20"  name="mpwd" class="mpwd" type="password"><br/>
 			
 			<div class="logincheckbox" ></div>
 			

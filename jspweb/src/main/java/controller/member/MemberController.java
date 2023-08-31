@@ -26,7 +26,7 @@ public class MemberController extends HttpServlet {
     // 회원가입(첨부파일 있을때)
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	//첨부파일 저장할 폴더의 절대 경로
-    	String uploadpath = "C:\\Users\\504\\git\\choi_BC\\jspweb\\src\\main\\webapp\\member\\img"; 	// 첨부 파일을 저장할 경로
+    	String uploadpath = request.getServletContext().getRealPath("/member/img");	// 첨부 파일을 저장할 경로
     	
     	//첨부파일 전송 했을때
     		// 1. 첨부파일 서버pc에 업로드 (cos 라이브러리)
