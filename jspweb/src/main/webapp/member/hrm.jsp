@@ -9,7 +9,7 @@
 <body>
 	<%@include file = "../header.jsp" %>
 
-	<div>
+	<div><!-- 전체 감싸기 -->
 		<form class="hrmForm">
 			
 			<div>직원명</div>
@@ -32,9 +32,21 @@
 			<input onchange="preimg(this)" name="smig" type="file">
 			<img class="preimg" alt="" src=""><br/>
 						
-			<button onclick="signup()" type="button">직원등록</button>
+			<button onclick="signup()" >직원등록</button>
 		</form>
-	</div>
+		
+		<div class="sprint">
+			<table>
+				<tr>
+					<th>사번</th><th>직원명</th><th>연락처</th><th>직급</th><th>사진</th><th>등록일</th>
+				</tr>
+				
+				
+			</table>
+		
+		</div>
+		
+	</div><!-- 전체 감싸기 -->
 
 
 	
