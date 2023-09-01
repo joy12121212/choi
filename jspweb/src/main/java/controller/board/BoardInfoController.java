@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -67,8 +68,19 @@ public class BoardInfoController extends HttpServlet {
     
     	// 전체, 개별 조회
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		// 파라미터 없고 가져오기만
 		ArrayList<BoardDto> result = BoardDao.getInstance().blistAll();
+		
+		System.out.println(result);
+		
+		// java객체를 sjo 의 문자열로 변환 해준다
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonArray = mapper.writeValueAsString(result);
+		
+		response.setContentType("application/json;charset=UTF-8");
+		response.getWriter().print(jsonArray);
 		
 		
 		

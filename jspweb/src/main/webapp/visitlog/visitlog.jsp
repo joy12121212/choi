@@ -20,7 +20,7 @@
 		<div class="visit_Top"> <!-- 쓰기 구역 -->
 			<div class="visit_Inputs">
 				<input class="vwriter" type="text" placeholder="작성자">	
-				<input class="vpwd" type="text" placeholder="비밀번호">
+				<input class="vpwd" type="password" placeholder="비밀번호">
 			</div>
 				<textarea class="vcontent" placeholder="내용"></textarea>
 				<button onclick ="vwrite()" type="button"> 등록 </button>

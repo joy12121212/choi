@@ -38,28 +38,26 @@ public class BoardDao extends Dao {
 		
 		// 2 모든글 출력
 	public ArrayList<BoardDto> blistAll(){
+		
 		ArrayList<BoardDto> list = new ArrayList<>();
+		
 			try {
-				String sql = "";
+				String sql = "select b.* , m.mid , m.mimg , bc.bcname from board b natural join bcategory bc natural join member m order by b.bdate desc;";
 				
 				ps = conn.prepareStatement(sql);
 				rs = ps.executeQuery();
 				
 				while (rs.next()) {
 					BoardDto dto = new BoardDto(
-					rs.getInt(1), rs.getString(2),rs.getString(3),
-					rs.getString(4),rs.getInt(5),rs.getInt(6)
+						rs.getInt("bno"),rs.getString("btitle"),rs.getString("bcontent"),
+						rs.getString("bfile"),rs.getString("bdate"),
+						rs.getInt("bview"),rs.getInt("mno"),rs.getInt("bcno"),
+						rs.getString("mid"),rs.getString("bcname"),rs.getString("mimg")
 					);
-					
-					
+					list.add(dto);
 				}
-				
 			} catch (Exception e) {System.out.println("보드다오 blistAll 에러 : " + e);}
-		
-		
 		return list;
-		
-		
 	}
 		// 3 개별 글 출력
 		

@@ -1,5 +1,5 @@
 console.log('list js 왔으요')
-blistAll();
+
 function onWrite(){
 	if(loginState == true){// 만약에 로그인이면
 		location.href="/jspweb/board/write.jsp"; 
@@ -21,18 +21,23 @@ function blistAll(){
       url :  "/jspweb/BoardInfoController",
       method : "get" , 
       data :"" ,
-      success : r => {r
+      success : r => {console.log(r)
       
-      	let output = document.querySelector('.bprint')
-      	let html = ``;
-      	
-      	for (let i = 0; i < r.length; i++){
-			  html +=`
-			  <th>${r[i].bno}</th><th>${r[i].btitle}</th><th>${r[i].bmno}</th>
-			  <th>${r[i].bdate}</th><th>${r[i].bview}</th>
-			  `
-		  }//for
-      	output.innerHTML=html;blistAll();
+     	let boardTable = document.querySelector('.boardTable')
+      	let html = `<tr>
+						<th>글번호</th><th>카테고리</th><th>글제목</th>
+						<th>작성자</th><th>조회수</th><th>작성일</th>
+					</tr>`;
+			// 서브릿으로부터 전달 받은 내용 [배열] 반복해서 html 전송
+			// 배열명.forEach()
+		r.forEach(b => {
+			html+=`<tr>
+						<th>${b.bno}</th><th>${b.bcname}</th><th>${b.btitle}</th>
+						<th>${b.mid}/<img src="/jspweb/member/img/${b.mimg}"/> </th><th>${b.bview}</th><th>${b.bdate}</th>
+					</tr>`;
+			})//forEach
+
+      	boardTable.innerHTML=html;
       } ,//suc
       error :  e => {e}
       });
