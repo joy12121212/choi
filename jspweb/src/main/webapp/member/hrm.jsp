@@ -31,12 +31,12 @@
 			</select>
 			
 			<div>사진등록</div>
-			<input onchange="preimg(this)" name="smig" class="" type="file">
+			<input onchange="preimg(this)" name="smig" class="" type="file" accept="image/*">
 			<img class="preimg" alt="" src="img/default.webp"><br/>
 						
-			<button onclick="signup()" type="button">직원등록</button>
+			<button class="sbtn" onclick="signup()" type="button">직원등록</button>
 		</form>
-		</div>
+	
 		<div class="sprint">
 			<div class="smenu">
 			<div>사번</div><div>직원명</div><div>연락처</div><div>직책</div><div>사진</div><div>등록일</div>

@@ -4,7 +4,6 @@
 
 .hrmForm{margin : 0 auto;
 	width : 1200px;
-    border: 2px solid red;
     display: flex;
     height: 110px;
     flex-wrap: nowrap;
@@ -14,12 +13,12 @@
     align-items: center;
     padding: 20px;
 	}
-.preimg{width: 100px; height: 100px; border: 1px solid black;}
-.smig2{width: 150px; height: 100px; border: 1px solid black;}
-.hrmForm input {width: 150px; height: 20px;}
+.preimg{width: 100px; height: 100px; }
+.smig2{width: 150px; height: 100px; }
+.hrmForm input {width: 150px; height: 30px;}
 .sprint{width: 1200px;}
 .smenu{display: flex;}
-
+.sbtn{height: 30px; width: 60px; font-size: 15px;}
 .sprint{width: 1200px; margin: 0 auto;}
 .smenu{
 	display: flex;
@@ -28,7 +27,10 @@
 	margin: 0 auto;
 	}
 .smenu div{
-	width: 150px; border: 1px solid black;
+	width: 150px; 
+	align-items: center;
+	text-align: center;
+	align-content: center;
 }
 .sinfo{
 	display: flex;
@@ -37,11 +39,13 @@
 	width: 1000px;
 	margin: 0 auto;
 	align-items: center;
+	text-align: center;
+	align-content: center;
 	}
 .sinfo div{
 	
-	width: 150px; border: 1px solid black;
-	height: 110px;
+	width: 150px;
+	height: 110px;line-height: 110px;
 
 }
 	

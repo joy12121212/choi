@@ -43,7 +43,7 @@
 			<div class="authbox"></div>
 			
 			<div class="intitle">프로필</div>
-			<input onchange="preimg(this)" name="mimg" class="mimg" type="file">
+			<input onchange="preimg(this)" name="mimg" class="mimg" type="file" accept="image/*">
 			<img  class="preimg" alt="" src="img/default.webp">
 			<button class="signupbtn" onclick="signup()" type="button">회원가입</button>
 	
