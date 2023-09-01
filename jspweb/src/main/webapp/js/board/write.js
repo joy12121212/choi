@@ -16,7 +16,13 @@ function bwrite(){
          data : formData ,
          contentType : false,
          processData : false,
-         success : r => {r} ,
+         success : r => {
+			if(r==true){
+				alert('게시물 등록 완료')
+				location.href="/jspweb/board/list.jsp"
+			}
+			else{alert('게시물 등록 실패')}
+         } ,
          error :  e => {e}
          });
          //첨부파일 있을경우 json 방식 불가 , form 객체 전송 타입으로 변환해야된다

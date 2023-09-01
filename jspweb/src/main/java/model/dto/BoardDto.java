@@ -154,9 +154,21 @@ public class BoardDto { // 게시물 , 카테고리 같이 씀
 		this.mno = mno;
 		this.bcno = bcno;
 	}
+
 	
 	
-	
+	//게시글 출력 생성자
+	public BoardDto(int bno, String btitle, String bcontent, String bdate, int bview, int mno) {
+		super();
+		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+		this.bdate = bdate;
+		this.bview = bview;
+		this.mno = mno;
+	}
+
+
 	
 	
 	

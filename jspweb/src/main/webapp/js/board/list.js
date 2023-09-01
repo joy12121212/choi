@@ -1,4 +1,5 @@
 console.log('list js 왔으요')
+blistAll();
 function onWrite(){
 	if(loginState == true){// 만약에 로그인이면
 		location.href="/jspweb/board/write.jsp"; 
@@ -12,11 +13,29 @@ function onWrite(){
 	
 	
 }
+blistAll();
+function blistAll(){
+	console.log('리스트 전체 출력 함수 실행')
+	
+	  $.ajax({
+      url :  "/jspweb/BoardInfoController",
+      method : "get" , 
+      data :"" ,
+      success : r => {r
+      
+      	let output = document.querySelector('.bprint')
+      	let html = ``;
+      	
+      	for (let i = 0; i < r.length; i++){
+			  html +=`
+			  <th>${r[i].bno}</th><th>${r[i].btitle}</th><th>${r[i].bmno}</th>
+			  <th>${r[i].bdate}</th><th>${r[i].bview}</th>
+			  `
+		  }//for
+      	output.innerHTML=html;blistAll();
+      } ,//suc
+      error :  e => {e}
+      });
+	
+}//blistAll
 
-function write(){
-
-	// form 가져오기
-	// form 객체화 하기
-	// ajax로 대용량 form 전송하기
-
-}

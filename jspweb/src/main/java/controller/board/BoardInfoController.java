@@ -1,6 +1,8 @@
 package controller.board;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import model.dao.BoardDao;
+import model.dao.MemberDao;
 import model.dto.BoardDto;
 import model.dto.MemberDto;
 
@@ -47,8 +51,11 @@ public class BoardInfoController extends HttpServlet {
     	BoardDto boardDto = new BoardDto(btitle, bcontent , bfile , mno , bcno);
     	System.out.println(boardDto);
     	// 다오
+    	boolean result = BoardDao.getInstance().bwrite(boardDto);
     	
     	// 다오 응답
+    	response.setContentType("application/json;charset=UTF-8");
+    	response.getWriter().print(result);
     	
     	
     	
@@ -61,6 +68,14 @@ public class BoardInfoController extends HttpServlet {
     	// 전체, 개별 조회
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		ArrayList<BoardDto> result = BoardDao.getInstance().blistAll();
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 		// 수정
