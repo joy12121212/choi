@@ -46,6 +46,7 @@ public class MemberController extends HttpServlet {
     	String memail = multi.getParameter("memail");
     	String mimg = multi.getFilesystemName("mimg"); System.out.println("컨트롤러 mimg : " + mimg);
     	
+    	if( mimg == null ) { mimg = "default.webp";}
 
     	System.out.println(mid + mpwd + memail + mimg);
     	// 객체화 

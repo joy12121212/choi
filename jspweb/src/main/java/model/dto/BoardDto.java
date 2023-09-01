@@ -144,6 +144,16 @@ public class BoardDto { // 게시물 , 카테고리 같이 씀
 				+ ", bdate=" + bdate + ", bview=" + bview + ", mno=" + mno + ", bcno=" + bcno + ", mid=" + mid
 				+ ", bcname=" + bcname + "]";
 	}
+
+		//글등록 생성자
+	public BoardDto(String btitle, String bcontent, String bfile, int mno, int bcno) {
+		super();
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+		this.bfile = bfile;
+		this.mno = mno;
+		this.bcno = bcno;
+	}
 	
 	
 	

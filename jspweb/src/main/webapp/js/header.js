@@ -1,3 +1,8 @@
+
+let loginState = false; // 로그인 상태 확인하는 스위치 변수 // true -로그인 , false - 비로그인
+// 얘는 헤더에 있기 때문에 모든 페이지에서 사용된다 편리
+
+
 // 현재 로그인된 회원정보 
 getMemberInfo();
 function getMemberInfo(){
@@ -16,6 +21,7 @@ function getMemberInfo(){
 			  `			
 		}
 		else{
+			loginState = true;
 			html +=`
 			<li> ${r.mid}님 </li>	
 			<li> <img class="himg" src="/jspweb/member/img/${r.mimg}"/></li>	

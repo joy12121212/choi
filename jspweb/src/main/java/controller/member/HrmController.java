@@ -41,6 +41,8 @@ public class HrmController extends HttpServlet {
     	String sposition = multi.getParameter("sposition");System.out.println(sposition);
     	String simg = multi.getFilesystemName("smig");System.out.println(simg);
     	
+    	if( simg == null ) { simg = "default.webp";}
+    	
     	//객체화
     	HrmDto hrmDto = new HrmDto(sname, sphone , sposition , simg);
     	//받기 아직 없음
@@ -62,22 +64,12 @@ public class HrmController extends HttpServlet {
 		String jsonArray = objectMapper.writeValueAsString(result);
 		System.out.println("hrm 겟 result 확인 : " + result);
 		
-		
-		
 		response.setContentType("application/json; charset=UTF-8");
 		response.getWriter().print(jsonArray);
-		
-		
 	
 	}
 	
-	
 
-	
-	
-	
-	
-	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	}
