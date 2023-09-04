@@ -58,9 +58,48 @@ public class BoardDao extends Dao {
 				}
 			} catch (Exception e) {System.out.println("보드다오 blistAll 에러 : " + e);}
 		return list;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 		// 3 개별 글 출력
+	public BoardDto getBoard(int bno) {
+	
+		try {
+			String sql = "select b.* , m.mid , m.mimg ,bc.bcname\r\n"
+					+ "from board b \r\n"
+					+ "natural join member m\r\n"
+					+ "natural join bcategory bc\r\n"
+					+ "where b.bno = ?;";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, bno);
+			rs=ps.executeQuery();
+			
+			if (rs.next()) {
+				BoardDto dto = new BoardDto(
+						rs.getInt("bno"),rs.getString("btitle"),rs.getString("bcontent"),
+						rs.getString("bfile"),rs.getString("bdate"),
+						rs.getInt("bview"),rs.getInt("mno"),rs.getInt("bcno"),
+						rs.getString("mid"),rs.getString("bcname"),rs.getString("mimg")
+					);
+				return dto;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("보드다오 개별글 출력 에러 : " + e);
+		}
 		
+		
+		return null;
+	}
+	
+	
+	
 		// 4 게시물 수정
 		
 		// 5 게시물 삭제

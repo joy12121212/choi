@@ -21,10 +21,7 @@
 		<div>
 			
 			<table class = "boardTable">
-				<tr>
-					<th>글번호</th><th>카테고리</th><th>글제목</th>
-					<th>작성자</th><th>조회수</th><th>작성일</th>
-				</tr>
+
 				<!-- 글 출력 목록 -->
 				<tr class="bprint"></tr>
 				

@@ -60,44 +60,44 @@ public class BoardInfoController extends HttpServlet {
     	
     	
     	
-    }
-    
-    
-    
-    
+    }//doPost end
     
     	// 전체, 개별 조회
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 파라미터 없고 가져오기만
+	String type = request.getParameter("type");
+	String json = "";
+	ObjectMapper mapper = new ObjectMapper();
+	
+	if (type.equals("1")) {
+		
 		ArrayList<BoardDto> result = BoardDao.getInstance().blistAll();
 		
-		System.out.println(result);
-		
-		// java객체를 sjo 의 문자열로 변환 해준다
-		
-		ObjectMapper mapper = new ObjectMapper();
-		String jsonArray = mapper.writeValueAsString(result);
-		
-		response.setContentType("application/json;charset=UTF-8");
-		response.getWriter().print(jsonArray);
+		json = mapper.writeValueAsString(result);
 		
 		
-		
-		
-		
-		
-		
+	}else if (type.equals("2")) {
+			// 개별 글 조회
+		// 보낼 정보 객체화
+		int bno = Integer.parseInt( request.getParameter("bno"));
+		// 결과값 저장
+		BoardDto result = BoardDao.getInstance().getBoard(bno);
+		// 답장
+		json = mapper.writeValueAsString(result);
 	}
+		//공통 로직 써서 코드 줄이기
+	response.setContentType("application/json;charset=UTF-8");
+	response.getWriter().print(json);
+	}// doGet end
 	
 		// 수정
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	}
+	}// doPut end
 
 		// 삭제
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	}
+	} // doDelete end
 
 }

@@ -20,7 +20,7 @@ function blistAll(){
 	  $.ajax({
       url :  "/jspweb/BoardInfoController",
       method : "get" , 
-      data :"" ,
+      data :{type : 1} ,
       success : r => {console.log(r)
       
      	let boardTable = document.querySelector('.boardTable')
@@ -32,7 +32,7 @@ function blistAll(){
 			// 배열명.forEach()
 		r.forEach(b => {
 			html+=`<tr>
-						<th>${b.bno}</th><th>${b.bcname}</th><th>${b.btitle}</th>
+						<th>${b.bno}</th><th>${b.bcname}</th><th><a href="/jspweb/board/view.jsp?bno=${b.bno}"> ${b.btitle}</a></th>
 						<th>${b.mid}/<img src="/jspweb/member/img/${b.mimg}"/> </th><th>${b.bview}</th><th>${b.bdate}</th>
 					</tr>`;
 			})//forEach
@@ -43,4 +43,25 @@ function blistAll(){
       });
 	
 }//blistAll
+
+
+
+/*
+
+	http url 에 매개변수(파라미터) 전달 [ 쿼리 스트링 방식]
+	- 페이지 전환시 매개변수(pk,식별) 전달
+	url ? 변수명 = 데이터
+	url ? 변수명 = 데이터 & 변수명 = 데이터 
+	<a href="/jspweb/board/view.jsp?bno=${b.bno}">
+	http://localhost:80/jspweb/board/view.jsp?bno=3
+		- 정의 : 페이지 전환시 매개변수(pk) 전달
+
+	- url 에서 매개변수 호출
+		// new URL(location.href).searchParams.get("매개변수명")
+
+*/
+
+
+
+
 
