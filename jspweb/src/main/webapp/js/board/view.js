@@ -24,7 +24,7 @@ function getBoard(){
          	
          	//html 구성
          	let html = `
-         		<div clas="boardBox"></div>
+         	
 				부가정보 : <div>${r.bcname} ${r.bview} ${r.bdate}</div>
 				부가정보2 : <div>${r.mid} <img src="/jspweb/member/img/${r.mimg}" width="50px"/></div>
 				제목 : <div>${r.btitle}</div>
@@ -33,7 +33,7 @@ function getBoard(){
 				<button type="button">삭제</button>
 				<button type="button">수정</button>
 				<a href="list.jsp"><button type="button">목록보기</button></a>
-				</div>`
+				`
          	boardBox.innerHTML=html;
          } ,
          error :  e => {e}
