@@ -17,6 +17,22 @@ public class BoardDto { // 게시물 , 카테고리 같이 씀
 	private String bcname;  // 카테고리명
 	private String mimg;	// 게시글 등록 이미지
 	
+	// 조회자 , 작성자 일치여부 확인
+	private boolean ishost;
+	
+	
+	
+	
+	public boolean isIshost() {
+		return ishost;
+	}
+
+
+	public void setIshost(boolean ishost) {
+		this.ishost = ishost;
+	}
+
+
 	public String getMimg() {
 		return mimg;
 	}
@@ -168,6 +184,16 @@ public class BoardDto { // 게시물 , 카테고리 같이 씀
 	}
 
 
+	//수정 생성자
+
+	public BoardDto(int bno, String btitle, String bcontent, String bfile, int bcno) {
+		super();
+		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+		this.bfile = bfile;
+		this.bcno = bcno;
+	}
 
 
 	

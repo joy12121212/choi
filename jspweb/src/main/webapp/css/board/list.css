@@ -1,1 +1,63 @@
 @charset "UTF-8";
+
+
+.listbtn{width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; margin-top: 10px;}
+.listbtn button {height: 30px; width: 100px; border : none; border-radius : 20px;
+font-size: 20px; margin-bottom: 5px;font-weight: 30;} 
+
+/* 테이블 css*/
+
+.boardTable{width: 1200px; margin-top:30px; margin: 0 auto;
+border-collapse : callapse;}
+
+.boardTable th , td{ padding: 10px 0px;
+text-align: center; align-items: center;
+white-space: nowrap;/* 자동 줄바꿈 해제 */
+overflow: hidden;/* 내용물이 구역보다 커지면 숨김 */
+text-overflow: ellipsis;/* 넘치는건... 으로 표시 */
+max-width: 150px;
+
+}
+.boardTable img {width: 20px;}
+
+.boardTable th {background-color: black; color: white; font-weight: 30;}
+
+.boardTable th:nth-child(1){width:5%;}
+.boardTable th:nth-child(2){width:10%;}
+.boardTable th:nth-child(3){width:55%;}
+.boardTable th:nth-child(4){width:10%;}
+.boardTable th:nth-child(5){width:5%;}
+.boardTable th:nth-child(6){width:15%;}
+
+
+.boardTable tr:nth-child(odd){background-color:#F0F0F0;} 
+
+
+.boardtop{text-align: center;}
+.boardtopetc{align-items: center;
+	display:flex;justify-content: flex-end; 
+	margin: 0 auto;
+	width: 1200px;}
+
+.boardbottom{ width : 1200px;
+	border-top: 1px solid #e8e8e8;
+	 margin: 0 auto; text-align: center; }
+
+.pagebox button{
+	border: none;
+	background-color: transparent;
+	font-size: 20px; padding: 15px 10px;
+
+}
+.search{font-weight: 30;font-size: 20px;border-radius : 20px;
+	height: 30px; width: 100px; border: none;
+}
+.keyword{ border-radius: 10px; width: 200px;height: 28px; margin: 0px 20px;}
+
+.skey{padding: 5px 10px; border-radius: 10px; width: 100px;font-size: 20px}
+
+.pageboxbt{display: flex; justify-content: center; align-items: center; margin-bottom: 40px;}
+
+.selectpage {width: 30px; height: 30px; border-radius: 50%; background-color: #F0F0F0 !important;}
+
+.listsize{margin-left: 10px; height: 25px;width: 45px; font-size: 15px;}
