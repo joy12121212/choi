@@ -6,12 +6,12 @@ let loginState = false; // 로그인 상태 확인하는 스위치 변수 // tru
 // 현재 로그인된 회원정보 
 getMemberInfo();
 function getMemberInfo(){
-		console.log('겟멤버 인포 돌아감')
+
 	  $.ajax({
       url :  "/jspweb/MemberInfoController",
       method : "get" , 
       data : {type : "info"} ,
-      success : r => {console.log(r)
+      success : r => {
       let submenu = document.querySelector('.submenu')
       let html = ``;
       	if(r==null){
@@ -45,7 +45,7 @@ function logout(){
       url :  "/jspweb/MemberInfoController",
       method : "get" , 
       data : {type : "logout"} ,
-      success : r => {console.log(r)
+      success : r => {
       alert('로그인이 필요합니다')
       	location.href="/jspweb/index.jsp"
       },

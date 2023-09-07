@@ -1,5 +1,14 @@
 console.log('list js 왔으요')
 
+/* 게시물 조회 조건 객체 */
+let pageOject = { 
+	type : 1 , bcno : 0  , listsize : 10 ,  // * type : 1:전체조회 , 2:개별조회 // * bcno : 조회할 카테고리 번호 [ 기본값은 전체보기 ] // * listsize : 하나의 페이지에 최대표시할 게시물수 [ 기본값은 10개 ]
+	page : 1 , key : '' , keyword : ''  
+	// * page : 조회할 페이지번호  // key : 검색할 기준 필드명 // keyword : 검색할 데이터
+}
+
+
+
 function onWrite(){
 	if(loginState == true){// 만약에 로그인이면
 		location.href="/jspweb/board/write.jsp"; 
@@ -96,7 +105,12 @@ function blistAll(page){//page: 조회할 페이지 번호
 }//blistAll
 
 
-
+// 5. 검색 버튼을 클릭했을때.
+function onSearch(){
+	pageOject.key = document.querySelector('.key').value;
+	pageOject.keyword = document.querySelector('.keyword').value; 
+	getList(1);
+} // f end 
 
 
 

@@ -57,7 +57,7 @@
 				<option>작성자</option>
 			</select>
 			<input type="text" class="keyword"> <!-- 검색할 내용 -->
-			<button type="button" class="search">검색</button>
+			<button onclick="onSearch()" type="button" class="search">검색</button>
 			</div>
 		</div> <!-- board bottom -->
 		
