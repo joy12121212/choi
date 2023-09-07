@@ -63,29 +63,36 @@ public class FileDownLoad extends HttpServlet {
 			fin.close(); oin.flush(); oin.close();
 		} // f end 
 	
-	
-	
-	
-	
-	
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+	/*
 
-	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+		Stream : 바이트(데이터)단위 이동하는 통로 
+		JAVA	--->  외부파일(프로젝트밖경로) / 네트워크 /키보드 등등 에서 스트림 사용
 
-	/**
-	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
-	 */
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+
+	강호동 
+	크롬(브라우저/유저)							톰캣(서버PC)								---------업로드 폴더(서버PC)	 		
+			/jspweb/FileDownLoad?filename=사진명.jpg						
+					-------request------->
+											1. filename 요청 
+											2. filename파일을 업로드 폴더 경로 찾기 		wtpwebapps/jspweb/board/upload
+											3. 다운로드 파일의 바이트 읽어오기 						( 실제 파일 )
+																	<-----FileInputStream-------
+																		.read()
+											4. 읽어온 바이트들을 bytes 배열에 저장 	
+											
+											5. 읽어온 바이트들을 bytes 배열에 바이트로 응답하기 
+					<------response-------
+						response.getOutputStream()
+							.write( bytes )
+
+	---------------------------------------------------------------
+	다운로드 게이지 => 바이트가 스트림을 통해 들어오는 중 
+	
+							
+
+신동엽
+	크롬(브라우저/유저)	
+					
+*/
 
 }
