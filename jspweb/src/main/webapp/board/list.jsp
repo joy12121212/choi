@@ -63,6 +63,8 @@
 		
 		
 		
+			
+		
 	</div><!-- 전체구역 끝 -->
 
 <script src="../js/board/list.js" type="text/javascript"></script>
