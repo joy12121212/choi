@@ -30,13 +30,11 @@
 			
 			<!-- 이모티콘, 첨부파일 등 구역-->
 			<div class="dropdown">
-		  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+		  <button class="emobtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 			  <i class="fas fa-tired"></i>
 		  </button>
-			  <ul class="dropdown-menu">
-			    <li><a class="dropdown-item" href="#">Action</a></li>
-			    <li><a class="dropdown-item" href="#">Another action</a></li>
-			    <li><a class="dropdown-item" href="#">Something else here</a></li>
+			  <ul class="dropdown-menu emolistbox">
+
 			  </ul>
 			</div>
 			
