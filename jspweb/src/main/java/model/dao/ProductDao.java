@@ -103,11 +103,11 @@ public class ProductDao extends Dao{
 	public List<ProductDto> findByTop( int count ){
 		List<ProductDto> list = new ArrayList<>();
 		try {
-			String sql = "select * from product order by pdate desc limit + " + count;
+			String sql = "select * from product order by pdate desc limit " + count;
 			ps = conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while (rs.next()) {list.add(findByPno(rs.getInt("pno")));}
-			
+			return list;
 		} catch (Exception e) {System.out.println("findByTop 에러 : " + e);}
 	return null; }
 	
@@ -119,14 +119,20 @@ public class ProductDao extends Dao{
 	
 	// 2. 현재 카카오지도내 보고있는 동서남북 기준내 제품들을 출력 함수
 	public List<ProductDto> findByLatLng( String east , String west , String south , String north ){
-		
-		try {// 동쪽 경도보다 크고 서쪽 경도보다 작고 남쪽 위도보다 크고 북쭉 위도보다 작고
+
+		try {// 동쪽 경도보다 작고 서쪽 경도보다 크고 남쪽 위도보다 작고 북쭉 위도보다 크고
 			List<ProductDto> list = new ArrayList<>();
-			String sql = "select * from product where ? >= plng and ? <= plng ?>=plat ? <=plat";
+			String sql = "select * from product where plat <= ? and plat >= ? and plng >= ? and plng <= ?; ";
 
 			ps = conn.prepareStatement(sql);
+			ps.setString(1, east);
+			ps.setString(2, west);
+			ps.setString(3, south);
+			ps.setString(4, north);
 			rs=ps.executeQuery();
+			
 			while (rs.next()) {list.add(findByPno(rs.getInt("pno")));}
+			return list;
 			
 		} catch (Exception e) {System.out.println("findByLatLng 에러 : " + e);}
 	return null; }
@@ -137,12 +143,11 @@ public class ProductDao extends Dao{
 		
 		try {
 			List<ProductDto> list = new ArrayList<>();			
-			String sql = "select * from product";
+			String sql = "select pno from product";
 			ps = conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while (rs.next()) {list.add(findByPno(rs.getInt("pno")));}
-			
-			
+			return list;
 		} catch (Exception e) {System.out.println("findByAll 에러 : " + e);}		
 	return null; }
 

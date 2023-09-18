@@ -23,8 +23,6 @@ import model.dao.ProductDao;
 import model.dto.MemberDto;
 import model.dto.ProductDto;
 
-
-
 @WebServlet("/productInfoController")
 public class productInfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -114,19 +112,23 @@ public class productInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String type = request.getParameter("type");
+
 		String json = "";	// DAO로부터 응답된 결과를 JSON형식의 문자열 타입을 저장하는 변수 
 		ObjectMapper mapper = new ObjectMapper(); 
-
-		if( type.equals("findByTop") ) 			{ 
+		
+		
+		if( type.equals("findByTop") ){ 
 			int count = Integer.parseInt( request.getParameter("count") );
 			List<ProductDto> result =  ProductDao.getInstance().findByTop( count );
 			json = mapper.writeValueAsString(result);
 		}
 		else if( type.equals("findByLatLng") ) 	{ 
+			System.out.println("지도 컨트롤러 실행");
 			String east = request.getParameter("east");		String west = request.getParameter("west");
 			String south = request.getParameter("south");	String north = request.getParameter("north");
-			List<ProductDto> result = ProductDao.getInstance().findByLatLng(east, south, west, north);
+			List<ProductDto> result = ProductDao.getInstance().findByLatLng(east, west, south, north);
 			json = mapper.writeValueAsString(result);
+
 		}
 		else if( type.equals("findByPno") ) 	{ 
 			int pno = Integer.parseInt( request.getParameter("pno") );
@@ -134,13 +136,15 @@ public class productInfoController extends HttpServlet {
 			json = mapper.writeValueAsString(result);
 		}
 		else if( type.equals("findByAll") ) 	{ 
+
 			List<ProductDto> result = ProductDao.getInstance().findByAll();	
 			json = mapper.writeValueAsString(result);
+
 		}
 
-		response.setCharacterEncoding("application/json;charset=UTF-8");
+		response.setContentType("application/json;charset=UTF-8");
 		response.getWriter().print( json );
-		
+
 
 	}
 

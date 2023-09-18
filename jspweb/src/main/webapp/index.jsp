@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 	<!-- 부트스트랩 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
+	<link href="/jspweb/css/index.css" rel="stylesheet">
 </head>
 <body>
 	<!-- jsp 파일안에 다른 jsp 파일 import 하기 -->
@@ -42,44 +42,11 @@
 		</button>
 	</div>
 
-<div class="row row-cols-1 row-cols-md-4 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="/jspweb/img/햄벅.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">햄버거당</h5>
-        <p class="card-text">맛잇겟당...........</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="/jspweb/img/햄벅.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">롯데리아를 가야되나</h5>
-        <p class="card-text">나는 아직도.. 배가 고프다</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="/jspweb/img/햄벅.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">후아후아</h5>
-        <p class="card-text">맥도날드도 좋은데</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="/jspweb/img/햄벅.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">근데 밥먹어야되는데</h5>
-        <p class="card-text">고민이 되는구나</p>
-      </div>
-    </div>
-  </div>
-</div>
+	<div class="container">
+		<div class="productBox row row-cols-1 row-cols-md-4 g-4">
+	
+		</div>
+	</div>
 
 </div>
 
@@ -87,6 +54,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 	<script src="/jspweb/js/index.js" type="text/javascript"></script>
+	
 
 	<!-- jsp 파일안에 다른 jsp 파일 import 하기 -->
 	<%@include file = "footer.jsp" %>
