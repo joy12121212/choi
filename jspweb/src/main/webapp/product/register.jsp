@@ -22,13 +22,24 @@
 			제품명 : <input name="pname" type="text"> 
 			제품설명 :  <textarea name="pcontent" rows="" cols=""></textarea>
 			제품가격 : <input name="pprice" type="number">
+			
+			제품 장소 : 
+			<div id="map" style="width:100%;height:350px;"></div>
+			<p><em>지도를 클릭해주세요!</em></p> 
+			<div id="clickLatlng"></div>
+			
 			<!-- 첨부파일 1개 일때 -->
 			<!-- 제품이미지 : <input name="pimg" type="file">-->
 		
 			<!-- 첨부파일 2~개 일때 -->
-			제품이미지 : <input name="pimg" type="file" multiple="multiple">
+			<!--제품이미지 : <input name="pimg" type="file" multiple="multiple"> -->
 			<!-- multiple 사용할거면 commons 사용 -->
-
+			
+			<!-- 첨부파일 드래그&드랍 -->
+			<div class="fileDropBox" style="width:400px; height:200px; border:1px solid black;">
+				파일을 올려주세요	
+			</div>
+			
 			<button onclick="onRegister()" type="button">등록</button>
 			
 			
@@ -36,6 +47,8 @@
 	</div>
 
 
+	<!-- 카카오 지도 -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0a3b6e2c0022f6972c3d293e2130dce"></script>
 
 
 	<!-- 부트스트랩 -->
