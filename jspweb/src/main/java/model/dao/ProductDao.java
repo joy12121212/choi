@@ -66,10 +66,12 @@ public class ProductDao extends Dao{
 			String sql = "select * from productimg where pno = "+pno;
 			// 위에서 먼저 사용중인 rs 에서 이미 사용중으로 while 중복 사용 불가
 			// 새로운 rs 만들어서 한번 더 rs 돌리기			
-			PreparedStatement ps2 = conn.prepareStatement(sql);
-			ResultSet rs2 = ps2.executeQuery();
-				while(rs2.next()) {imglist.put(rs2.getInt("pimgno"), rs2.getString("pimg"));}
-				return imglist;
+			
+			ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {imglist.put(rs.getInt("pimgno"), rs.getString("pimg"));}
+			return imglist;
 		} catch (Exception e) {System.out.println(e);} return null;
 		
 	}
@@ -80,8 +82,10 @@ public class ProductDao extends Dao{
 		
 		try {
 			String sql = "select * from product p natural join pcategory pc natural join member m where p.pno= " + pno;
-			PreparedStatement ps = conn.prepareStatement(sql);
+
+			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
+			
 			if (rs.next()) {
 				ProductDto dto = new ProductDto(
 						rs.getInt("pcno"), rs.getString("pcname"), 
@@ -122,13 +126,13 @@ public class ProductDao extends Dao{
 
 		try {// 동쪽 경도보다 작고 서쪽 경도보다 크고 남쪽 위도보다 작고 북쭉 위도보다 크고
 			List<ProductDto> list = new ArrayList<>();
-			String sql = "select * from product where plat <= ? and plat >= ? and plng >= ? and plng <= ?; ";
+			String sql = "select * from product where plat <= ? and plat >= ? and plng >= ? and plng <= ? ";
 
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, east);
-			ps.setString(2, west);
-			ps.setString(3, south);
-			ps.setString(4, north);
+			ps.setString(4, east);
+			ps.setString(3, west);
+			ps.setString(2, south);
+			ps.setString(1, north);
 			rs=ps.executeQuery();
 			
 			while (rs.next()) {list.add(findByPno(rs.getInt("pno")));}

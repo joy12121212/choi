@@ -20,23 +20,23 @@ function findByTop( count ) {
 			jsonArray.forEach((p)=>{
 				
 				let firstImg = Object.values(p.imgList)[0];
-				console.log(firstImg)
 				
 				
 				html+=`
-					  <div class="col">
-					    <div class="card">
-				  	    <img onclick="findByPno(${p.pno})" src="/jspweb/product/img/${firstImg}" class="card-img-top" alt="...">
-
-						      <div class="card-body">
-					        <h5 class="card-title">${p.pname}</h5>
-					        <p class="card-text">
-					        	<div> ${p.pcontent}</div>
-					        	<div> ${p.pprice.toLocaleString()} 원</div>
-					        </p>
-					      </div>
-					    </div>
-					  </div>`
+				<div class="col">
+				    <div class="card" style="height:450px; border: none;">
+				      <a href="/jspweb/product/view.jsp?pno=${ p.pno }" >
+				     	 <img src="/jspweb/product/img/${firstImg}" class="card-img-top" alt="..." style="height:300px; border-radius: 50px; box-shadow: 0px 0px 5px #e8e8e8;">
+				      </a>
+				      <div class="card-body">
+				        <h5 class="card-title">${ p.pname }</h5>
+				        <p class="card-text">
+				        	<div> ${ p.pcontent } </div>
+				        	<div> ${ p.pprice.toLocaleString() }원 </div>
+				        </p>
+				      </div>
+				    </div>
+				  </div>`
 				
 			})
 		productBox.innerHTML=html;		
@@ -58,7 +58,9 @@ function findByLatLng( east , west  ,  south  , north  ) {
 		error: e=>{console.log(e)}
 	})
 }
-// 3. 선택된 제품번호에 해당하는 제품 출력 함수 
+
+
+// 3. 선택된 제품번호에 해당하는 제품 출력 함수  // ★이거 view js 에서 갖다 썻음
 function findByPno( pno ) {
 	$.ajax({
 		url : "/jspweb/productInfoController" , method : "get" , 

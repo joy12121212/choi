@@ -25,11 +25,11 @@
 
 	
 
-	<!-- 카카오지도 -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0a3b6e2c0022f6972c3d293e2130dce&libraries=clusterer"></script>
-
 	<!-- 부트스트랩 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+	<!-- 카카오지도 -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e0a3b6e2c0022f6972c3d293e2130dce&libraries=clusterer"></script>
 
 	<script  src="/jspweb/js/product/list.js" type="text/javascript"></script>
 
