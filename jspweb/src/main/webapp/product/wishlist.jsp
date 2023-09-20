@@ -24,29 +24,7 @@
 
 		
 			<table class="table table-hover text-center align-middle"> <!-- 부트스트랩 기본 테이블 -->
-				<tr class="table-light">
-					<th width="5%"><input class="checkbox" type="checkbox"></th>
-					<th width="5%">이미지</th>
-					<th width="40%">제품정보</th>
-					<th width="10%">가격</th>
-					<th width="10%">비고</th>
-				</tr>
-				
-				<tr>
-					<td><input class="checkbox"  type="checkbox"></td>
-					<td><img src="/jspweb/product/img/음식1.jpg" width="100%"/></td>
-					<td>먹을거리팝니다</td>
-					<td>121212</td>
-					<td> <button class="btn btn-outline-dark"  type="button"> 삭제 </button> </td>
-				</tr>
-				<tr>
-					<td><input class="checkbox"  type="checkbox"></td>
-					<td><img src="/jspweb/product/img/음식1.jpg" width="100%"/></td>
-					<td>먹을거리팝니다</td>
-					<td>121212</td>
-					<td> <button class="btn btn-outline-dark"  type="button"> 삭제 </button> </td>
-				</tr>
-				
+
 			</table>
 
 			<div class="buybtn">
