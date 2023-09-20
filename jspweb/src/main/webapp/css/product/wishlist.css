@@ -1,0 +1,10 @@
+/* 체크박스 크기 변경 - 얘는 width 로 사이즈 변경 불가*/
+.checkbox{
+	zoom : 1.2; /* 1이 기본 , 2가 2배 , 3이 3배 */
+}
+
+.selectbtn{margin: 10px; display: flex;justify-content: flex-start; }
+
+.buybtn{ margin: 10px; display: flex;justify-content: center;}
+.selectbtn button{margin: 0px 10px;}
+.buybtn button{width:20%; margin: 10px 30px; font-size: 20px;}
