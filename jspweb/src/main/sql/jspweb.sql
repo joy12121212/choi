@@ -227,41 +227,73 @@ select count(*) from board b where b.bcno = 1; # 카테고리1 - 공지사항 �
 
 
 
+# --------------- 제품 ----------------------- #
 
-# ------------------4인 과제------------------------------#
+# pk 상위 테이블 먼저 생성
+# 1. 제품 카테고리
+drop table if exists pcategory;
+create table pcategory(
+	pcno int auto_increment primary key,
+	pcname varchar(20) not null );
 
-
-use Temproject3;
-drop database if exists Temproject3;
-create database Temproject3;
-use Temproject3;drop table if exists sns;
-create table sns(
-   sno int auto_increment,
-   simg longtext not null,
-    scontent text not null,
-    spwd varchar(6) not null,
-    sdate datetime default now(),
-    primary key(sno)
+# 샘플
+insert pcategory(pcname) values('노트북');
+insert pcategory(pcname) values('컴퓨터');        
+insert pcategory(pcname) values('핸드폰');
+        
+# 2. 제품
+drop table if exists product;
+create table product(
+	pno int auto_increment primary key,
+    pname varchar(100) not null,
+    pcontent longtext,
+    pprice int unsigned default 0,		# signed 기본값:음수사용 / unsigned(음수 사용 안함 음수만큼의 메모리를 양수로 사용(0~42억 정도)
+    pstate tinyint default 0 not null,			#[ ex) 0 판매중 , 1 거래중 , 2 판매완료 ]               
+    pdate datetime default now(),
+    plat varchar(40),
+    plng varchar(40),
+    pcno int ,
+    mno int,
+	foreign key (pcno) references pcategory(pcno) on delete set null on update cascade, # 자동삭제
+    foreign key (mno) references member(mno) on delete set null on update cascade # 자동삭제
 );
 
-select * from sns order by sdate desc;
-
-
-# 답글 기능 테이블
-
-drop table if exists reply;
-create table reply(
-   rno int auto_increment,
-    rpwd varchar(6) not null,
-    rcontent text not null,
-    rdate datetime default now(),
-    sno int,
-    primary key(rno),
-    foreign key(sno) references sns(sno) on delete cascade
+# 3. 제품 이미지
+drop table if exists productimg;
+create table productimg(
+	pimgno int auto_increment primary key,
+    pimg longtext,
+    pno int,
+    foreign key (pno) references product(pno) on delete set null on update cascade
 );
 
-# 답글 등록 
-insert into reply(rpwd , rcontent , sno) values (? , ? , ?);
 
-# 답글 삭제
-delete from reply where rno = ? and rpwd = ?
+# 1. 제품등록 [ 제품등록 후 이미지 등록 - > 왜 ? 이미지 등록시 제품번호 pk 필요함 ]
+
+insert into product(pcno,pname,pcontent,pprice,plat,plng,mno) 
+	values( ? , ? , ? , ? , ? , ? , ? );
+
+	# 제품 등록 후 해당 제품pk번호를 이미지 테이블에 이미지와 같이 저장
+insert into productimg(pimg , pno) values(? , ?);
+
+select * from product;
+select * from productimg;
+
+delete from product where pno = 5;
+
+select pno from product where ? >= plat and ? <= plat and ? >=plng and ? <=plng order by pdate;
+
+
+use jspweb;
+drop table if exists pwishlist;
+create table pwishlist(
+	mno int not null,
+    pno int not null,
+    foreign key(mno) references member(mno) on delete cascade on update cascade, -- 회원이 탈퇴하면 찜하기 목록 같이 삭제
+    foreign key(pno) references product(pno) on delete cascade on update cascade -- 제품이 삭제되면 찜하기 목록에서 없는 제품으로 대입 null 대입
+);
+
+# bigint / unsigned -> 음수 없음 양수만
+
+
+
