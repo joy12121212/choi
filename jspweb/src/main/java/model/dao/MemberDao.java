@@ -1,8 +1,11 @@
 package model.dao;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.dto.MemberDto;
+import model.dto.MpointDto;
 
 public class MemberDao extends Dao{
 	private static MemberDao memberDao = new MemberDao();
@@ -141,9 +144,82 @@ public class MemberDao extends Dao{
 	}
 	
 	
+	// 9. 포인트 지급/사용 함수
+	// 파라미터 int mpno , int mno , String mpamount
+	public boolean setPoint(MpointDto dto) {
+		
+		try {
+			
+			String sql = "insert into mpoint(mpno , mno , mpamount, mpcomment) values( ? , ? , ? , ? );";
+			
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, dto.getMpno());
+			ps.setInt(2, dto.getMno());
+			ps.setLong(3, dto.getMpamount());
+			ps.setString(4, dto.getMpcomment());
+			
+			int row = ps.executeUpdate();
+			
+			if(row == 1) {return true;}
+			
+			
+		} catch (Exception e) {
+			System.out.println("setPoint 다오 에러 : " + e);
+		}return false;
+	} //mpoint
+	
+	
+	// 10. 내 포인트 확인
+	
+	public long getPoint(int mno) {
+		
+		try {
+			// 합 sum , 평균 avg , 총 수 count
+			String sql = "select sum(mpamount) from mpoint where mno = ?";
+			
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, mno);
+			rs=ps.executeQuery();
+			
+			if(rs.next()) {return rs.getInt(1);}
+		} catch (Exception e) {
+			System.out.println("getPoint 에러 " + e);
+		}return 0;
+	}
+	
+	
+	
+	// 11. 내 포인트 사용 내역
+	
+	public List<MpointDto> getPointAll(int mno){
+		
+		List<MpointDto> list = new ArrayList<>();
+		
+		try {
+			String sql = "select * from mpoint where mno = ? ";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, mno);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				MpointDto dto = new MpointDto(rs.getString(1),rs.getInt(2),
+						rs.getLong(3),rs.getString(4),rs.getString(5));
+				list.add(dto);
+				System.out.println(rs.getString(4));
+			}
+			
+		} catch (Exception e) {
+			System.out.println("getPointAll 에러 " + e);
+		}return list;
+	}//getPointAll
 	
 	
 	
 	
 	
-}
+	
+	
+	
+}// class
+

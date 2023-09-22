@@ -171,7 +171,8 @@ public class ProductDao extends Dao{
 			ps.setInt(2, pno);
 		
 			int row = ps.executeUpdate();
-			
+			//레코드가 있으면 찜하기 이미 등록한거
+			//레코드가 없으면 찜하기 등록 안한거
 			if(row==1){return true;}
 
 		} catch (Exception e) {

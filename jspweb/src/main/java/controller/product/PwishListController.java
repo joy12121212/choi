@@ -48,17 +48,19 @@ public class PwishListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String type = request.getParameter("type");
-		
+		// 타입이 findByWish 이거라면 if 문 실행
 		if(type.equals("findByWish")) {
 			
 			int pno = Integer.parseInt(request.getParameter("pno"));
 			
 			int mno = ((MemberDto) request.getSession().getAttribute("loginDto")).getMno();
-			
+			//getWish 다오로 보내서 레코드가 1이면 이미 pno, mno 가 있으니 빈하트로
+			//getWish 다오로 보내서 레코드가 0이면 pno, mno가 없으니 색깔 하트로
 			boolean result = ProductDao.getInstance().getWish(mno, pno);
 			
 			response.setContentType("application/json;charset=UTF-8");
 			response.getWriter().print(result);		
+			
 		}else if (type.equals("findByAll")) {
 			int mno = ((MemberDto) request.getSession().getAttribute("loginDto")).getMno();
 			List<ProductDto> reslut = ProductDao.getInstance().getWishProductList(mno);
